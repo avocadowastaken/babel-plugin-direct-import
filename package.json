@@ -1,0 +1,66 @@
+{
+  "name": "babel-plugin-direct-import",
+  "version": "0.0.1",
+  "description": "Babel plugin to cherry pick imports of es6 modules.",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "repository": "https://github.com/umidbekkarimov/babel-plugin-direct-import.git",
+  "author": "Umidbek Karimov <uma.karimov@gmail.com>",
+  "license": "MIT",
+  "jest": {
+    "coverageReporters": [
+      "text-summary",
+      "lcov"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/__tests__/",
+      "/node_modules/"
+    ],
+    "testMatch": [
+      "**/src/**/*.spec.js"
+    ],
+    "snapshotSerializers": [
+      "<rootDir>/tools/raw-serializer.js"
+    ]
+  },
+  "scripts": {
+    "all": "yarn format && yarn lint && yarn cover",
+    "test": "jest",
+    "cover": "jest --coverage --no-cache",
+    "codecov": "yarn cover && codecov -f ./coverage/lcov.info",
+    "lint": "eslint \"{src,tools}/**/*.js\"",
+    "format": "prettier --write \"{src,tools}/**/*.js\"",
+    "report": "rimraf coverage && (yarn cover || true) && opener ./coverage/lcov-report/index.html"
+  },
+  "devDependencies": {
+    "babel-core": "6.25.0",
+    "codecov": "2.2.0",
+    "eslint": "4.0.0",
+    "eslint-config-airbnb-base": "11.2.0",
+    "eslint-config-prettier": "2.2.0",
+    "eslint-plugin-import": "2.3.0",
+    "eslint-plugin-node": "5.0.0",
+    "glob": "7.1.2",
+    "jest": "20.0.4",
+    "opener": "1.4.3",
+    "prettier": "1.4.4",
+    "rimraf": "2.6.1"
+  },
+  "dependencies": {
+    "babylon": "6.17.4",
+    "lodash": "4.17.4"
+  }
+}

@@ -1,0 +1,12 @@
+coverage
+yarn.lock
+tools
+src/__tests__
+src/__mocks__
+src/utils/__tests__
+
+.idea
+.npmignore
+.travis.yml
+.eslintignore
+.eslintrc.json

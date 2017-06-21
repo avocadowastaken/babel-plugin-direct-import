@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Transform: redux-form@6.8.0 should transform with: "each-module.js" 1`] = `
+import {
+  defaultShouldAsyncValidate,
+  defaultShouldValidate,
+  Field,
+  FieldArray,
+  fieldInputPropTypes,
+  fieldMetaPropTypes,
+  fieldPropTypes,
+  Fields,
+  Form,
+  formPropTypes,
+  FormSection,
+  formValues,
+  formValueSelector,
+  getFormAsyncErrors,
+  getFormInitialValues,
+  getFormMeta,
+  getFormNames,
+  getFormSubmitErrors,
+  getFormSyncErrors,
+  getFormSyncWarnings,
+  getFormValues,
+  hasSubmitFailed,
+  hasSubmitSucceeded,
+  isDirty,
+  isInvalid,
+  isPristine,
+  isSubmitting,
+  isValid,
+  propTypes,
+  reducer,
+  reduxForm,
+  SubmissionError,
+  values
+} from "redux-form";
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import { default as defaultShouldAsyncValidate } from "redux-form/es/defaultShouldAsyncValidate";
+import { default as defaultShouldValidate } from "redux-form/es/defaultShouldValidate";
+import { default as Field } from "redux-form/es/Field";
+import { default as FieldArray } from "redux-form/es/FieldArray";
+import { fieldInputPropTypes } from "redux-form/es/propTypes";
+import { fieldMetaPropTypes } from "redux-form/es/propTypes";
+import { fieldPropTypes } from "redux-form/es/propTypes";
+import { default as Fields } from "redux-form/es/Fields";
+import { default as Form } from "redux-form/es/Form";
+import { formPropTypes } from "redux-form/es/propTypes";
+import { default as FormSection } from "redux-form/es/FormSection";
+import { default as formValues } from "redux-form/es/formValues";
+import { default as formValueSelector } from "redux-form/es/formValueSelector";
+import { default as getFormAsyncErrors } from "redux-form/es/getFormAsyncErrors";
+import { default as getFormInitialValues } from "redux-form/es/getFormInitialValues";
+import { default as getFormMeta } from "redux-form/es/getFormMeta";
+import { default as getFormNames } from "redux-form/es/getFormNames";
+import { default as getFormSubmitErrors } from "redux-form/es/getFormSubmitErrors";
+import { default as getFormSyncErrors } from "redux-form/es/getFormSyncErrors";
+import { default as getFormSyncWarnings } from "redux-form/es/getFormSyncWarnings";
+import { default as getFormValues } from "redux-form/es/getFormValues";
+import { default as hasSubmitFailed } from "redux-form/es/hasSubmitFailed";
+import { default as hasSubmitSucceeded } from "redux-form/es/hasSubmitSucceeded";
+import { default as isDirty } from "redux-form/es/isDirty";
+import { default as isInvalid } from "redux-form/es/isInvalid";
+import { default as isPristine } from "redux-form/es/isPristine";
+import { default as isSubmitting } from "redux-form/es/isSubmitting";
+import { default as isValid } from "redux-form/es/isValid";
+import { default as propTypes } from "redux-form/es/propTypes";
+import { default as reducer } from "redux-form/es/reducer";
+import { default as reduxForm } from "redux-form/es/reduxForm";
+import { default as SubmissionError } from "redux-form/es/SubmissionError";
+import { default as values } from "redux-form/es/values";
+`;

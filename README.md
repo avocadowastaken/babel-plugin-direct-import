@@ -1,0 +1,211 @@
+# babel-plugin-direct-import
+
+
+[![build status](https://img.shields.io/travis/umidbekkarimov/babel-plugin-direct-import/master.svg?style=flat-square)](https://travis-ci.org/umidbekkarimov/babel-plugin-direct-import)
+[![npm version](https://img.shields.io/npm/v/babel-plugin-direct-import.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-direct-import)
+[![npm downloads](https://img.shields.io/npm/dm/babel-plugin-direct-import.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-direct-import)
+[![Codecov](https://img.shields.io/codecov/c/gh/umidbekkarimov/babel-plugin-direct-import.svg?style=flat-square)](https://codecov.io/gh/umidbekkarimov/babel-plugin-direct-import)
+
+Babel plugin to cherry pick imports of es6 modules.
+
+## Motivation
+
+[Tree shaking](https://webpack.js.org/guides/tree-shaking/) is awesome! And [Rollup](https://rollupjs.org/) with [webpack](https://webpack.js.org) *(TODO: add more next week)* teams doing great job making it more better! But still not all libs can be "tree shaked" right now and as a developer I don't want to wait, I want to use sweet `import { module } from "package"` syntax right now without caring about final bundle size.
+
+> "But we already have [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) and [babel-transform-imports](https://bitbucket.org/amctheatres/babel-transform-imports)!"
+
+Right! And this plugins are awesome! But they does not work with complicated structures like [material-ui@next](https://github.com/callemall/material-ui/blob/next/src/index.js) has. I started in [babel-plugin-material-ui@next](https://github.com/umidbekkarimov/babel-plugin-material-ui/tree/next) but soon this idea has grow up to create generic plugin that will work with any es6 package.
+
+
+
+## Installation
+
+```bash
+npm install --save-dev babel-plugin-direct-import
+```
+
+
+
+## Example
+
+**In**
+
+```javascript
+import { TextField, SelectField, FlatButton } from "material-ui";
+import {
+  ActionAccessibility,
+  ActionAccessible,
+  ActionAccountBalance as BalanceIcon
+} from "material-ui/svg-icons";
+```
+
+**Out**
+
+```javascript
+import TextField from "material-ui/TextField";
+import SelectField from "material-ui/SelectField";
+import FlatButton from "material-ui/FlatButton";
+import ActionAccessibility from "material-ui/svg-icons/action/accessibility";
+import ActionAccessible from "material-ui/svg-icons/action/accessible";
+import BalanceIcon from "material-ui/svg-icons/action/account-balance";
+```
+
+
+
+## Usage
+
+### **Via .babelrc (Recommended)**
+
+**.babelrc**
+
+```json
+{
+  "plugins": [
+    [
+      "direct-import",
+      [
+        {
+          "name": "material-ui",
+          "indexFile": "material-ui/index.es"
+        },
+        {
+          "name": "material-ui/svg-icons",
+          "indexFile": "material-ui/svg-icons/index.es"
+        }
+      ]
+    ]
+  ]
+}
+```
+
+### **Via Node API**
+
+```javascript
+require("babel-core").transform("code", {
+  plugins: [
+    [
+      "direct-import",
+      [
+        {
+          name: "material-ui",
+          indexFile: "material-ui/index.es"
+        },
+        {
+          name: "material-ui/svg-icons",
+          indexFile: "material-ui/svg-icons/index.es"
+        }
+      ]
+    ]
+  ]
+});
+```
+
+
+
+## Limitations
+
+Since this plugin just started to operate, It has it's limitations (PRs or suggestions are welcomed).
+
+#### Transformation of namespace imports:
+
+To keep it simple currently it ignores namespace imports.
+
+```javascript
+import * as MUI from 'material-ui';
+
+return (props) => <MUI.Checkbox {...props} />;
+```
+
+#### Mapping of variable exports:
+
+If index file of package exports a variable - you will have to disable mapping for it, otherwise plugin will throw `package does not contain module ` errors. 
+
+e.g:
+
+```javascript
+import foo from './foo';
+
+export const bar = foo.bar;
+export const baz = foo.baz;
+export const noop = () => {};
+```
+
+## Supported Packages
+
+#### [Material UI](https://github.com/callemall/material-ui)
+
+```json
+[
+  {
+    "name": "material-ui",
+    "indexFile": "material-ui/index.es"
+  },
+  {
+    "name": "material-ui/svg-icons",
+    "indexFile": "material-ui/svg-icons/index.es"
+  }
+]
+```
+
+#### [Material UI Next](https://github.com/callemall/material-ui/tree/next) 
+
+```json
+[
+  {
+    "name": "material-ui",
+    "indexFile": "material-ui/index.es"
+  }
+]
+```
+
+#### [React Router 3](https://github.com/ReactTraining/react-router/tree/v3)
+
+```json
+[
+  {
+    "name": "react-router",
+    "indexFile": "react-router/es/index"
+  }
+]
+```
+
+#### [React Router 4](https://github.com/ReactTraining/react-router)
+
+```json
+[
+  {
+    "name": "react-router",
+    "indexFile": "react-router/es/index"
+  },
+  {
+    "name": "react-router-dom",
+    "indexFile": "react-router-dom/es/index"
+  }
+]
+```
+
+#### [Redux Form](https://github.com/erikras/redux-form) (Partial support)
+
+```json
+[
+  {
+    "name": "redux-form",
+    "indexFile": "redux-form/es/index"
+  },
+  {
+    "name": "redux-form/immutable",
+    "indexFile": "redux-form/es/immutable"
+  }
+]
+```
+
+
+
+## Thanks
+
+Heavily inspired by:
+* [babel-plugin-date-fns](https://github.com/date-fns/babel-plugin-date-fns)
+* [babel-plugin-lodash](https://github.com/lodash/babel-plugin-lodash)
+* [babel-plugin-recharts](https://github.com/recharts/babel-plugin-recharts)
+* [babel-transform-imports](https://bitbucket.org/amctheatres/babel-transform-imports)
+* [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
