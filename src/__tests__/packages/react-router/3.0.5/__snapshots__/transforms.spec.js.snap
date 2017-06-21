@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Transform: react-router@3.0.5 should transform with: "each-module.js" 1`] = `
+import {
+  applyRouterMiddleware,
+  browserHistory,
+  createMemoryHistory,
+  hashHistory,
+  IndexLink,
+  IndexRedirect,
+  IndexRoute,
+  Link,
+  match,
+  Redirect,
+  Route,
+  Router,
+  RouterContext,
+  useRouterHistory,
+  withRouter
+} from "react-router";
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import { default as applyRouterMiddleware } from "react-router/es/applyRouterMiddleware";
+import { default as browserHistory } from "react-router/es/browserHistory";
+import { default as createMemoryHistory } from "react-router/es/createMemoryHistory";
+import { default as hashHistory } from "react-router/es/hashHistory";
+import { default as IndexLink } from "react-router/es/IndexLink";
+import { default as IndexRedirect } from "react-router/es/IndexRedirect";
+import { default as IndexRoute } from "react-router/es/IndexRoute";
+import { default as Link } from "react-router/es/Link";
+import { default as match } from "react-router/es/match";
+import { default as Redirect } from "react-router/es/Redirect";
+import { default as Route } from "react-router/es/Route";
+import { default as Router } from "react-router/es/Router";
+import { default as RouterContext } from "react-router/es/RouterContext";
+import { default as useRouterHistory } from "react-router/es/useRouterHistory";
+import { default as withRouter } from "react-router/es/withRouter";
+`;

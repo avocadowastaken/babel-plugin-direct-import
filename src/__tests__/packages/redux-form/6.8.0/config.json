@@ -1,0 +1,10 @@
+[
+  {
+    "name": "redux-form",
+    "indexFile": "redux-form/es/index"
+  },
+  {
+    "name": "redux-form/immutable",
+    "indexFile": "redux-form/es/immutable"
+  }
+]

@@ -1,0 +1,320 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fulfill mappings for: material-ui@1.0.0-alpha.17 should fulfill exports for "material-ui/index.es" 1`] = `
+Object {
+  "exports": Object {
+    "AppBar": Object {
+      "exported": "AppBar",
+      "local": "default",
+      "source": "material-ui/AppBar",
+    },
+    "Avatar": Object {
+      "exported": "Avatar",
+      "local": "default",
+      "source": "material-ui/Avatar",
+    },
+    "Badge": Object {
+      "exported": "Badge",
+      "local": "default",
+      "source": "material-ui/Badge",
+    },
+    "BottomNavigation": Object {
+      "exported": "BottomNavigation",
+      "local": "default",
+      "source": "material-ui/BottomNavigation",
+    },
+    "BottomNavigationButton": Object {
+      "exported": "BottomNavigationButton",
+      "local": "BottomNavigationButton",
+      "source": "material-ui/BottomNavigation",
+    },
+    "Button": Object {
+      "exported": "Button",
+      "local": "default",
+      "source": "material-ui/Button",
+    },
+    "Card": Object {
+      "exported": "Card",
+      "local": "default",
+      "source": "material-ui/Card",
+    },
+    "CardActions": Object {
+      "exported": "CardActions",
+      "local": "CardActions",
+      "source": "material-ui/Card",
+    },
+    "CardContent": Object {
+      "exported": "CardContent",
+      "local": "CardContent",
+      "source": "material-ui/Card",
+    },
+    "CardHeader": Object {
+      "exported": "CardHeader",
+      "local": "CardHeader",
+      "source": "material-ui/Card",
+    },
+    "CardMedia": Object {
+      "exported": "CardMedia",
+      "local": "CardMedia",
+      "source": "material-ui/Card",
+    },
+    "Checkbox": Object {
+      "exported": "Checkbox",
+      "local": "default",
+      "source": "material-ui/Checkbox",
+    },
+    "Chip": Object {
+      "exported": "Chip",
+      "local": "default",
+      "source": "material-ui/Chip",
+    },
+    "CircularProgress": Object {
+      "exported": "CircularProgress",
+      "local": "CircularProgress",
+      "source": "material-ui/Progress",
+    },
+    "Dialog": Object {
+      "exported": "Dialog",
+      "local": "default",
+      "source": "material-ui/Dialog",
+    },
+    "DialogActions": Object {
+      "exported": "DialogActions",
+      "local": "DialogActions",
+      "source": "material-ui/Dialog",
+    },
+    "DialogContent": Object {
+      "exported": "DialogContent",
+      "local": "DialogContent",
+      "source": "material-ui/Dialog",
+    },
+    "DialogContentText": Object {
+      "exported": "DialogContentText",
+      "local": "DialogContentText",
+      "source": "material-ui/Dialog",
+    },
+    "DialogTitle": Object {
+      "exported": "DialogTitle",
+      "local": "DialogTitle",
+      "source": "material-ui/Dialog",
+    },
+    "Divider": Object {
+      "exported": "Divider",
+      "local": "default",
+      "source": "material-ui/Divider",
+    },
+    "Drawer": Object {
+      "exported": "Drawer",
+      "local": "default",
+      "source": "material-ui/Drawer",
+    },
+    "FormControl": Object {
+      "exported": "FormControl",
+      "local": "FormControl",
+      "source": "material-ui/Form",
+    },
+    "FormGroup": Object {
+      "exported": "FormGroup",
+      "local": "FormGroup",
+      "source": "material-ui/Form",
+    },
+    "FormHelperText": Object {
+      "exported": "FormHelperText",
+      "local": "FormHelperText",
+      "source": "material-ui/Form",
+    },
+    "FormLabel": Object {
+      "exported": "FormLabel",
+      "local": "FormLabel",
+      "source": "material-ui/Form",
+    },
+    "Grid": Object {
+      "exported": "Grid",
+      "local": "default",
+      "source": "material-ui/Grid",
+    },
+    "Hidden": Object {
+      "exported": "Hidden",
+      "local": "default",
+      "source": "material-ui/Hidden",
+    },
+    "Icon": Object {
+      "exported": "Icon",
+      "local": "default",
+      "source": "material-ui/Icon",
+    },
+    "IconButton": Object {
+      "exported": "IconButton",
+      "local": "default",
+      "source": "material-ui/IconButton",
+    },
+    "Input": Object {
+      "exported": "Input",
+      "local": "default",
+      "source": "material-ui/Input",
+    },
+    "InputLabel": Object {
+      "exported": "InputLabel",
+      "local": "InputLabel",
+      "source": "material-ui/Input",
+    },
+    "LabelSwitch": Object {
+      "exported": "LabelSwitch",
+      "local": "LabelSwitch",
+      "source": "material-ui/Switch",
+    },
+    "LinearProgress": Object {
+      "exported": "LinearProgress",
+      "local": "LinearProgress",
+      "source": "material-ui/Progress",
+    },
+    "List": Object {
+      "exported": "List",
+      "local": "default",
+      "source": "material-ui/List",
+    },
+    "ListItem": Object {
+      "exported": "ListItem",
+      "local": "ListItem",
+      "source": "material-ui/List",
+    },
+    "ListItemAvatar": Object {
+      "exported": "ListItemAvatar",
+      "local": "ListItemAvatar",
+      "source": "material-ui/List",
+    },
+    "ListItemIcon": Object {
+      "exported": "ListItemIcon",
+      "local": "ListItemIcon",
+      "source": "material-ui/List",
+    },
+    "ListItemSecondaryAction": Object {
+      "exported": "ListItemSecondaryAction",
+      "local": "ListItemSecondaryAction",
+      "source": "material-ui/List",
+    },
+    "ListItemText": Object {
+      "exported": "ListItemText",
+      "local": "ListItemText",
+      "source": "material-ui/List",
+    },
+    "ListSubheader": Object {
+      "exported": "ListSubheader",
+      "local": "ListSubheader",
+      "source": "material-ui/List",
+    },
+    "Menu": Object {
+      "exported": "Menu",
+      "local": "default",
+      "source": "material-ui/Menu",
+    },
+    "MenuItem": Object {
+      "exported": "MenuItem",
+      "local": "MenuItem",
+      "source": "material-ui/Menu",
+    },
+    "MenuList": Object {
+      "exported": "MenuList",
+      "local": "MenuList",
+      "source": "material-ui/Menu",
+    },
+    "MuiThemeProvider": Object {
+      "exported": "MuiThemeProvider",
+      "local": "MuiThemeProvider",
+      "source": "material-ui/styles",
+    },
+    "Paper": Object {
+      "exported": "Paper",
+      "local": "default",
+      "source": "material-ui/Paper",
+    },
+    "Radio": Object {
+      "exported": "Radio",
+      "local": "default",
+      "source": "material-ui/Radio",
+    },
+    "RadioGroup": Object {
+      "exported": "RadioGroup",
+      "local": "RadioGroup",
+      "source": "material-ui/Radio",
+    },
+    "Snackbar": Object {
+      "exported": "Snackbar",
+      "local": "default",
+      "source": "material-ui/Snackbar",
+    },
+    "SnackbarContent": Object {
+      "exported": "SnackbarContent",
+      "local": "SnackbarContent",
+      "source": "material-ui/Snackbar",
+    },
+    "SvgIcon": Object {
+      "exported": "SvgIcon",
+      "local": "default",
+      "source": "material-ui/SvgIcon",
+    },
+    "Switch": Object {
+      "exported": "Switch",
+      "local": "default",
+      "source": "material-ui/Switch",
+    },
+    "Tab": Object {
+      "exported": "Tab",
+      "local": "Tab",
+      "source": "material-ui/Tabs",
+    },
+    "Table": Object {
+      "exported": "Table",
+      "local": "default",
+      "source": "material-ui/Table",
+    },
+    "TableBody": Object {
+      "exported": "TableBody",
+      "local": "TableBody",
+      "source": "material-ui/Table",
+    },
+    "TableCell": Object {
+      "exported": "TableCell",
+      "local": "TableCell",
+      "source": "material-ui/Table",
+    },
+    "TableHead": Object {
+      "exported": "TableHead",
+      "local": "TableHead",
+      "source": "material-ui/Table",
+    },
+    "TableRow": Object {
+      "exported": "TableRow",
+      "local": "TableRow",
+      "source": "material-ui/Table",
+    },
+    "TableSortLabel": Object {
+      "exported": "TableSortLabel",
+      "local": "TableSortLabel",
+      "source": "material-ui/Table",
+    },
+    "Tabs": Object {
+      "exported": "Tabs",
+      "local": "default",
+      "source": "material-ui/Tabs",
+    },
+    "TextField": Object {
+      "exported": "TextField",
+      "local": "default",
+      "source": "material-ui/TextField",
+    },
+    "Toolbar": Object {
+      "exported": "Toolbar",
+      "local": "default",
+      "source": "material-ui/Toolbar",
+    },
+    "Typography": Object {
+      "exported": "Typography",
+      "local": "default",
+      "source": "material-ui/Typography",
+    },
+  },
+  "indexFile": "material-ui/index.es",
+  "name": "material-ui",
+}
+`;
