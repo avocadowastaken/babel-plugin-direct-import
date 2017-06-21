@@ -1,0 +1,10 @@
+[
+  {
+    "name": "material-ui",
+    "indexFile": "material-ui/index.es"
+  },
+  {
+    "name": "material-ui/svg-icons",
+    "indexFile": "material-ui/svg-icons/index.es"
+  }
+]

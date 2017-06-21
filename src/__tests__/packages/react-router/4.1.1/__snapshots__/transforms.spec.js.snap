@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Transform: react-router@4.1.1 should transform with: "each-module.js" 1`] = `
+import {
+  matchPath,
+  MemoryRouter,
+  Prompt,
+  Redirect,
+  Route,
+  Router,
+  StaticRouter,
+  Switch,
+  withRouter
+} from "react-router";
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import { default as matchPath } from "react-router/es/matchPath";
+import { default as MemoryRouter } from "react-router/es/MemoryRouter";
+import { default as Prompt } from "react-router/es/Prompt";
+import { default as Redirect } from "react-router/es/Redirect";
+import { default as Route } from "react-router/es/Route";
+import { default as Router } from "react-router/es/Router";
+import { default as StaticRouter } from "react-router/es/StaticRouter";
+import { default as Switch } from "react-router/es/Switch";
+import { default as withRouter } from "react-router/es/withRouter";
+`;
