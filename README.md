@@ -158,6 +158,17 @@ export const noop = () => {};
 ]
 ```
 
+#### [React Virtualized](https://github.com/bvaughn/react-virtualized) 
+
+```json
+[
+  {
+    "name": "react-virtualized",
+    "indexFile": "react-virtualized/dist/es/index"
+  }
+]
+```
+
 #### [React Router 3](https://github.com/ReactTraining/react-router/tree/v3)
 
 ```json
