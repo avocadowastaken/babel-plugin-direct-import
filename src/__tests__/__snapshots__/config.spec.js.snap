@@ -10,8 +10,6 @@ exports[`config prepareConfig should throw when \`indexFile\` is not a string 2`
 
 exports[`config prepareConfig should throw when \`indexFile\` is not a string 3`] = `"babel-plugin-direct-import: { indexFile } expected to be a string"`;
 
-exports[`config prepareConfig should throw when \`indexFile\` is not a string 4`] = `"babel-plugin-direct-import: { indexFile } expected to be a string"`;
-
 exports[`config prepareConfig should throw when \`indexFileContent\` is an empty string 1`] = `"babel-plugin-direct-import: { indexFileContent } is empty"`;
 
 exports[`config prepareConfig should throw when \`indexFileContent\` is not a string 1`] = `"babel-plugin-direct-import: { indexFileContent } expected to be a string"`;

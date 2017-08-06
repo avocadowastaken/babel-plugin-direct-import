@@ -8,6 +8,10 @@ describe("config", () => {
       ).toThrowErrorMatchingSnapshot();
     });
 
+    it("should not throw when given only a name as string", () => {
+      expect(() => prepareConfig("lodash")).not.toThrow();
+    });
+
     it("should throw when `name` is not a string", () => {
       expect(() => prepareConfig({ name: 10 })).toThrowErrorMatchingSnapshot();
       expect(() => prepareConfig({ name: {} })).toThrowErrorMatchingSnapshot();
@@ -31,9 +35,13 @@ describe("config", () => {
       expect(() =>
         prepareConfig({ name: "lodash", indexFile: [] })
       ).toThrowErrorMatchingSnapshot();
+    });
+
+    it("should not throw when `indexFile` is null or undefined", () => {
       expect(() =>
         prepareConfig({ name: "lodash", indexFile: null })
-      ).toThrowErrorMatchingSnapshot();
+      ).not.toThrow();
+      expect(() => prepareConfig({ name: "lodash" })).not.toThrow();
     });
 
     it("should throw when `indexFile` is an empty string", () => {
@@ -75,17 +83,15 @@ describe("config", () => {
       expect(Array.isArray(config)).toBe(true);
     });
 
-    it("should set `name` to `indexFile` if it's value is undefined", () => {
-      expect(prepareConfig({ name: "lodash" })).toEqual([
-        { name: "lodash", indexFile: "lodash", indexFileContent: null }
-      ]);
-    });
-
     it("should create normalized config", () => {
       expect(
         prepareConfig({ name: "lodash", indexFile: "lodash/index" })
       ).toEqual([
         { name: "lodash", indexFile: "lodash/index", indexFileContent: null }
+      ]);
+
+      expect(prepareConfig("material-ui")).toEqual([
+        { name: "material-ui", indexFile: null, indexFileContent: null }
       ]);
     });
   });
