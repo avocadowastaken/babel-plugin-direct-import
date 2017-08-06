@@ -1,3 +1,5 @@
+const fse = require("fs-extra");
+const path = require("path");
 const { fulfillConfigExports } = require("../mapper");
 
 describe("mapper", () => {
@@ -19,6 +21,127 @@ describe("mapper", () => {
         name: "lodash",
         indexFile: "lodash/index"
       });
+    });
+
+    it("should read `indexFile` from the `module` field in package.json", () => {
+      const dummyModulePath = path.resolve(
+        __dirname,
+        "..",
+        "..",
+        "node_modules",
+        "__dummy-module"
+      );
+      fse.removeSync(dummyModulePath);
+      fse.mkdirpSync(dummyModulePath);
+      fse.writeFileSync(
+        path.join(dummyModulePath, "package.json"),
+        JSON.stringify({
+          module: "./index.es.js"
+        }),
+        "utf-8"
+      );
+      fse.writeFileSync(
+        path.join(dummyModulePath, "index.es.js"),
+        "export { default as dummy } from './dummy'",
+        "utf-8"
+      );
+      fse.writeFileSync(
+        path.join(dummyModulePath, "dummy.js"),
+        "export default 'foo'",
+        "utf-8"
+      );
+
+      const result = fulfillConfigExports({
+        name: "__dummy-module"
+      });
+
+      expect(result).toEqual({
+        exports: {
+          dummy: {
+            local: "default",
+            exported: "dummy",
+            source: "__dummy-module/dummy"
+          }
+        },
+        name: "__dummy-module",
+        indexFile: "__dummy-module/index.es.js"
+      });
+
+      fse.removeSync(dummyModulePath);
+    });
+
+    it("should read `indexFile` from the `jsnext:main` field in package.json", () => {
+      const dummyModulePath = path.resolve(
+        __dirname,
+        "..",
+        "..",
+        "node_modules",
+        "__dummy-module"
+      );
+      fse.removeSync(dummyModulePath);
+      fse.mkdirpSync(dummyModulePath);
+      fse.writeFileSync(
+        path.join(dummyModulePath, "package.json"),
+        JSON.stringify({
+          "jsnext:main": "./index.es.js"
+        }),
+        "utf-8"
+      );
+      fse.writeFileSync(
+        path.join(dummyModulePath, "index.es.js"),
+        "export { default as dummy } from './dummy'",
+        "utf-8"
+      );
+      fse.writeFileSync(
+        path.join(dummyModulePath, "dummy.js"),
+        "export default 'foo'",
+        "utf-8"
+      );
+
+      const result = fulfillConfigExports({
+        name: "__dummy-module"
+      });
+
+      expect(result).toEqual({
+        exports: {
+          dummy: {
+            local: "default",
+            exported: "dummy",
+            source: "__dummy-module/dummy"
+          }
+        },
+        name: "__dummy-module",
+        indexFile: "__dummy-module/index.es.js"
+      });
+
+      fse.removeSync(dummyModulePath);
+    });
+
+    it("should throw if no `indexFile` could be found", () => {
+      const dummyModulePath = path.resolve(
+        __dirname,
+        "..",
+        "..",
+        "node_modules",
+        "__dummy-module"
+      );
+      fse.removeSync(dummyModulePath);
+      fse.mkdirpSync(dummyModulePath);
+      fse.writeFileSync(
+        path.join(dummyModulePath, "package.json"),
+        JSON.stringify({
+          main: "./index.js"
+        }),
+        "utf-8"
+      );
+
+      expect(() =>
+        fulfillConfigExports({
+          name: "__dummy-module"
+        })
+      ).toThrowErrorMatchingSnapshot();
+
+      fse.removeSync(dummyModulePath);
     });
 
     it("should scan named import declarations", () => {
