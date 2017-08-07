@@ -40,10 +40,10 @@
     "all": "yarn format && yarn lint && yarn cover",
     "test": "jest",
     "cover": "jest --coverage --no-cache",
-    "codecov": "yarn cover && codecov -f ./coverage/lcov.info",
+    "codecov": "codecov -f ./coverage/lcov.info",
     "lint": "eslint \"{src,tools}/**/*.js\"",
     "format": "prettier --write \"{src,tools}/**/*.js\"",
-    "report": "rimraf coverage && (yarn cover || true) && opener ./coverage/lcov-report/index.html"
+    "report": "rimraf coverage && (yarn cover || opener ./coverage/lcov-report/index.html)"
   },
   "devDependencies": {
     "babel-core": "6.25.0",
