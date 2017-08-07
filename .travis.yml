@@ -6,11 +6,16 @@ notifications:
 node_js:
 - 6
 - 7
-script: yarn cover
-after_success: yarn codecov
+- 8
+
+before_script: yarn lint
+script: yarn cover -- --ci
+after_success: if [[ $TRAVIS_NODE_VERSION == "8" ]]; then yarn codecov; fi
+
 branches:
   except:
   - /^v\d+\.\d+\.\d+$/
+
 deploy:
   provider: npm
   email: 4734297+umidbekk@users.noreply.github.com
@@ -18,4 +23,6 @@ deploy:
     secure: MGgBoanmticxsbOsXwoJfth5D2VHUioUhlJGfFiz5iz68QUZY6vkrpGfcE0rOzV0M0Tj0U03DY6MZdFL/Jle/a44IUqXD8XfrmQr6jOOpnVnl2qTlGSjpPbLZ7KgjvLyWfHBafStTxl8z00KlI22T5l3j1Mhf58KOv6fzG3Quudn28qhj//9peEx8GWfL+fLAjTZwYwTdCsPr03X3HN5qs8mBuCjwrCft2eYozm6bhXTGMWi+/jT5zQWX+UwaIl+ho2vY12mcL06lYIEHtmzcxKSt+ThmrTpUsJHPxRPubD6uU3cwQGBeOIRUrMgkM700LgNMOx2YrQUGij9HeNO0xz9DF9mmx0OVATMXDBACzR8uOX45ZZe8htWTo2Kgvhx1Ve/u6hIfcBNPOO5iTKNiacRYJuaGBGSlVAyaMy3wAIwGLiTO6YtJe3skVCFl2u5eAqCckbOrbnTk0ePQTyeL5FJhGJyzpTHZUtAb25fUu7I6BgPdsqWfrxbF6J58aiKMLNfimVLoi8Sh/jnkcEPwqFlEQL3a+Af0QItGGwA1EapAebxMzyHbe8VGO33JQcNrNdfGtQSXNYPv3kgHr7/nCTE0H55qd6n9NniPf1S4NQ2MNUz3xEmPtCu5b8GkEzc9psv5mGQOzFcRnWPG0FeobnCNOpVO4qe1u5VbGT8IB0=
   on:
     tags: true
+    branch: master
     repo: umidbekkarimov/babel-plugin-direct-import
+    condition: $TRAVIS_NODE_VERSION = 8
