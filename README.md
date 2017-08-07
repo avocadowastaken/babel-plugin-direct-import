@@ -64,13 +64,10 @@ import BalanceIcon from "material-ui/svg-icons/action/account-balance";
     [
       "direct-import",
       [
+        "my-package-name",
         {
-          "name": "material-ui",
-          "indexFile": "material-ui/index.es"
-        },
-        {
-          "name": "material-ui/svg-icons",
-          "indexFile": "material-ui/svg-icons/index.es"
+          "name": "my-package-name/sub-package",
+          "indexFile": "my-package-name/sub-package/index.es.js"
         }
       ]
     ]
@@ -86,13 +83,10 @@ require("babel-core").transform("code", {
     [
       "direct-import",
       [
+        "my-package-name",
         {
-          name: "material-ui",
-          indexFile: "material-ui/index.es"
-        },
-        {
-          name: "material-ui/svg-icons",
-          indexFile: "material-ui/svg-icons/index.es"
+          name: "my-package-name/sub-package",
+          indexFile: "my-package-name/sub-package/index.es.js"
         }
       ]
     ]
@@ -130,87 +124,94 @@ export const baz = foo.baz;
 export const noop = () => {};
 ```
 
-## Supported Packages
+## Tested Packages
 
 #### [Material UI](https://github.com/callemall/material-ui)
 
 ```json
-[
-  {
-    "name": "material-ui",
-    "indexFile": "material-ui/index.es"
-  },
-  {
-    "name": "material-ui/svg-icons",
-    "indexFile": "material-ui/svg-icons/index.es"
-  }
-]
+{
+  "plugins": [
+    "direct-import",
+    [
+      "material-ui",
+      {
+        "name": "material-ui/svg-icons",
+        "indexFile": "material-ui/svg-icons/index.es"
+      }
+    ]
+  ]
+}
 ```
 
 #### [Material UI Next](https://github.com/callemall/material-ui/tree/next) 
 
 ```json
-[
-  {
-    "name": "material-ui",
-    "indexFile": "material-ui/index.es"
-  }
-]
+{
+  "plugins": [
+    "direct-import",
+    [
+      "material-ui"
+    ]
+  ]
+}
 ```
 
 #### [React Virtualized](https://github.com/bvaughn/react-virtualized) 
 
 ```json
-[
-  {
-    "name": "react-virtualized",
-    "indexFile": "react-virtualized/dist/es/index"
-  }
-]
+{
+  "plugins": [
+    "direct-import",
+    [
+      "react-virtualized"
+    ]
+  ]
+}
 ```
 
 #### [React Router 3](https://github.com/ReactTraining/react-router/tree/v3)
 
 ```json
-[
-  {
-    "name": "react-router",
-    "indexFile": "react-router/es/index"
-  }
-]
+{
+  "plugins": [
+    "direct-import",
+    [
+      "react-router"
+    ]
+  ]
+}
 ```
 
 #### [React Router 4](https://github.com/ReactTraining/react-router)
 
 ```json
-[
-  {
-    "name": "react-router",
-    "indexFile": "react-router/es/index"
-  },
-  {
-    "name": "react-router-dom",
-    "indexFile": "react-router-dom/es/index"
-  }
-]
+{
+  "plugins": [
+    "direct-import",
+    [
+      "react-router",
+      "react-router-dom"
+    ]
+  ]
+}
 ```
 
 #### [Redux Form](https://github.com/erikras/redux-form) (Partial support)
 
 ```json
-[
-  {
-    "name": "redux-form",
-    "indexFile": "redux-form/es/index"
-  },
-  {
-    "name": "redux-form/immutable",
-    "indexFile": "redux-form/es/immutable"
-  }
-]
+{
+  "plugins": [
+    "direct-import",
+    [
+      "redux-form",
+      {
+        "name": "redux-form/immutable",
+        "indexFile": "redux-form/es/immutable"
+      }
+    ]
+  ]
+}
 ```
-
-
 
 ## Thanks
 
