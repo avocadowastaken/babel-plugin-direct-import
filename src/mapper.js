@@ -15,7 +15,7 @@ function getFileRoot(indexFilePath, packageName) {
 /**
  * @param config
  * @param {String} config.name
- * @param {String} config.indexFile
+ * @param {String} [config.indexFile]
  * @param {String} [config.indexFileContent]
  * @param {Object} [config.exports]
  * @returns {{exports: {}, name: String, indexFile: String}}
@@ -25,18 +25,32 @@ function fulfillConfigExports(config) {
     return config;
   }
 
-  let { indexFileContent } = config;
+  let { indexFile, indexFileContent } = config;
 
   const exports = {};
 
   if (!fp.isString(indexFileContent)) {
-    const indexFilePath = resolveFilename(config.indexFile);
+    if (!fp.isString(indexFile)) {
+      const packageJsonPath = resolveFilename(`${config.name}/package.json`);
+      const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf-8"));
 
+      if (fp.isString(packageJson.module)) {
+        indexFile = path.join(config.name, packageJson.module);
+      } else if (fp.isString(packageJson["jsnext:main"])) {
+        indexFile = path.join(config.name, packageJson["jsnext:main"]);
+      } else {
+        throw new Error(
+          `babel-plugin-direct-import: no indexFile specified for ${config.name} and its package.json does not specify "module" or "jsnext:main"`
+        );
+      }
+    }
+
+    const indexFilePath = resolveFilename(indexFile);
     indexFileContent = fs.readFileSync(indexFilePath, "utf-8");
   }
 
   const imports = {};
-  const fileRoot = getFileRoot(config.indexFile, config.name);
+  const fileRoot = getFileRoot(indexFile, config.name);
   const ast = babylon.parse(indexFileContent, { sourceType: "module" });
 
   ast.program.body.forEach(node => {
@@ -93,7 +107,7 @@ function fulfillConfigExports(config) {
   return {
     exports,
     name: config.name,
-    indexFile: config.indexFile
+    indexFile
   };
 }
 
