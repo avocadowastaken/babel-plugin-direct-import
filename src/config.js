@@ -8,6 +8,13 @@ const getUnknownKeys = fp.flow(
 const prepareConfig = fp.flow(
   fp.castArray,
   fp.map(options => {
+    if (fp.isString(options)) {
+      return {
+        name: options,
+        indexFile: null,
+        indexFileContent: null
+      };
+    }
     const { name, indexFile, indexFileContent } = options;
     const unknownKeys = getUnknownKeys(options);
 
@@ -31,9 +38,7 @@ const prepareConfig = fp.flow(
 
     config.name = name;
 
-    if (fp.isUndefined(indexFile)) {
-      config.indexFile = name;
-    } else {
+    if (indexFile != null) {
       if (!fp.isString(indexFile)) {
         throw new Error(
           "babel-plugin-direct-import: { indexFile } expected to be a string"
@@ -48,6 +53,7 @@ const prepareConfig = fp.flow(
     }
 
     if (
+      indexFile != null &&
       config.indexFile !== config.name &&
       config.indexFile.split("/")[0] !== config.name.split("/")[0]
     ) {
