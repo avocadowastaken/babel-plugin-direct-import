@@ -60,10 +60,14 @@ module.exports = babel => ({
                 ? types.importNamespaceSpecifier(
                     types.identifier(spec.local.name)
                   )
-                : types.importSpecifier(
-                    types.identifier(spec.local.name),
-                    types.identifier(moduleSettings.local)
-                  )
+                : moduleSettings.local === "default"
+                  ? types.importDefaultSpecifier(
+                      types.identifier(spec.local.name)
+                    )
+                  : types.importSpecifier(
+                      types.identifier(spec.local.name),
+                      types.identifier(moduleSettings.local)
+                    )
             ],
             types.stringLiteral(moduleSettings.source)
           )

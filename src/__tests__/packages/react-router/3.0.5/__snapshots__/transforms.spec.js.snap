@@ -19,19 +19,19 @@ import {
   withRouter
 } from "react-router";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import { default as applyRouterMiddleware } from "react-router/es/applyRouterMiddleware";
-import { default as browserHistory } from "react-router/es/browserHistory";
-import { default as createMemoryHistory } from "react-router/es/createMemoryHistory";
-import { default as hashHistory } from "react-router/es/hashHistory";
-import { default as IndexLink } from "react-router/es/IndexLink";
-import { default as IndexRedirect } from "react-router/es/IndexRedirect";
-import { default as IndexRoute } from "react-router/es/IndexRoute";
-import { default as Link } from "react-router/es/Link";
-import { default as match } from "react-router/es/match";
-import { default as Redirect } from "react-router/es/Redirect";
-import { default as Route } from "react-router/es/Route";
-import { default as Router } from "react-router/es/Router";
-import { default as RouterContext } from "react-router/es/RouterContext";
-import { default as useRouterHistory } from "react-router/es/useRouterHistory";
-import { default as withRouter } from "react-router/es/withRouter";
+import applyRouterMiddleware from "react-router/es/applyRouterMiddleware";
+import browserHistory from "react-router/es/browserHistory";
+import createMemoryHistory from "react-router/es/createMemoryHistory";
+import hashHistory from "react-router/es/hashHistory";
+import IndexLink from "react-router/es/IndexLink";
+import IndexRedirect from "react-router/es/IndexRedirect";
+import IndexRoute from "react-router/es/IndexRoute";
+import Link from "react-router/es/Link";
+import match from "react-router/es/match";
+import Redirect from "react-router/es/Redirect";
+import Route from "react-router/es/Route";
+import Router from "react-router/es/Router";
+import RouterContext from "react-router/es/RouterContext";
+import useRouterHistory from "react-router/es/useRouterHistory";
+import withRouter from "react-router/es/withRouter";
 `;

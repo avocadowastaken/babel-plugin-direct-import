@@ -17,6 +17,7 @@
     "import"
   ],
   "rules": {
-    "no-console": "off"
+    "no-console": "off",
+    "no-nested-ternary": "off"
   }
 }
