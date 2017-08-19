@@ -168,8 +168,10 @@ import MUITextField from "material-ui/TextField";
 
 exports[`Transform: material-ui@1.0.0-beta.5 should transform with: "namespace-reexport.js" 1`] = `
 import { colors } from "material-ui";
+import { colors as muiColors } from "material-ui";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import * as colors from "material-ui/colors";
+import * as muiColors from "material-ui/colors";
 `;
 
 exports[`Transform: material-ui@1.0.0-beta.5 should transform with: "namespace-specifier.js" 1`] = `
