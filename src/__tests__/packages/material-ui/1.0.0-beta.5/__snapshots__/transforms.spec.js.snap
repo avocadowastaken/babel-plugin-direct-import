@@ -74,7 +74,8 @@ import {
   Typography,
   withStyles,
   withTheme
-} from "material-ui";~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+} from "material-ui";
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import AppBar from "material-ui/AppBar";
 import Avatar from "material-ui/Avatar";
 import Badge from "material-ui/Badge";
