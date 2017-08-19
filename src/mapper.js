@@ -73,6 +73,14 @@ function fulfillConfigExports(config) {
             local: specifier.local.name
           };
         }
+
+        if (specifier.type === "ImportNamespaceSpecifier") {
+          imports[specifier.local.name] = {
+            source,
+            imported: "*",
+            local: specifier.local.name
+          };
+        }
       });
     }
 

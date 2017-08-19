@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Fulfill mappings for: material-ui@1.0.0-alpha.17 should fulfill exports for "material-ui/index.es" 1`] = `
+exports[`Fulfill mappings for: material-ui@1.0.0-beta.5 should fulfill exports for "material-ui/index.es" 1`] = `
 Object {
   "exports": Object {
     "AppBar": Object {
@@ -32,6 +32,11 @@ Object {
       "exported": "Button",
       "local": "default",
       "source": "material-ui/Button",
+    },
+    "ButtonBase": Object {
+      "exported": "ButtonBase",
+      "local": "default",
+      "source": "material-ui/ButtonBase",
     },
     "Card": Object {
       "exported": "Card",
@@ -113,6 +118,11 @@ Object {
       "local": "FormControl",
       "source": "material-ui/Form",
     },
+    "FormControlLabel": Object {
+      "exported": "FormControlLabel",
+      "local": "FormControlLabel",
+      "source": "material-ui/Form",
+    },
     "FormGroup": Object {
       "exported": "FormGroup",
       "local": "FormGroup",
@@ -157,11 +167,6 @@ Object {
       "exported": "InputLabel",
       "local": "InputLabel",
       "source": "material-ui/Input",
-    },
-    "LabelSwitch": Object {
-      "exported": "LabelSwitch",
-      "local": "LabelSwitch",
-      "source": "material-ui/Switch",
     },
     "LinearProgress": Object {
       "exported": "LinearProgress",
@@ -312,6 +317,41 @@ Object {
       "exported": "Typography",
       "local": "default",
       "source": "material-ui/Typography",
+    },
+    "colors": Object {
+      "exported": "colors",
+      "local": "*",
+      "source": "material-ui/colors",
+    },
+    "createBreakpoints": Object {
+      "exported": "createBreakpoints",
+      "local": "createBreakpoints",
+      "source": "material-ui/styles",
+    },
+    "createMuiTheme": Object {
+      "exported": "createMuiTheme",
+      "local": "createMuiTheme",
+      "source": "material-ui/styles",
+    },
+    "createPalette": Object {
+      "exported": "createPalette",
+      "local": "createPalette",
+      "source": "material-ui/styles",
+    },
+    "createTypography": Object {
+      "exported": "createTypography",
+      "local": "createTypography",
+      "source": "material-ui/styles",
+    },
+    "withStyles": Object {
+      "exported": "withStyles",
+      "local": "withStyles",
+      "source": "material-ui/styles",
+    },
+    "withTheme": Object {
+      "exported": "withTheme",
+      "local": "withTheme",
+      "source": "material-ui/styles",
     },
   },
   "indexFile": "material-ui/index.es",

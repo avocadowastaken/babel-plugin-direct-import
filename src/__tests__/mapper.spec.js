@@ -218,7 +218,7 @@ describe("mapper", () => {
       });
     });
 
-    it("should ignore namespace import declarations", () => {
+    it("should scan namespace import declarations", () => {
       const result = fulfillConfigExports({
         name: "foo",
         indexFile: "foo/index",
@@ -229,9 +229,9 @@ describe("mapper", () => {
       });
 
       expect(result).toEqual({
-        exports: {},
         name: "foo",
-        indexFile: "foo/index"
+        indexFile: "foo/index",
+        exports: { bar: { exported: "bar", local: "*", source: "foo/bar" } }
       });
     });
 
