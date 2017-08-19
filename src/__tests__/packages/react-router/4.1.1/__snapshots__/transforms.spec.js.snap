@@ -13,13 +13,13 @@ import {
   withRouter
 } from "react-router";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import { default as matchPath } from "react-router/es/matchPath";
-import { default as MemoryRouter } from "react-router/es/MemoryRouter";
-import { default as Prompt } from "react-router/es/Prompt";
-import { default as Redirect } from "react-router/es/Redirect";
-import { default as Route } from "react-router/es/Route";
-import { default as Router } from "react-router/es/Router";
-import { default as StaticRouter } from "react-router/es/StaticRouter";
-import { default as Switch } from "react-router/es/Switch";
-import { default as withRouter } from "react-router/es/withRouter";
+import matchPath from "react-router/es/matchPath";
+import MemoryRouter from "react-router/es/MemoryRouter";
+import Prompt from "react-router/es/Prompt";
+import Redirect from "react-router/es/Redirect";
+import Route from "react-router/es/Route";
+import Router from "react-router/es/Router";
+import StaticRouter from "react-router/es/StaticRouter";
+import Switch from "react-router/es/Switch";
+import withRouter from "react-router/es/withRouter";
 `;

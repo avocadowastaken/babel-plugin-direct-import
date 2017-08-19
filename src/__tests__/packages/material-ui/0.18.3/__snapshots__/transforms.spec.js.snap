@@ -12,12 +12,12 @@ import {
   ActionAccountBalance
 } from "material-ui/svg-icons";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import { default as TextField } from "material-ui/TextField";
-import { default as SelectField } from "material-ui/SelectField";
-import { default as FlatButton } from "material-ui/FlatButton";
-import { default as ActionAccessibility } from "material-ui/svg-icons/action/accessibility";
-import { default as ActionAccessible } from "material-ui/svg-icons/action/accessible";
-import { default as ActionAccountBalance } from "material-ui/svg-icons/action/account-balance";
+import TextField from "material-ui/TextField";
+import SelectField from "material-ui/SelectField";
+import FlatButton from "material-ui/FlatButton";
+import ActionAccessibility from "material-ui/svg-icons/action/accessibility";
+import ActionAccessible from "material-ui/svg-icons/action/accessible";
+import ActionAccountBalance from "material-ui/svg-icons/action/account-balance";
 `;
 
 exports[`Transform: material-ui@0.18.3 should transform with: "each-module.js" 1`] = `
@@ -90,72 +90,72 @@ import {
   ToolbarTitle
 } from "material-ui";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import { default as AppBar } from "material-ui/AppBar";
-import { default as AutoComplete } from "material-ui/AutoComplete";
-import { default as Avatar } from "material-ui/Avatar";
-import { default as Badge } from "material-ui/Badge";
-import { default as BottomNavigation } from "material-ui/BottomNavigation";
-import { default as BottomNavigationItem } from "material-ui/BottomNavigation/BottomNavigationItem";
-import { default as Card } from "material-ui/Card";
-import { default as CardActions } from "material-ui/Card/CardActions";
-import { default as CardHeader } from "material-ui/Card/CardHeader";
-import { default as CardMedia } from "material-ui/Card/CardMedia";
-import { default as CardTitle } from "material-ui/Card/CardTitle";
-import { default as CardText } from "material-ui/Card/CardText";
-import { default as Checkbox } from "material-ui/Checkbox";
-import { default as Chip } from "material-ui/Chip";
-import { default as CircularProgress } from "material-ui/CircularProgress";
-import { default as DatePicker } from "material-ui/DatePicker";
-import { default as Dialog } from "material-ui/Dialog";
-import { default as Divider } from "material-ui/Divider";
-import { default as Drawer } from "material-ui/Drawer";
-import { default as DropDownMenu } from "material-ui/DropDownMenu";
-import { default as FlatButton } from "material-ui/FlatButton";
-import { default as FloatingActionButton } from "material-ui/FloatingActionButton";
-import { default as FontIcon } from "material-ui/FontIcon";
-import { default as GridList } from "material-ui/GridList";
-import { default as GridTile } from "material-ui/GridList/GridTile";
-import { default as IconButton } from "material-ui/IconButton";
-import { default as IconMenu } from "material-ui/IconMenu";
-import { default as LinearProgress } from "material-ui/LinearProgress";
-import { default as List } from "material-ui/List";
-import { default as ListItem } from "material-ui/List/ListItem";
-import { default as makeSelectable } from "material-ui/List/makeSelectable";
-import { default as Menu } from "material-ui/Menu";
-import { default as MenuItem } from "material-ui/MenuItem";
-import { default as MuiThemeProvider } from "material-ui/styles/MuiThemeProvider";
-import { default as Paper } from "material-ui/Paper";
-import { default as Popover } from "material-ui/Popover";
-import { default as RadioButton } from "material-ui/RadioButton";
-import { default as RadioButtonGroup } from "material-ui/RadioButton/RadioButtonGroup";
-import { default as RaisedButton } from "material-ui/RaisedButton";
-import { default as RefreshIndicator } from "material-ui/RefreshIndicator";
-import { default as SelectField } from "material-ui/SelectField";
-import { default as Slider } from "material-ui/Slider";
-import { default as Subheader } from "material-ui/Subheader";
-import { default as SvgIcon } from "material-ui/SvgIcon";
-import { default as Step } from "material-ui/Stepper/Step";
-import { default as StepButton } from "material-ui/Stepper/StepButton";
-import { default as StepContent } from "material-ui/Stepper/StepContent";
-import { default as StepLabel } from "material-ui/Stepper/StepLabel";
-import { default as Stepper } from "material-ui/Stepper/Stepper";
-import { default as Snackbar } from "material-ui/Snackbar";
-import { default as Tabs } from "material-ui/Tabs";
-import { default as Tab } from "material-ui/Tabs/Tab";
-import { default as Table } from "material-ui/Table";
-import { default as TableBody } from "material-ui/Table/TableBody";
-import { default as TableFooter } from "material-ui/Table/TableFooter";
-import { default as TableHeader } from "material-ui/Table/TableHeader";
-import { default as TableHeaderColumn } from "material-ui/Table/TableHeaderColumn";
-import { default as TableRow } from "material-ui/Table/TableRow";
-import { default as TableRowColumn } from "material-ui/Table/TableRowColumn";
-import { default as TextField } from "material-ui/TextField";
-import { default as TimePicker } from "material-ui/TimePicker";
-import { default as Toggle } from "material-ui/Toggle";
-import { default as Toolbar } from "material-ui/Toolbar";
-import { default as ToolbarGroup } from "material-ui/Toolbar/ToolbarGroup";
-import { default as ToolbarSeparator } from "material-ui/Toolbar/ToolbarSeparator";
-import { default as ToolbarTitle } from "material-ui/Toolbar/ToolbarTitle";
+import AppBar from "material-ui/AppBar";
+import AutoComplete from "material-ui/AutoComplete";
+import Avatar from "material-ui/Avatar";
+import Badge from "material-ui/Badge";
+import BottomNavigation from "material-ui/BottomNavigation";
+import BottomNavigationItem from "material-ui/BottomNavigation/BottomNavigationItem";
+import Card from "material-ui/Card";
+import CardActions from "material-ui/Card/CardActions";
+import CardHeader from "material-ui/Card/CardHeader";
+import CardMedia from "material-ui/Card/CardMedia";
+import CardTitle from "material-ui/Card/CardTitle";
+import CardText from "material-ui/Card/CardText";
+import Checkbox from "material-ui/Checkbox";
+import Chip from "material-ui/Chip";
+import CircularProgress from "material-ui/CircularProgress";
+import DatePicker from "material-ui/DatePicker";
+import Dialog from "material-ui/Dialog";
+import Divider from "material-ui/Divider";
+import Drawer from "material-ui/Drawer";
+import DropDownMenu from "material-ui/DropDownMenu";
+import FlatButton from "material-ui/FlatButton";
+import FloatingActionButton from "material-ui/FloatingActionButton";
+import FontIcon from "material-ui/FontIcon";
+import GridList from "material-ui/GridList";
+import GridTile from "material-ui/GridList/GridTile";
+import IconButton from "material-ui/IconButton";
+import IconMenu from "material-ui/IconMenu";
+import LinearProgress from "material-ui/LinearProgress";
+import List from "material-ui/List";
+import ListItem from "material-ui/List/ListItem";
+import makeSelectable from "material-ui/List/makeSelectable";
+import Menu from "material-ui/Menu";
+import MenuItem from "material-ui/MenuItem";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import Paper from "material-ui/Paper";
+import Popover from "material-ui/Popover";
+import RadioButton from "material-ui/RadioButton";
+import RadioButtonGroup from "material-ui/RadioButton/RadioButtonGroup";
+import RaisedButton from "material-ui/RaisedButton";
+import RefreshIndicator from "material-ui/RefreshIndicator";
+import SelectField from "material-ui/SelectField";
+import Slider from "material-ui/Slider";
+import Subheader from "material-ui/Subheader";
+import SvgIcon from "material-ui/SvgIcon";
+import Step from "material-ui/Stepper/Step";
+import StepButton from "material-ui/Stepper/StepButton";
+import StepContent from "material-ui/Stepper/StepContent";
+import StepLabel from "material-ui/Stepper/StepLabel";
+import Stepper from "material-ui/Stepper/Stepper";
+import Snackbar from "material-ui/Snackbar";
+import Tabs from "material-ui/Tabs";
+import Tab from "material-ui/Tabs/Tab";
+import Table from "material-ui/Table";
+import TableBody from "material-ui/Table/TableBody";
+import TableFooter from "material-ui/Table/TableFooter";
+import TableHeader from "material-ui/Table/TableHeader";
+import TableHeaderColumn from "material-ui/Table/TableHeaderColumn";
+import TableRow from "material-ui/Table/TableRow";
+import TableRowColumn from "material-ui/Table/TableRowColumn";
+import TextField from "material-ui/TextField";
+import TimePicker from "material-ui/TimePicker";
+import Toggle from "material-ui/Toggle";
+import Toolbar from "material-ui/Toolbar";
+import ToolbarGroup from "material-ui/Toolbar/ToolbarGroup";
+import ToolbarSeparator from "material-ui/Toolbar/ToolbarSeparator";
+import ToolbarTitle from "material-ui/Toolbar/ToolbarTitle";
 `;
 
 exports[`Transform: material-ui@0.18.3 should transform with: "svg-icons.js" 1`] = `
@@ -165,9 +165,9 @@ import {
   ActionAccountBalance
 } from "material-ui/svg-icons";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import { default as ActionAccessibility } from "material-ui/svg-icons/action/accessibility";
-import { default as ActionAccessible } from "material-ui/svg-icons/action/accessible";
-import { default as ActionAccountBalance } from "material-ui/svg-icons/action/account-balance";
+import ActionAccessibility from "material-ui/svg-icons/action/accessibility";
+import ActionAccessible from "material-ui/svg-icons/action/accessible";
+import ActionAccountBalance from "material-ui/svg-icons/action/account-balance";
 `;
 
 exports[`Transform: material-ui@0.18.3 should transform with: "with-empty-specifiers.js" 1`] = `
@@ -183,9 +183,9 @@ import {
   FlatButton as MUIFlatButton
 } from "material-ui";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import { default as MUITextField } from "material-ui/TextField";
-import { default as MUISelectField } from "material-ui/SelectField";
-import { default as MUIFlatButton } from "material-ui/FlatButton";
+import MUITextField from "material-ui/TextField";
+import MUISelectField from "material-ui/SelectField";
+import MUIFlatButton from "material-ui/FlatButton";
 `;
 
 exports[`Transform: material-ui@0.18.3 should transform with: "with-namespace-specifier.js" 1`] = `
