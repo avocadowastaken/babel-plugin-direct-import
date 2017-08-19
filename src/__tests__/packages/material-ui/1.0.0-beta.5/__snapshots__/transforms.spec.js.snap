@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Transform: material-ui@1.0.0-alpha.17 should throw with: "unknown-module.js" 1`] = `"unknown: babel-plugin-direct-import: material-ui does not contain module \\"FlatButton\\""`;
+exports[`Transform: material-ui@1.0.0-beta.5 should throw with: "unknown-module.js" 1`] = `"unknown: babel-plugin-direct-import: material-ui does not contain module \\"FlatButton\\""`;
 
-exports[`Transform: material-ui@1.0.0-alpha.17 should transform with: "each-module.js" 1`] = `
+exports[`Transform: material-ui@1.0.0-beta.5 should transform with: "each-module.js" 1`] = `
 import {
   AppBar,
   Avatar,
@@ -10,6 +10,7 @@ import {
   BottomNavigation,
   BottomNavigationButton,
   Button,
+  ButtonBase,
   Card,
   CardActions,
   CardContent,
@@ -17,6 +18,12 @@ import {
   CardMedia,
   Checkbox,
   Chip,
+  CircularProgress,
+  colors,
+  createBreakpoints,
+  createMuiTheme,
+  createPalette,
+  createTypography,
   Dialog,
   DialogActions,
   DialogContent,
@@ -25,15 +32,17 @@ import {
   Divider,
   Drawer,
   FormControl,
+  FormControlLabel,
   FormGroup,
-  FormLabel,
   FormHelperText,
+  FormLabel,
+  Grid,
   Hidden,
   Icon,
   IconButton,
   Input,
   InputLabel,
-  Grid,
+  LinearProgress,
   List,
   ListItem,
   ListItemAvatar,
@@ -44,17 +53,15 @@ import {
   Menu,
   MenuItem,
   MenuList,
+  MuiThemeProvider,
   Paper,
-  CircularProgress,
-  LinearProgress,
   Radio,
   RadioGroup,
   Snackbar,
   SnackbarContent,
-  MuiThemeProvider,
   SvgIcon,
   Switch,
-  LabelSwitch,
+  Tab,
   Table,
   TableBody,
   TableCell,
@@ -62,18 +69,19 @@ import {
   TableRow,
   TableSortLabel,
   Tabs,
-  Tab,
-  Typography,
   TextField,
-  Toolbar
-} from "material-ui";
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Toolbar,
+  Typography,
+  withStyles,
+  withTheme
+} from "material-ui";~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import { default as AppBar } from "material-ui/AppBar";
 import { default as Avatar } from "material-ui/Avatar";
 import { default as Badge } from "material-ui/Badge";
 import { default as BottomNavigation } from "material-ui/BottomNavigation";
 import { BottomNavigationButton } from "material-ui/BottomNavigation";
 import { default as Button } from "material-ui/Button";
+import { default as ButtonBase } from "material-ui/ButtonBase";
 import { default as Card } from "material-ui/Card";
 import { CardActions } from "material-ui/Card";
 import { CardContent } from "material-ui/Card";
@@ -81,6 +89,12 @@ import { CardHeader } from "material-ui/Card";
 import { CardMedia } from "material-ui/Card";
 import { default as Checkbox } from "material-ui/Checkbox";
 import { default as Chip } from "material-ui/Chip";
+import { CircularProgress } from "material-ui/Progress";
+import * as colors from "material-ui/colors";
+import { createBreakpoints } from "material-ui/styles";
+import { createMuiTheme } from "material-ui/styles";
+import { createPalette } from "material-ui/styles";
+import { createTypography } from "material-ui/styles";
 import { default as Dialog } from "material-ui/Dialog";
 import { DialogActions } from "material-ui/Dialog";
 import { DialogContent } from "material-ui/Dialog";
@@ -89,15 +103,17 @@ import { DialogTitle } from "material-ui/Dialog";
 import { default as Divider } from "material-ui/Divider";
 import { default as Drawer } from "material-ui/Drawer";
 import { FormControl } from "material-ui/Form";
+import { FormControlLabel } from "material-ui/Form";
 import { FormGroup } from "material-ui/Form";
-import { FormLabel } from "material-ui/Form";
 import { FormHelperText } from "material-ui/Form";
+import { FormLabel } from "material-ui/Form";
+import { default as Grid } from "material-ui/Grid";
 import { default as Hidden } from "material-ui/Hidden";
 import { default as Icon } from "material-ui/Icon";
 import { default as IconButton } from "material-ui/IconButton";
 import { default as Input } from "material-ui/Input";
 import { InputLabel } from "material-ui/Input";
-import { default as Grid } from "material-ui/Grid";
+import { LinearProgress } from "material-ui/Progress";
 import { default as List } from "material-ui/List";
 import { ListItem } from "material-ui/List";
 import { ListItemAvatar } from "material-ui/List";
@@ -108,17 +124,15 @@ import { ListSubheader } from "material-ui/List";
 import { default as Menu } from "material-ui/Menu";
 import { MenuItem } from "material-ui/Menu";
 import { MenuList } from "material-ui/Menu";
+import { MuiThemeProvider } from "material-ui/styles";
 import { default as Paper } from "material-ui/Paper";
-import { CircularProgress } from "material-ui/Progress";
-import { LinearProgress } from "material-ui/Progress";
 import { default as Radio } from "material-ui/Radio";
 import { RadioGroup } from "material-ui/Radio";
 import { default as Snackbar } from "material-ui/Snackbar";
 import { SnackbarContent } from "material-ui/Snackbar";
-import { MuiThemeProvider } from "material-ui/styles";
 import { default as SvgIcon } from "material-ui/SvgIcon";
 import { default as Switch } from "material-ui/Switch";
-import { LabelSwitch } from "material-ui/Switch";
+import { Tab } from "material-ui/Tabs";
 import { default as Table } from "material-ui/Table";
 import { TableBody } from "material-ui/Table";
 import { TableCell } from "material-ui/Table";
@@ -126,19 +140,20 @@ import { TableHead } from "material-ui/Table";
 import { TableRow } from "material-ui/Table";
 import { TableSortLabel } from "material-ui/Table";
 import { default as Tabs } from "material-ui/Tabs";
-import { Tab } from "material-ui/Tabs";
-import { default as Typography } from "material-ui/Typography";
 import { default as TextField } from "material-ui/TextField";
 import { default as Toolbar } from "material-ui/Toolbar";
+import { default as Typography } from "material-ui/Typography";
+import { withStyles } from "material-ui/styles";
+import { withTheme } from "material-ui/styles";
 `;
 
-exports[`Transform: material-ui@1.0.0-alpha.17 should transform with: "with-empty-specifiers.js" 1`] = `
+exports[`Transform: material-ui@1.0.0-beta.5 should transform with: "empty-specifiers.js" 1`] = `
 import "material-ui";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import "material-ui";
 `;
 
-exports[`Transform: material-ui@1.0.0-alpha.17 should transform with: "with-local-name.js" 1`] = `
+exports[`Transform: material-ui@1.0.0-beta.5 should transform with: "local-name.js" 1`] = `
 import {
   Button as MUIButton,
   Checkbox as MUICheckbox,
@@ -150,7 +165,13 @@ import { default as MUICheckbox } from "material-ui/Checkbox";
 import { default as MUITextField } from "material-ui/TextField";
 `;
 
-exports[`Transform: material-ui@1.0.0-alpha.17 should transform with: "with-namespace-specifier.js" 1`] = `
+exports[`Transform: material-ui@1.0.0-beta.5 should transform with: "namespace-reexport.js" 1`] = `
+import { colors } from "material-ui";
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import * as colors from "material-ui/colors";
+`;
+
+exports[`Transform: material-ui@1.0.0-beta.5 should transform with: "namespace-specifier.js" 1`] = `
 import * as all from "material-ui";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import * as all from "material-ui";
