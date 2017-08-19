@@ -56,10 +56,14 @@ module.exports = babel => ({
         declaration.insertBefore(
           types.importDeclaration(
             [
-              types.importSpecifier(
-                types.identifier(spec.local.name),
-                types.identifier(moduleSettings.local)
-              )
+              moduleSettings.local === "*"
+                ? types.importNamespaceSpecifier(
+                    types.identifier(spec.local.name)
+                  )
+                : types.importSpecifier(
+                    types.identifier(spec.local.name),
+                    types.identifier(moduleSettings.local)
+                  )
             ],
             types.stringLiteral(moduleSettings.source)
           )
