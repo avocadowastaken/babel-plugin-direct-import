@@ -2,6 +2,8 @@
 
 exports[`Transform: redux-form@6.8.0 should transform with: "each-core-module.js" 1`] = `
 import {
+  actions,
+  actionTypes,
   defaultShouldAsyncValidate,
   defaultShouldValidate,
   Field,
@@ -37,6 +39,8 @@ import {
   values
 } from "redux-form";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import * as actions from "redux-form/es/actions";
+import * as actionTypes from "redux-form/es/actionTypes";
 import defaultShouldAsyncValidate from "redux-form/es/defaultShouldAsyncValidate";
 import defaultShouldValidate from "redux-form/es/defaultShouldValidate";
 import Field from "redux-form/es/Field";
@@ -74,6 +78,8 @@ import values from "redux-form/es/values";
 
 exports[`Transform: redux-form@6.8.0 should transform with: "each-immutable-module.js" 1`] = `
 import {
+  actions,
+  actionTypes,
   defaultShouldAsyncValidate,
   defaultShouldValidate,
   Field,
@@ -109,6 +115,8 @@ import {
   values
 } from "redux-form/immutable";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import * as actions from "redux-form/es/actions";
+import * as actionTypes from "redux-form/es/actionTypes";
 import defaultShouldAsyncValidate from "redux-form/es/defaultShouldAsyncValidate";
 import defaultShouldValidate from "redux-form/es/defaultShouldValidate";
 import Field from "redux-form/es/immutable/Field";
