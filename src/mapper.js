@@ -99,7 +99,7 @@ function fulfillConfigExports(config) {
             ) {
               const {
                 init: { name: local },
-                id: { name: exported },
+                id: { name: exported }
               } = declaration;
 
               if (imports[local]) {
