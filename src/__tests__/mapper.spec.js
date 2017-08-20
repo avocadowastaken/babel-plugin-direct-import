@@ -275,6 +275,46 @@ describe("mapper", () => {
       });
     });
 
+    it("should ignore not imported variable exports", () => {
+      const result = fulfillConfigExports({
+        name: "foo",
+        indexFile: "foo/index",
+        indexFileContent: [
+          "import _bar from './bar';",
+          "export const bar = _bar;",
+          "export const baz = bar;"
+        ].join("\n")
+      });
+
+      expect(result).toEqual({
+        name: "foo",
+        indexFile: "foo/index",
+        exports: {
+          bar: { exported: "bar", local: "default", source: "foo/bar" }
+        }
+      });
+    });
+
+    it("should ignore function exports", () => {
+      const result = fulfillConfigExports({
+        name: "foo",
+        indexFile: "foo/index",
+        indexFileContent: [
+          "import _bar from './bar';",
+          "export const bar = _bar;",
+          "export function baz() {}"
+        ].join("\n")
+      });
+
+      expect(result).toEqual({
+        name: "foo",
+        indexFile: "foo/index",
+        exports: {
+          bar: { exported: "bar", local: "default", source: "foo/bar" }
+        }
+      });
+    });
+
     it("should scan default export declarations with source", () => {
       const result = fulfillConfigExports({
         name: "foo",
