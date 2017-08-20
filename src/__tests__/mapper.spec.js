@@ -255,6 +255,26 @@ describe("mapper", () => {
       });
     });
 
+    it("should scan variable exports of imports", () => {
+      const result = fulfillConfigExports({
+        name: "foo",
+        indexFile: "foo/index",
+        indexFileContent: [
+          "import _bar, { baz as _baz } from './bar';",
+          "export const bar = _bar, baz = _baz;"
+        ].join("\n")
+      });
+
+      expect(result).toEqual({
+        name: "foo",
+        indexFile: "foo/index",
+        exports: {
+          bar: { exported: "bar", local: "default", source: "foo/bar" },
+          baz: { exported: "baz", local: "baz", source: "foo/bar" }
+        }
+      });
+    });
+
     it("should scan default export declarations with source", () => {
       const result = fulfillConfigExports({
         name: "foo",
