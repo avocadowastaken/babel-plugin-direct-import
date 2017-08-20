@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Fulfill mappings for: redux-form@6.8.0 should fulfill exports for "redux-form/es/immutable" 1`] = `
+exports[`Fulfill mappings for: redux-form@7.0.3 should fulfill exports for "redux-form/es/immutable" 1`] = `
 Object {
   "exports": Object {
     "Field": Object {
@@ -37,11 +37,6 @@ Object {
       "exported": "actionTypes",
       "local": "*",
       "source": "redux-form/es/actionTypes",
-    },
-    "actions": Object {
-      "exported": "actions",
-      "local": "*",
-      "source": "redux-form/es/actions",
     },
     "defaultShouldAsyncValidate": Object {
       "exported": "defaultShouldAsyncValidate",
@@ -184,7 +179,7 @@ Object {
 }
 `;
 
-exports[`Fulfill mappings for: redux-form@6.8.0 should fulfill exports for "redux-form/es/index" 1`] = `
+exports[`Fulfill mappings for: redux-form@7.0.3 should fulfill exports for "redux-form/es/index" 1`] = `
 Object {
   "exports": Object {
     "Field": Object {
@@ -221,11 +216,6 @@ Object {
       "exported": "actionTypes",
       "local": "*",
       "source": "redux-form/es/actionTypes",
-    },
-    "actions": Object {
-      "exported": "actions",
-      "local": "*",
-      "source": "redux-form/es/actions",
     },
     "defaultShouldAsyncValidate": Object {
       "exported": "defaultShouldAsyncValidate",
