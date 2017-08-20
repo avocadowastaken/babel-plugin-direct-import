@@ -89,6 +89,31 @@ function fulfillConfigExports(config) {
         ? null
         : path.posix.join(fileRoot, node.source.value);
 
+      if (node.declaration) {
+        if (node.declaration.type === "VariableDeclaration") {
+          node.declaration.declarations.forEach(declaration => {
+            if (
+              declaration.type === "VariableDeclarator" &&
+              declaration.init &&
+              declaration.init.type === "Identifier"
+            ) {
+              const {
+                init: { name: local },
+                id: { name: exported },
+              } = declaration;
+
+              if (imports[local]) {
+                exports[exported] = {
+                  exported,
+                  source: imports[local].source,
+                  local: imports[local].imported
+                };
+              }
+            }
+          });
+        }
+      }
+
       node.specifiers.forEach(specifier => {
         const {
           local: { name: local },
