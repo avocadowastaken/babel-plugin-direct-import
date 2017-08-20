@@ -10,7 +10,7 @@ node_js:
 
 before_script: yarn lint
 script: yarn cover -- --ci
-after_success: if [[ $TRAVIS_NODE_VERSION == "8" ]]; then yarn codecov; fi
+after_success: if [[ $TRAVIS_NODE_VERSION == "8" && $TRAVIS_BRANCH == "master" ]]; then yarn codecov; fi
 
 branches:
   except:
