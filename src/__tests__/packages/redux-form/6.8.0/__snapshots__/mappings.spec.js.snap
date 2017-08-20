@@ -33,6 +33,16 @@ Object {
       "local": "default",
       "source": "redux-form/es/SubmissionError",
     },
+    "actionTypes": Object {
+      "exported": "actionTypes",
+      "local": "*",
+      "source": "redux-form/es/actionTypes",
+    },
+    "actions": Object {
+      "exported": "actions",
+      "local": "*",
+      "source": "redux-form/es/actions",
+    },
     "defaultShouldAsyncValidate": Object {
       "exported": "defaultShouldAsyncValidate",
       "local": "default",
@@ -206,6 +216,16 @@ Object {
       "exported": "SubmissionError",
       "local": "default",
       "source": "redux-form/es/SubmissionError",
+    },
+    "actionTypes": Object {
+      "exported": "actionTypes",
+      "local": "*",
+      "source": "redux-form/es/actionTypes",
+    },
+    "actions": Object {
+      "exported": "actions",
+      "local": "*",
+      "source": "redux-form/es/actions",
     },
     "defaultShouldAsyncValidate": Object {
       "exported": "defaultShouldAsyncValidate",
