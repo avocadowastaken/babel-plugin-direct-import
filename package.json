@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-direct-import",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Babel plugin to cherry pick imports of es6 modules.",
   "main": "src/index.js",
   "engines": {
