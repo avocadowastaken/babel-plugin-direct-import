@@ -131,13 +131,15 @@ export const noop = () => {};
 ```json
 {
   "plugins": [
-    "direct-import",
     [
-      "material-ui",
-      {
-        "name": "material-ui/svg-icons",
-        "indexFile": "material-ui/svg-icons/index.es"
-      }
+      "direct-import",
+      [
+        "material-ui",
+        {
+          "name": "material-ui/svg-icons",
+          "indexFile": "material-ui/svg-icons/index.es"
+        }
+      ]
     ]
   ]
 }
@@ -148,10 +150,7 @@ export const noop = () => {};
 ```json
 {
   "plugins": [
-    "direct-import",
-    [
-      "material-ui"
-    ]
+    ["direct-import", ["material-ui"]]
   ]
 }
 ```
@@ -161,10 +160,7 @@ export const noop = () => {};
 ```json
 {
   "plugins": [
-    "direct-import",
-    [
-      "react-virtualized"
-    ]
+    ["direct-import", ["react-virtualized"]]
   ]
 }
 ```
@@ -174,10 +170,7 @@ export const noop = () => {};
 ```json
 {
   "plugins": [
-    "direct-import",
-    [
-      "react-router"
-    ]
+    ["direct-import", ["react-router"]]
   ]
 }
 ```
@@ -187,11 +180,7 @@ export const noop = () => {};
 ```json
 {
   "plugins": [
-    "direct-import",
-    [
-      "react-router",
-      "react-router-dom"
-    ]
+    ["direct-import", ["react-router", "react-router-dom"]]
   ]
 }
 ```
@@ -201,13 +190,15 @@ export const noop = () => {};
 ```json
 {
   "plugins": [
-    "direct-import",
     [
-      "redux-form",
-      {
-        "name": "redux-form/immutable",
-        "indexFile": "redux-form/es/immutable"
-      }
+      "direct-import",
+      [
+        "redux-form",
+        {
+          "name": "redux-form/immutable",
+          "indexFile": "redux-form/es/immutable"
+        }
+      ]
     ]
   ]
 }
