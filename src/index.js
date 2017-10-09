@@ -43,7 +43,7 @@ module.exports = babel => ({
       }
 
       importSpecifiers.forEach(spec => {
-        const { name } = spec.imported;
+        const { name } = spec.imported || spec.local;
         const moduleSettings = settings.exports[name];
 
         if (!moduleSettings) {

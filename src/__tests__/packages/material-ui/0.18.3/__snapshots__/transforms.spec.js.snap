@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Transform: material-ui@0.18.3 should throw with: "default-import.js" 1`] = `"unknown: Cannot read property 'name' of undefined"`;
+exports[`Transform: material-ui@0.18.3 should throw with: "default-import.js" 1`] = `"unknown: babel-plugin-direct-import: material-ui does not contain module \\"MUI\\""`;
 
 exports[`Transform: material-ui@0.18.3 should throw with: "unknown-module.js" 1`] = `"unknown: babel-plugin-direct-import: material-ui does not contain module \\"foo\\""`;
 
