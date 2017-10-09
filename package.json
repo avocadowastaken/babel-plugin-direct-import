@@ -45,6 +45,10 @@
     "format": "prettier --write \"{src,tools}/**/*.js\"",
     "report": "rimraf coverage && (yarn cover || opener ./coverage/lcov-report/index.html)"
   },
+  "dependencies": {
+    "babylon": "^6.18.0",
+    "lodash": "^4.0.0"
+  },
   "devDependencies": {
     "babel-core": "6.26.0",
     "codecov": "2.3.0",
@@ -59,9 +63,5 @@
     "opener": "1.4.3",
     "prettier": "1.5.3",
     "rimraf": "2.6.1"
-  },
-  "dependencies": {
-    "babylon": "6.18.0",
-    "lodash": "4.17.4"
   }
 }
