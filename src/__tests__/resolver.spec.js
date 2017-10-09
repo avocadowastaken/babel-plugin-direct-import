@@ -13,17 +13,17 @@ describe("resolver", () => {
     });
 
     it("should not throw when module is not installed", () => {
-      const fn = jest.fn();
-      const warn = console.warn;
-
-      console.warn = fn;
+      const fn = jest.spyOn(console, "warn").mockImplementation();
 
       const filePath = resolveFilename("foo");
 
       expect(filePath).toBeNull();
-      expect(fn.mock.calls).toMatchSnapshot();
+      expect(fn).toHaveBeenCalledTimes(1);
+      expect(fn).toHaveBeenLastCalledWith(
+        "babel-plugin-direct-import: Cannot find module 'foo'"
+      );
 
-      console.warn = warn;
+      fn.mockRestore();
     });
   });
 });
