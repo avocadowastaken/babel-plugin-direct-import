@@ -10,27 +10,8 @@
   "author": "Umidbek Karimov <4734297+umidbekk@users.noreply.github.com>",
   "license": "MIT",
   "jest": {
-    "coverageReporters": [
-      "text-summary",
-      "lcov"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    },
-    "collectCoverageFrom": [
-      "src/**/*.js"
-    ],
-    "coveragePathIgnorePatterns": [
-      "/__tests__/",
-      "/node_modules/"
-    ],
     "testMatch": [
-      "**/src/**/*.spec.js"
+      "**/__tests__/**/*.spec.js"
     ]
   },
   "scripts": {
