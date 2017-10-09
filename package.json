@@ -31,9 +31,6 @@
     ],
     "testMatch": [
       "**/src/**/*.spec.js"
-    ],
-    "snapshotSerializers": [
-      "<rootDir>/tools/raw-serializer.js"
     ]
   },
   "scripts": {

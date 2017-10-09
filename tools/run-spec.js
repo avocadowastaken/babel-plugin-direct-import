@@ -7,7 +7,13 @@ const { fulfillConfigExports } = require("../src/mapper");
 
 const fp = require("lodash/fp");
 
-const makeRaw = string => ({ [Symbol.for("raw")]: string });
+const RAW = Symbol("raw");
+
+function makeRaw(input, output) {
+  return {
+    [RAW]: [input, "~".repeat(80), "\n", output].join("")
+  };
+}
 
 const safeReadDir = dir => {
   try {
@@ -25,6 +31,15 @@ const getFixtures = fp.flow(
 
 function runSpec(dir, spec) {
   const [version, pkg] = dir.split(path.sep).reverse();
+
+  expect.addSnapshotSerializer({
+    print(x) {
+      return x[RAW];
+    },
+    test(x) {
+      return x && typeof x[RAW] === "string";
+    }
+  });
 
   describe(util.format(spec.title, `${pkg}@${version}`), () => {
     // eslint-disable-next-line global-require, import/no-dynamic-require
@@ -83,9 +98,7 @@ function runTransformSpec(dir) {
             plugins: [[plugin, transformConfig]]
           });
 
-          expect(
-            makeRaw(`${content}${"~".repeat(80)}\n${result.code}`)
-          ).toMatchSnapshot();
+          expect(makeRaw(content, result.code)).toMatchSnapshot();
         });
       });
     }
