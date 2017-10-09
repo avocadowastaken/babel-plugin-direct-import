@@ -1,11 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`resolver resolveFilename should not throw when module is not installed 1`] = `
-Array [
-  Array [
-    "babel-plugin-direct-import: Cannot find module 'foo'",
-  ],
-]
-`;
-
 exports[`resolver resolveFilename should throw errors from \`Module\` package 1`] = `"Cannot read property 'length' of null"`;
