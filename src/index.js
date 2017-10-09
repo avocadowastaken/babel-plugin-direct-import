@@ -19,7 +19,8 @@ module.exports = babel => ({
       configs = fulfillConfigs(JSON.stringify(state.opts));
     },
     ImportDeclaration(declaration) {
-      const specifiers = declaration.node.specifiers;
+      const { types } = babel;
+      const { specifiers } = declaration.node;
 
       if (specifiers.length === 0) {
         return;
@@ -30,8 +31,6 @@ module.exports = babel => ({
       if (!settings) {
         return;
       }
-
-      const types = babel.types;
 
       const importSpecifiers = specifiers.filter(
         spec =>
@@ -44,7 +43,7 @@ module.exports = babel => ({
       }
 
       importSpecifiers.forEach(spec => {
-        const name = spec.imported.name;
+        const { name } = spec.imported;
         const moduleSettings = settings.exports[name];
 
         if (!moduleSettings) {
