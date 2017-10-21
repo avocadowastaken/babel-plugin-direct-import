@@ -3,24 +3,23 @@ const { dirname } = require('path')
 const { prepareConfig } = require("./config");
 const { fulfillConfigExports } = require("./mapper");
 
-const fulfillConfigs = fp.memoize(
+// note: memoize uses the first argument as key, so programPath is ignored here, which is expected
+const fulfillConfigs = fp.memoize((opts, programPath) =>
   fp.flow(
     x => JSON.parse(x),
     prepareConfig,
     fp.map(x => Object.assign({}, x, { programPath })),
     fp.map(fp.flow(fulfillConfigExports, x => [x.name, x])),
     fp.fromPairs
-  )
+  )(opts)
 );
 
 let configs;
-let programPath;
 
 module.exports = babel => ({
   visitor: {
     Program(path, state) {
-      programPath = dirname(state.file.opts.filename);
-      configs = fulfillConfigs(JSON.stringify(state.opts));
+      configs = fulfillConfigs(JSON.stringify(state.opts), dirname(state.file.opts.filename));
     },
     ImportDeclaration(declaration) {
       const { types } = babel;

@@ -25,7 +25,8 @@ function fulfillConfigExports(config) {
     return config;
   }
 
-  let { indexFile, indexFileContent, programPath } = config;
+  const { programPath } = config;
+  let { indexFile, indexFileContent } = config;
 
   const exports = {};
 
