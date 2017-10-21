@@ -33,5 +33,5 @@ import {
   reducer,
   reduxForm,
   SubmissionError,
-  values
+  values,
 } from "redux-form";

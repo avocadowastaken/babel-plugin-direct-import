@@ -32,7 +32,10 @@ function fulfillConfigExports(config) {
 
   if (!fp.isString(indexFileContent)) {
     if (!fp.isString(indexFile)) {
-      const packageJsonPath = resolveFilename(`${config.name}/package.json`, programPath);
+      const packageJsonPath = resolveFilename(
+        `${config.name}/package.json`,
+        programPath
+      );
       const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf-8"));
 
       if (fp.isString(packageJson.module)) {
@@ -62,7 +65,7 @@ function fulfillConfigExports(config) {
           imports[specifier.local.name] = {
             source,
             local: specifier.local.name,
-            imported: specifier.imported.name
+            imported: specifier.imported.name,
           };
         }
 
@@ -70,7 +73,7 @@ function fulfillConfigExports(config) {
           imports[specifier.local.name] = {
             source,
             imported: "default",
-            local: specifier.local.name
+            local: specifier.local.name,
           };
         }
 
@@ -78,7 +81,7 @@ function fulfillConfigExports(config) {
           imports[specifier.local.name] = {
             source,
             imported: "*",
-            local: specifier.local.name
+            local: specifier.local.name,
           };
         }
       });
@@ -99,14 +102,14 @@ function fulfillConfigExports(config) {
             ) {
               const {
                 init: { name: local },
-                id: { name: exported }
+                id: { name: exported },
               } = declaration;
 
               if (imports[local]) {
                 exports[exported] = {
                   exported,
                   source: imports[local].source,
-                  local: imports[local].imported
+                  local: imports[local].imported,
                 };
               }
             }
@@ -117,20 +120,20 @@ function fulfillConfigExports(config) {
       node.specifiers.forEach(specifier => {
         const {
           local: { name: local },
-          exported: { name: exported }
+          exported: { name: exported },
         } = specifier;
 
         if (exportSource) {
           exports[exported] = {
             local,
             exported,
-            source: exportSource
+            source: exportSource,
           };
         } else if (imports[local]) {
           exports[exported] = {
             exported,
             source: imports[local].source,
-            local: imports[local].imported
+            local: imports[local].imported,
           };
         }
       });
@@ -140,7 +143,7 @@ function fulfillConfigExports(config) {
   return {
     exports,
     name: config.name,
-    indexFile
+    indexFile,
   };
 }
 

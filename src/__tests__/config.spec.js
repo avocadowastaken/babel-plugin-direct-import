@@ -87,11 +87,11 @@ describe("config", () => {
       expect(
         prepareConfig({ name: "lodash", indexFile: "lodash/index" })
       ).toEqual([
-        { name: "lodash", indexFile: "lodash/index", indexFileContent: null }
+        { name: "lodash", indexFile: "lodash/index", indexFileContent: null },
       ]);
 
       expect(prepareConfig("material-ui")).toEqual([
-        { name: "material-ui", indexFile: null, indexFileContent: null }
+        { name: "material-ui", indexFile: null, indexFileContent: null },
       ]);
     });
   });

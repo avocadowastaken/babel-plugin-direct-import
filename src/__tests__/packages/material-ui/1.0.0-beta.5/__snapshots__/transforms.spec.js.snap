@@ -73,7 +73,7 @@ import {
   Toolbar,
   Typography,
   withStyles,
-  withTheme
+  withTheme,
 } from "material-ui";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import AppBar from "material-ui/AppBar";
@@ -158,7 +158,7 @@ exports[`Transform: material-ui@1.0.0-beta.5 should transform with: "local-name.
 import {
   Button as MUIButton,
   Checkbox as MUICheckbox,
-  TextField as MUITextField
+  TextField as MUITextField,
 } from "material-ui";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import MUIButton from "material-ui/Button";

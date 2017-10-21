@@ -68,5 +68,5 @@ import {
   Toolbar,
   Typography,
   withStyles,
-  withTheme
+  withTheme,
 } from "material-ui";

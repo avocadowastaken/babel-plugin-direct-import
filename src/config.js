@@ -12,7 +12,7 @@ const prepareConfig = fp.flow(
       return {
         name: options,
         indexFile: null,
-        indexFileContent: null
+        indexFileContent: null,
       };
     }
     const { name, indexFile, indexFileContent } = options;
