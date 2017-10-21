@@ -4,14 +4,15 @@ const Module = require("module");
  * Resolve module file.
  *
  * @param {String} fileName
+ * @param {String} cwd
  * @returns {String|null}
  */
-function resolveFilename(fileName, relativeTo = process.cwd()) {
+function resolveFilename(fileName, cwd = process.cwd()) {
   try {
     const parent = new Module();
 
     // eslint-disable-next-line no-underscore-dangle
-    parent.paths = Module._nodeModulePaths(relativeTo);
+    parent.paths = Module._nodeModulePaths(cwd);
 
     // eslint-disable-next-line no-underscore-dangle
     return Module._resolveFilename(fileName, parent);
