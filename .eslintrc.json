@@ -14,10 +14,12 @@
   ],
   "plugins": [
     "node",
-    "import"
+    "import",
+    "prettier"
   ],
   "rules": {
     "no-console": "off",
-    "no-nested-ternary": "off"
+    "no-nested-ternary": "off",
+    "prettier/prettier": "error"
   }
 }
