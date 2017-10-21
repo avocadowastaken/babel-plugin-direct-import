@@ -1,17 +1,19 @@
-const fp = require("lodash/fp");
+const _ = require("lodash");
 const { dirname } = require("path");
 const { prepareConfig } = require("./config");
 const { fulfillConfigExports } = require("./mapper");
 
 // note: memoize uses the first argument as key, so programPath is ignored here, which is expected
-const fulfillConfigs = fp.memoize((opts, programPath) =>
-  fp.flow(
-    x => JSON.parse(x),
-    prepareConfig,
-    fp.map(x => Object.assign({}, x, { programPath })),
-    fp.map(fp.flow(fulfillConfigExports, x => [x.name, x])),
-    fp.fromPairs
-  )(opts)
+const fulfillConfigs = _.memoize(
+  (opts, programPath) =>
+    prepareConfig(opts).reduce((acc, x) => {
+      const config = fulfillConfigExports(Object.assign(x, { programPath }));
+
+      acc[config.name] = config;
+
+      return acc;
+    }, {}),
+  opts => JSON.stringify(opts)
 );
 
 let configs;
@@ -19,10 +21,7 @@ let configs;
 module.exports = babel => ({
   visitor: {
     Program(path, state) {
-      configs = fulfillConfigs(
-        JSON.stringify(state.opts),
-        dirname(state.file.opts.filename)
-      );
+      configs = fulfillConfigs(state.opts, dirname(state.file.opts.filename));
     },
     ImportDeclaration(declaration) {
       const { types } = babel;
