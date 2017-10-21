@@ -25,13 +25,14 @@ function fulfillConfigExports(config) {
     return config;
   }
 
+  const { programPath } = config;
   let { indexFile, indexFileContent } = config;
 
   const exports = {};
 
   if (!fp.isString(indexFileContent)) {
     if (!fp.isString(indexFile)) {
-      const packageJsonPath = resolveFilename(`${config.name}/package.json`);
+      const packageJsonPath = resolveFilename(`${config.name}/package.json`, programPath);
       const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf-8"));
 
       if (fp.isString(packageJson.module)) {
@@ -44,8 +45,7 @@ function fulfillConfigExports(config) {
         );
       }
     }
-
-    const indexFilePath = resolveFilename(indexFile);
+    const indexFilePath = resolveFilename(indexFile, programPath);
     indexFileContent = fs.readFileSync(indexFilePath, "utf-8");
   }
 
