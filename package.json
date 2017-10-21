@@ -15,7 +15,7 @@
     ]
   },
   "scripts": {
-    "all": "yarn format && yarn lint && yarn cover",
+    "all": "run-s format lint cover",
     "test": "jest",
     "cover": "jest --coverage --no-cache",
     "codecov": "codecov -f ./coverage/lcov.info",
@@ -38,6 +38,7 @@
     "fs-extra": "^4.0.1",
     "glob": "^7.1.2",
     "jest": "^21.2.1",
+    "npm-run-all": "^4.1.1",
     "opener": "^1.4.3",
     "prettier": "^1.5.3",
     "rimraf": "^2.6.1"
