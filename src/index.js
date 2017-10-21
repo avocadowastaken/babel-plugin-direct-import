@@ -1,4 +1,5 @@
 const fp = require("lodash/fp");
+const { dirname } = require('path')
 const { prepareConfig } = require("./config");
 const { fulfillConfigExports } = require("./mapper");
 
@@ -6,16 +7,19 @@ const fulfillConfigs = fp.memoize(
   fp.flow(
     x => JSON.parse(x),
     prepareConfig,
+    fp.map(x => Object.assign({}, x, { programPath })),
     fp.map(fp.flow(fulfillConfigExports, x => [x.name, x])),
     fp.fromPairs
   )
 );
 
 let configs;
+let programPath;
 
 module.exports = babel => ({
   visitor: {
     Program(path, state) {
+      programPath = dirname(state.file.opts.filename);
       configs = fulfillConfigs(JSON.stringify(state.opts));
     },
     ImportDeclaration(declaration) {
