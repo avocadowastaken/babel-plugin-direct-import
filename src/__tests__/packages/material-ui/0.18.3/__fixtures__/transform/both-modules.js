@@ -2,5 +2,5 @@ import { TextField, SelectField, FlatButton } from "material-ui";
 import {
   ActionAccessibility,
   ActionAccessible,
-  ActionAccountBalance
+  ActionAccountBalance,
 } from "material-ui/svg-icons";

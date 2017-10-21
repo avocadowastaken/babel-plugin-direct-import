@@ -3,7 +3,7 @@ export { default as Avatar } from "./Avatar";
 export { default as Badge } from "./Badge";
 export {
   default as BottomNavigation,
-  BottomNavigationButton
+  BottomNavigationButton,
 } from "./BottomNavigation";
 export { default as Button } from "./Button";
 export { default as ButtonBase } from "./ButtonBase";
@@ -12,7 +12,7 @@ export {
   CardActions,
   CardContent,
   CardHeader,
-  CardMedia
+  CardMedia,
 } from "./Card";
 export { default as Checkbox } from "./Checkbox";
 export { default as Chip } from "./Chip";
@@ -21,7 +21,7 @@ export {
   DialogActions,
   DialogContent,
   DialogContentText,
-  DialogTitle
+  DialogTitle,
 } from "./Dialog";
 export { default as Divider } from "./Divider";
 export { default as Drawer } from "./Drawer";
@@ -30,7 +30,7 @@ export {
   FormGroup,
   FormLabel,
   FormHelperText,
-  FormControlLabel
+  FormControlLabel,
 } from "./Form";
 export { default as Hidden } from "./Hidden";
 export { default as Icon } from "./Icon";
@@ -44,7 +44,7 @@ export {
   ListItemIcon,
   ListItemSecondaryAction,
   ListItemText,
-  ListSubheader
+  ListSubheader,
 } from "./List";
 export { default as Menu, MenuItem, MenuList } from "./Menu";
 export { default as Paper } from "./Paper";
@@ -58,7 +58,7 @@ export {
   createMuiTheme,
   createTypography,
   createBreakpoints,
-  createPalette
+  createPalette,
 } from "./styles";
 
 // eslint-disable-next-line import/first
@@ -74,7 +74,7 @@ export {
   TableCell,
   TableHead,
   TableRow,
-  TableSortLabel
+  TableSortLabel,
 } from "./Table";
 export { default as Tabs, Tab } from "./Tabs";
 export { default as Typography } from "./Typography";

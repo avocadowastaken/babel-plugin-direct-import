@@ -64,5 +64,5 @@ import {
   Toolbar,
   ToolbarGroup,
   ToolbarSeparator,
-  ToolbarTitle
+  ToolbarTitle,
 } from "material-ui";

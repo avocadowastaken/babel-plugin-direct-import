@@ -21,7 +21,7 @@ import {
   SortDirection,
   SortIndicator,
   Table,
-  WindowScroller
+  WindowScroller,
 } from "react-virtualized";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import { accessibilityOverscanIndicesGetter } from "react-virtualized/dist/es/Grid";

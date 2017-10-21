@@ -16,7 +16,7 @@ import {
   Router,
   RouterContext,
   useRouterHistory,
-  withRouter
+  withRouter,
 } from "react-router";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import applyRouterMiddleware from "react-router/es/applyRouterMiddleware";

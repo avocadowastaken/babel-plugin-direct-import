@@ -1,5 +1,5 @@
 const fp = require("lodash/fp");
-const { dirname } = require('path')
+const { dirname } = require("path");
 const { prepareConfig } = require("./config");
 const { fulfillConfigExports } = require("./mapper");
 
@@ -19,7 +19,10 @@ let configs;
 module.exports = babel => ({
   visitor: {
     Program(path, state) {
-      configs = fulfillConfigs(JSON.stringify(state.opts), dirname(state.file.opts.filename));
+      configs = fulfillConfigs(
+        JSON.stringify(state.opts),
+        dirname(state.file.opts.filename)
+      );
     },
     ImportDeclaration(declaration) {
       const { types } = babel;
@@ -69,7 +72,7 @@ module.exports = babel => ({
                   : types.importSpecifier(
                       types.identifier(spec.local.name),
                       types.identifier(moduleSettings.local)
-                    )
+                    ),
             ],
             types.stringLiteral(moduleSettings.source)
           )
@@ -77,6 +80,6 @@ module.exports = babel => ({
       });
 
       declaration.remove();
-    }
-  }
+    },
+  },
 });

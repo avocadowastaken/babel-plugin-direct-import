@@ -680,19 +680,19 @@ import _CommunicationSpeakerPhone from "./communication/speaker-phone";
 export { _CommunicationSpeakerPhone as CommunicationSpeakerPhone };
 import _CommunicationStayCurrentLandscape from "./communication/stay-current-landscape";
 export {
-  _CommunicationStayCurrentLandscape as CommunicationStayCurrentLandscape
+  _CommunicationStayCurrentLandscape as CommunicationStayCurrentLandscape,
 };
 import _CommunicationStayCurrentPortrait from "./communication/stay-current-portrait";
 export {
-  _CommunicationStayCurrentPortrait as CommunicationStayCurrentPortrait
+  _CommunicationStayCurrentPortrait as CommunicationStayCurrentPortrait,
 };
 import _CommunicationStayPrimaryLandscape from "./communication/stay-primary-landscape";
 export {
-  _CommunicationStayPrimaryLandscape as CommunicationStayPrimaryLandscape
+  _CommunicationStayPrimaryLandscape as CommunicationStayPrimaryLandscape,
 };
 import _CommunicationStayPrimaryPortrait from "./communication/stay-primary-portrait";
 export {
-  _CommunicationStayPrimaryPortrait as CommunicationStayPrimaryPortrait
+  _CommunicationStayPrimaryPortrait as CommunicationStayPrimaryPortrait,
 };
 import _CommunicationStopScreenShare from "./communication/stop-screen-share";
 export { _CommunicationStopScreenShare as CommunicationStopScreenShare };
@@ -898,23 +898,23 @@ import _DeviceSignalCellular4Bar from "./device/signal-cellular-4-bar";
 export { _DeviceSignalCellular4Bar as DeviceSignalCellular4Bar };
 import _DeviceSignalCellularConnectedNoInternet0Bar from "./device/signal-cellular-connected-no-internet-0-bar";
 export {
-  _DeviceSignalCellularConnectedNoInternet0Bar as DeviceSignalCellularConnectedNoInternet0Bar
+  _DeviceSignalCellularConnectedNoInternet0Bar as DeviceSignalCellularConnectedNoInternet0Bar,
 };
 import _DeviceSignalCellularConnectedNoInternet1Bar from "./device/signal-cellular-connected-no-internet-1-bar";
 export {
-  _DeviceSignalCellularConnectedNoInternet1Bar as DeviceSignalCellularConnectedNoInternet1Bar
+  _DeviceSignalCellularConnectedNoInternet1Bar as DeviceSignalCellularConnectedNoInternet1Bar,
 };
 import _DeviceSignalCellularConnectedNoInternet2Bar from "./device/signal-cellular-connected-no-internet-2-bar";
 export {
-  _DeviceSignalCellularConnectedNoInternet2Bar as DeviceSignalCellularConnectedNoInternet2Bar
+  _DeviceSignalCellularConnectedNoInternet2Bar as DeviceSignalCellularConnectedNoInternet2Bar,
 };
 import _DeviceSignalCellularConnectedNoInternet3Bar from "./device/signal-cellular-connected-no-internet-3-bar";
 export {
-  _DeviceSignalCellularConnectedNoInternet3Bar as DeviceSignalCellularConnectedNoInternet3Bar
+  _DeviceSignalCellularConnectedNoInternet3Bar as DeviceSignalCellularConnectedNoInternet3Bar,
 };
 import _DeviceSignalCellularConnectedNoInternet4Bar from "./device/signal-cellular-connected-no-internet-4-bar";
 export {
-  _DeviceSignalCellularConnectedNoInternet4Bar as DeviceSignalCellularConnectedNoInternet4Bar
+  _DeviceSignalCellularConnectedNoInternet4Bar as DeviceSignalCellularConnectedNoInternet4Bar,
 };
 import _DeviceSignalCellularNoSim from "./device/signal-cellular-no-sim";
 export { _DeviceSignalCellularNoSim as DeviceSignalCellularNoSim };
@@ -1710,7 +1710,7 @@ import _NavigationSubdirectoryArrowLeft from "./navigation/subdirectory-arrow-le
 export { _NavigationSubdirectoryArrowLeft as NavigationSubdirectoryArrowLeft };
 import _NavigationSubdirectoryArrowRight from "./navigation/subdirectory-arrow-right";
 export {
-  _NavigationSubdirectoryArrowRight as NavigationSubdirectoryArrowRight
+  _NavigationSubdirectoryArrowRight as NavigationSubdirectoryArrowRight,
 };
 import _NavigationUnfoldLess from "./navigation/unfold-less";
 export { _NavigationUnfoldLess as NavigationUnfoldLess };
@@ -1722,33 +1722,33 @@ import _NotificationAdb from "./notification/adb";
 export { _NotificationAdb as NotificationAdb };
 import _NotificationAirlineSeatFlatAngled from "./notification/airline-seat-flat-angled";
 export {
-  _NotificationAirlineSeatFlatAngled as NotificationAirlineSeatFlatAngled
+  _NotificationAirlineSeatFlatAngled as NotificationAirlineSeatFlatAngled,
 };
 import _NotificationAirlineSeatFlat from "./notification/airline-seat-flat";
 export { _NotificationAirlineSeatFlat as NotificationAirlineSeatFlat };
 import _NotificationAirlineSeatIndividualSuite from "./notification/airline-seat-individual-suite";
 export {
-  _NotificationAirlineSeatIndividualSuite as NotificationAirlineSeatIndividualSuite
+  _NotificationAirlineSeatIndividualSuite as NotificationAirlineSeatIndividualSuite,
 };
 import _NotificationAirlineSeatLegroomExtra from "./notification/airline-seat-legroom-extra";
 export {
-  _NotificationAirlineSeatLegroomExtra as NotificationAirlineSeatLegroomExtra
+  _NotificationAirlineSeatLegroomExtra as NotificationAirlineSeatLegroomExtra,
 };
 import _NotificationAirlineSeatLegroomNormal from "./notification/airline-seat-legroom-normal";
 export {
-  _NotificationAirlineSeatLegroomNormal as NotificationAirlineSeatLegroomNormal
+  _NotificationAirlineSeatLegroomNormal as NotificationAirlineSeatLegroomNormal,
 };
 import _NotificationAirlineSeatLegroomReduced from "./notification/airline-seat-legroom-reduced";
 export {
-  _NotificationAirlineSeatLegroomReduced as NotificationAirlineSeatLegroomReduced
+  _NotificationAirlineSeatLegroomReduced as NotificationAirlineSeatLegroomReduced,
 };
 import _NotificationAirlineSeatReclineExtra from "./notification/airline-seat-recline-extra";
 export {
-  _NotificationAirlineSeatReclineExtra as NotificationAirlineSeatReclineExtra
+  _NotificationAirlineSeatReclineExtra as NotificationAirlineSeatReclineExtra,
 };
 import _NotificationAirlineSeatReclineNormal from "./notification/airline-seat-recline-normal";
 export {
-  _NotificationAirlineSeatReclineNormal as NotificationAirlineSeatReclineNormal
+  _NotificationAirlineSeatReclineNormal as NotificationAirlineSeatReclineNormal,
 };
 import _NotificationBluetoothAudio from "./notification/bluetooth-audio";
 export { _NotificationBluetoothAudio as NotificationBluetoothAudio };
@@ -1794,7 +1794,7 @@ import _NotificationPersonalVideo from "./notification/personal-video";
 export { _NotificationPersonalVideo as NotificationPersonalVideo };
 import _NotificationPhoneBluetoothSpeaker from "./notification/phone-bluetooth-speaker";
 export {
-  _NotificationPhoneBluetoothSpeaker as NotificationPhoneBluetoothSpeaker
+  _NotificationPhoneBluetoothSpeaker as NotificationPhoneBluetoothSpeaker,
 };
 import _NotificationPhoneForwarded from "./notification/phone-forwarded";
 export { _NotificationPhoneForwarded as NotificationPhoneForwarded };

@@ -11,7 +11,7 @@ const RAW = Symbol("raw");
 
 function makeRaw(input, output) {
   return {
-    [RAW]: [input, "~".repeat(80), "\n", output].join("")
+    [RAW]: [input, "~".repeat(80), "\n", output].join(""),
   };
 }
 
@@ -38,7 +38,7 @@ function runSpec(dir, spec) {
     },
     test(x) {
       return x && typeof x[RAW] === "string";
-    }
+    },
   });
 
   describe(util.format(spec.title, `${pkg}@${version}`), () => {
@@ -67,7 +67,7 @@ function runMappingSpec(dir) {
           expect(fulfillConfigExports(config)).toMatchSnapshot();
         });
       });
-    }
+    },
   });
 }
 
@@ -77,7 +77,7 @@ function runTransformSpec(dir) {
     run(transformConfig) {
       const {
         error: errorFixtures,
-        transform: transformFixtures
+        transform: transformFixtures,
       } = getFixtures(path.join(dir, "__fixtures__"));
 
       errorFixtures.forEach(filename => {
@@ -95,13 +95,13 @@ function runTransformSpec(dir) {
           const content = fs.readFileSync(filename, "utf-8");
 
           const result = babel.transform(content, {
-            plugins: [[plugin, transformConfig]]
+            plugins: [[plugin, transformConfig]],
           });
 
           expect(makeRaw(content, result.code)).toMatchSnapshot();
         });
       });
-    }
+    },
   });
 }
 

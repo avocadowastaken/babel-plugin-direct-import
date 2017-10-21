@@ -13,5 +13,5 @@ import {
   Router,
   RouterContext,
   useRouterHistory,
-  withRouter
+  withRouter,
 } from "react-router";

@@ -13,13 +13,13 @@ describe("mapper", () => {
     it("should resolve and load `indexFile`", () => {
       const result = fulfillConfigExports({
         name: "lodash",
-        indexFile: "lodash/index"
+        indexFile: "lodash/index",
       });
 
       expect(result).toEqual({
         exports: {},
         name: "lodash",
-        indexFile: "lodash/index"
+        indexFile: "lodash/index",
       });
     });
 
@@ -36,7 +36,7 @@ describe("mapper", () => {
       fse.writeFileSync(
         path.join(dummyModulePath, "package.json"),
         JSON.stringify({
-          module: "./index.es.js"
+          module: "./index.es.js",
         }),
         "utf-8"
       );
@@ -52,7 +52,7 @@ describe("mapper", () => {
       );
 
       const result = fulfillConfigExports({
-        name: "__dummy-module"
+        name: "__dummy-module",
       });
 
       expect(result).toEqual({
@@ -60,11 +60,11 @@ describe("mapper", () => {
           dummy: {
             local: "default",
             exported: "dummy",
-            source: "__dummy-module/dummy"
-          }
+            source: "__dummy-module/dummy",
+          },
         },
         name: "__dummy-module",
-        indexFile: "__dummy-module/index.es.js"
+        indexFile: "__dummy-module/index.es.js",
       });
 
       fse.removeSync(dummyModulePath);
@@ -83,7 +83,7 @@ describe("mapper", () => {
       fse.writeFileSync(
         path.join(dummyModulePath, "package.json"),
         JSON.stringify({
-          "jsnext:main": "./index.es.js"
+          "jsnext:main": "./index.es.js",
         }),
         "utf-8"
       );
@@ -99,7 +99,7 @@ describe("mapper", () => {
       );
 
       const result = fulfillConfigExports({
-        name: "__dummy-module"
+        name: "__dummy-module",
       });
 
       expect(result).toEqual({
@@ -107,11 +107,11 @@ describe("mapper", () => {
           dummy: {
             local: "default",
             exported: "dummy",
-            source: "__dummy-module/dummy"
-          }
+            source: "__dummy-module/dummy",
+          },
         },
         name: "__dummy-module",
-        indexFile: "__dummy-module/index.es.js"
+        indexFile: "__dummy-module/index.es.js",
       });
 
       fse.removeSync(dummyModulePath);
@@ -130,14 +130,14 @@ describe("mapper", () => {
       fse.writeFileSync(
         path.join(dummyModulePath, "package.json"),
         JSON.stringify({
-          main: "./index.js"
+          main: "./index.js",
         }),
         "utf-8"
       );
 
       expect(() =>
         fulfillConfigExports({
-          name: "__dummy-module"
+          name: "__dummy-module",
         })
       ).toThrowErrorMatchingSnapshot();
 
@@ -150,8 +150,8 @@ describe("mapper", () => {
         indexFile: "foo/index",
         indexFileContent: [
           "import { bar as _bar } from './bar';",
-          "export { _bar as bar };"
-        ].join("\n")
+          "export { _bar as bar };",
+        ].join("\n"),
       });
 
       expect(result).toEqual({
@@ -161,9 +161,9 @@ describe("mapper", () => {
           bar: {
             local: "bar",
             exported: "bar",
-            source: "foo/bar"
-          }
-        }
+            source: "foo/bar",
+          },
+        },
       });
     });
 
@@ -173,8 +173,8 @@ describe("mapper", () => {
         indexFile: "foo/index",
         indexFileContent: [
           "import _bar from './bar';",
-          "export { _bar as bar };"
-        ].join("\n")
+          "export { _bar as bar };",
+        ].join("\n"),
       });
 
       expect(result).toEqual({
@@ -184,9 +184,9 @@ describe("mapper", () => {
           bar: {
             exported: "bar",
             local: "default",
-            source: "foo/bar"
-          }
-        }
+            source: "foo/bar",
+          },
+        },
       });
     });
 
@@ -196,8 +196,8 @@ describe("mapper", () => {
         indexFile: "foo/index",
         indexFileContent: [
           "import _bar, { baz as _baz } from './bar';",
-          "export { _bar as bar, _baz as baz };"
-        ].join("\n")
+          "export { _bar as bar, _baz as baz };",
+        ].join("\n"),
       });
 
       expect(result).toEqual({
@@ -207,14 +207,14 @@ describe("mapper", () => {
           bar: {
             exported: "bar",
             local: "default",
-            source: "foo/bar"
+            source: "foo/bar",
           },
           baz: {
             local: "baz",
             exported: "baz",
-            source: "foo/bar"
-          }
-        }
+            source: "foo/bar",
+          },
+        },
       });
     });
 
@@ -224,14 +224,14 @@ describe("mapper", () => {
         indexFile: "foo/index",
         indexFileContent: [
           "import * as _bar from './bar';",
-          "export { _bar as bar };"
-        ].join("\n")
+          "export { _bar as bar };",
+        ].join("\n"),
       });
 
       expect(result).toEqual({
         name: "foo",
         indexFile: "foo/index",
-        exports: { bar: { exported: "bar", local: "*", source: "foo/bar" } }
+        exports: { bar: { exported: "bar", local: "*", source: "foo/bar" } },
       });
     });
 
@@ -239,7 +239,7 @@ describe("mapper", () => {
       const result = fulfillConfigExports({
         name: "foo",
         indexFile: "foo/index",
-        indexFileContent: "export { bar } from './bar';"
+        indexFileContent: "export { bar } from './bar';",
       });
 
       expect(result).toEqual({
@@ -249,9 +249,9 @@ describe("mapper", () => {
           bar: {
             exported: "bar",
             local: "bar",
-            source: "foo/bar"
-          }
-        }
+            source: "foo/bar",
+          },
+        },
       });
     });
 
@@ -261,8 +261,8 @@ describe("mapper", () => {
         indexFile: "foo/index",
         indexFileContent: [
           "import _bar, { baz as _baz } from './bar';",
-          "export const bar = _bar, baz = _baz;"
-        ].join("\n")
+          "export const bar = _bar, baz = _baz;",
+        ].join("\n"),
       });
 
       expect(result).toEqual({
@@ -270,8 +270,8 @@ describe("mapper", () => {
         indexFile: "foo/index",
         exports: {
           bar: { exported: "bar", local: "default", source: "foo/bar" },
-          baz: { exported: "baz", local: "baz", source: "foo/bar" }
-        }
+          baz: { exported: "baz", local: "baz", source: "foo/bar" },
+        },
       });
     });
 
@@ -282,16 +282,16 @@ describe("mapper", () => {
         indexFileContent: [
           "import _bar from './bar';",
           "export const bar = _bar;",
-          "export const baz = bar;"
-        ].join("\n")
+          "export const baz = bar;",
+        ].join("\n"),
       });
 
       expect(result).toEqual({
         name: "foo",
         indexFile: "foo/index",
         exports: {
-          bar: { exported: "bar", local: "default", source: "foo/bar" }
-        }
+          bar: { exported: "bar", local: "default", source: "foo/bar" },
+        },
       });
     });
 
@@ -302,16 +302,16 @@ describe("mapper", () => {
         indexFileContent: [
           "import _bar from './bar';",
           "export const bar = _bar;",
-          "export function baz() {}"
-        ].join("\n")
+          "export function baz() {}",
+        ].join("\n"),
       });
 
       expect(result).toEqual({
         name: "foo",
         indexFile: "foo/index",
         exports: {
-          bar: { exported: "bar", local: "default", source: "foo/bar" }
-        }
+          bar: { exported: "bar", local: "default", source: "foo/bar" },
+        },
       });
     });
 
@@ -319,7 +319,7 @@ describe("mapper", () => {
       const result = fulfillConfigExports({
         name: "foo",
         indexFile: "foo/index",
-        indexFileContent: "export { default as bar } from './bar';"
+        indexFileContent: "export { default as bar } from './bar';",
       });
 
       expect(result).toEqual({
@@ -329,9 +329,9 @@ describe("mapper", () => {
           bar: {
             exported: "bar",
             local: "default",
-            source: "foo/bar"
-          }
-        }
+            source: "foo/bar",
+          },
+        },
       });
     });
   });

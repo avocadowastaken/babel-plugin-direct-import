@@ -9,7 +9,7 @@ import { TextField, SelectField, FlatButton } from "material-ui";
 import {
   ActionAccessibility,
   ActionAccessible,
-  ActionAccountBalance
+  ActionAccountBalance,
 } from "material-ui/svg-icons";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import TextField from "material-ui/TextField";
@@ -87,7 +87,7 @@ import {
   Toolbar,
   ToolbarGroup,
   ToolbarSeparator,
-  ToolbarTitle
+  ToolbarTitle,
 } from "material-ui";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import AppBar from "material-ui/AppBar";
@@ -162,7 +162,7 @@ exports[`Transform: material-ui@0.18.3 should transform with: "svg-icons.js" 1`]
 import {
   ActionAccessibility,
   ActionAccessible,
-  ActionAccountBalance
+  ActionAccountBalance,
 } from "material-ui/svg-icons";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import ActionAccessibility from "material-ui/svg-icons/action/accessibility";
@@ -180,7 +180,7 @@ exports[`Transform: material-ui@0.18.3 should transform with: "with-local-name.j
 import {
   TextField as MUITextField,
   SelectField as MUISelectField,
-  FlatButton as MUIFlatButton
+  FlatButton as MUIFlatButton,
 } from "material-ui";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import MUITextField from "material-ui/TextField";
