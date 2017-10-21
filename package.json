@@ -21,7 +21,7 @@
     "codecov": "codecov -f ./coverage/lcov.info",
     "lint": "eslint \"{src,tools}/**/*.js\"",
     "format": "prettier --write \"{src,tools}/**/*.js\"",
-    "report": "rimraf coverage && (yarn cover || opener ./coverage/lcov-report/index.html)"
+    "report": "opener ./coverage/lcov-report/index.html"
   },
   "dependencies": {
     "babylon": "^6.18.0",
