@@ -1,7 +1,7 @@
 import * as _actions from "./actions";
 import * as _actionTypes from "./actionTypes";
 export {
-  default as defaultShouldAsyncValidate
+  default as defaultShouldAsyncValidate,
 } from "./defaultShouldAsyncValidate";
 export { default as defaultShouldValidate } from "./defaultShouldValidate";
 export { default as Form } from "./Form";
@@ -13,7 +13,7 @@ export {
   fieldInputPropTypes,
   fieldMetaPropTypes,
   fieldPropTypes,
-  formPropTypes
+  formPropTypes,
 } from "./propTypes";
 export { default as Field } from "./immutable/Field";
 export { default as Fields } from "./immutable/Fields";
@@ -23,16 +23,16 @@ export { default as formValues } from "./immutable/formValues";
 export { default as getFormNames } from "./immutable/getFormNames";
 export { default as getFormValues } from "./immutable/getFormValues";
 export {
-  default as getFormInitialValues
+  default as getFormInitialValues,
 } from "./immutable/getFormInitialValues";
 export { default as getFormSyncErrors } from "./immutable/getFormSyncErrors";
 export { default as getFormMeta } from "./immutable/getFormMeta";
 export { default as getFormAsyncErrors } from "./immutable/getFormAsyncErrors";
 export {
-  default as getFormSyncWarnings
+  default as getFormSyncWarnings,
 } from "./immutable/getFormSyncWarnings";
 export {
-  default as getFormSubmitErrors
+  default as getFormSubmitErrors,
 } from "./immutable/getFormSubmitErrors";
 export { default as isDirty } from "./immutable/isDirty";
 export { default as isInvalid } from "./immutable/isInvalid";
@@ -104,5 +104,5 @@ export {
   submit,
   touch,
   unregisterField,
-  untouch
+  untouch,
 };

@@ -18,5 +18,5 @@ import {
   SortDirection,
   SortIndicator,
   Table,
-  WindowScroller
+  WindowScroller,
 } from "react-virtualized";

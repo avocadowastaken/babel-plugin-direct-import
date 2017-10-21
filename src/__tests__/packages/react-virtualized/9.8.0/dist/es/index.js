@@ -7,13 +7,13 @@ export {
   accessibilityOverscanIndicesGetter,
   defaultCellRangeRenderer,
   defaultOverscanIndicesGetter,
-  Grid
+  Grid,
 } from "./Grid";
 export { InfiniteLoader } from "./InfiniteLoader";
 export { List } from "./List";
 export {
   createCellPositioner as createMasonryCellPositioner,
-  Masonry
+  Masonry,
 } from "./Masonry";
 export { MultiGrid } from "./MultiGrid";
 export { ScrollSync } from "./ScrollSync";
@@ -26,6 +26,6 @@ export {
   Table,
   Column,
   SortDirection,
-  SortIndicator
+  SortIndicator,
 } from "./Table";
 export { WindowScroller } from "./WindowScroller";

@@ -36,7 +36,7 @@ import {
   reducer,
   reduxForm,
   SubmissionError,
-  values
+  values,
 } from "redux-form";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import * as actions from "redux-form/es/actions";
@@ -112,7 +112,7 @@ import {
   reducer,
   reduxForm,
   SubmissionError,
-  values
+  values,
 } from "redux-form/immutable";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import * as actions from "redux-form/es/actions";

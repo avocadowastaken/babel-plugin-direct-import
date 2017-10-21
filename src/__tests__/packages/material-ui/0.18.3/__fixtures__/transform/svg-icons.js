@@ -1,5 +1,5 @@
 import {
   ActionAccessibility,
   ActionAccessible,
-  ActionAccountBalance
+  ActionAccountBalance,
 } from "material-ui/svg-icons";

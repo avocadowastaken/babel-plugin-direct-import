@@ -1,7 +1,7 @@
 import actions from "./actions";
 import * as _actionTypes from "./actionTypes";
 export {
-  default as defaultShouldAsyncValidate
+  default as defaultShouldAsyncValidate,
 } from "./defaultShouldAsyncValidate";
 export { default as defaultShouldValidate } from "./defaultShouldValidate";
 export { default as Form } from "./Form";
@@ -13,7 +13,7 @@ export {
   fieldInputPropTypes,
   fieldMetaPropTypes,
   fieldPropTypes,
-  formPropTypes
+  formPropTypes,
 } from "./propTypes";
 export { default as Field } from "./Field";
 export { default as Fields } from "./Fields";

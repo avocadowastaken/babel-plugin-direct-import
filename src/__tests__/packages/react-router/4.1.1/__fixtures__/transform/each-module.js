@@ -7,5 +7,5 @@ import {
   Router,
   StaticRouter,
   Switch,
-  withRouter
+  withRouter,
 } from "react-router";
