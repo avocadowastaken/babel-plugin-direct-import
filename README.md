@@ -8,9 +8,13 @@
 
 Babel plugin to cherry pick imports of es6 modules.
 
+## Heads Up
+
+Webpack 4 comes with `sideEffects` flag [support](https://github.com/webpack/webpack/tree/next/examples/side-effects)!
+
 ## Motivation
 
-[Tree shaking](https://webpack.js.org/guides/tree-shaking/) is awesome! And [Rollup](https://rollupjs.org/) with [webpack](https://webpack.js.org) *(TODO: add more next week)* teams doing great job making it more better! But still not all libs can be "tree shaked" right now and as a developer I don't want to wait, I want to use sweet `import { module } from "package"` syntax right now without caring about final bundle size.
+[Tree shaking](https://webpack.js.org/guides/tree-shaking/) is awesome! And [Rollup](https://rollupjs.org/) with [webpack](https://webpack.js.org) teams doing great job making it more better! But still not all libs can be "tree shaked" right now and as a developer I don't want to wait, I want to use sweet `import { module } from "package"` syntax right now without caring about final bundle size.
 
 > "But we already have [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) and [babel-transform-imports](https://bitbucket.org/amctheatres/babel-transform-imports)!"
 
