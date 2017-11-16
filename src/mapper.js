@@ -39,9 +39,9 @@ function fulfillConfigExports(config) {
       const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf-8"));
 
       if (fp.isString(packageJson.module)) {
-        indexFile = path.join(config.name, packageJson.module);
+        indexFile = path.posix.join(config.name, packageJson.module);
       } else if (fp.isString(packageJson["jsnext:main"])) {
-        indexFile = path.join(config.name, packageJson["jsnext:main"]);
+        indexFile = path.posix.join(config.name, packageJson["jsnext:main"]);
       } else {
         throw new Error(
           `babel-plugin-direct-import: no indexFile specified for ${config.name} and its package.json does not specify "module" or "jsnext:main"`
