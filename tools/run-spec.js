@@ -81,12 +81,24 @@ function runTransformSpec(dir) {
       } = getFixtures(path.join(dir, "__fixtures__"));
 
       errorFixtures.forEach(filename => {
-        it(`should throw with: "${path.basename(filename)}"`, () => {
-          const content = fs.readFileSync(filename, "utf-8");
+        it(`should warn with: "${path.basename(filename)}"`, () => {
+          const { warn } = console;
 
-          expect(() =>
-            babel.transform(content, { plugins: [[plugin, transformConfig]] })
-          ).toThrowErrorMatchingSnapshot();
+          console.warn = jest.fn();
+
+          const content = fs.readFileSync(filename, "utf-8");
+          const result = babel.transform(content, {
+            plugins: [[plugin, transformConfig]],
+          });
+
+          expect(result.code.trim()).toBe(content.trim());
+          expect(console.warn).toBeCalled();
+
+          console.warn.mock.calls.forEach(x => {
+            expect(x[0]).toMatchSnapshot();
+          });
+
+          console.warn = warn;
         });
       });
 
