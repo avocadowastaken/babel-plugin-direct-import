@@ -1,4 +1,5 @@
 const fp = require("lodash/fp");
+const { format } = require("util");
 
 const getUnknownKeys = fp.flow(
   fp.omit(["name", "indexFile", "indexFileContent"]),
@@ -21,10 +22,11 @@ const prepareConfig = fp.flow(
     const config = {};
 
     if (unknownKeys.length > 0) {
-      const keys = unknownKeys.join(", ");
-
       throw new Error(
-        `babel-plugin-direct-import: contains unknown keys { ${keys} }`
+        format(
+          "babel-plugin-direct-import: contains unknown keys { %s }",
+          unknownKeys.join(", ")
+        )
       );
     }
 
@@ -58,7 +60,11 @@ const prepareConfig = fp.flow(
       config.indexFile.split("/")[0] !== config.name.split("/")[0]
     ) {
       throw new Error(
-        `babel-plugin-direct-import: Index file "${config.indexFile}" must belong to "${config.name}" package`
+        format(
+          'babel-plugin-direct-import: Index file "%s" must belong to "%s" package',
+          config.indexFile,
+          config.name
+        )
       );
     }
 
