@@ -19,6 +19,15 @@ const fulfillConfigs = _.memoize(
 
 let configs;
 
+function getSpecName(spec) {
+  switch (spec.type) {
+    case "ImportDefaultSpecifier":
+      return "default";
+    default:
+      return spec.imported.name;
+  }
+}
+
 module.exports = babel => ({
   visitor: {
     Program(path, state) {
@@ -38,29 +47,56 @@ module.exports = babel => ({
         return;
       }
 
-      const importSpecifiers = specifiers.filter(
-        spec =>
-          spec.type === "ImportSpecifier" ||
-          spec.type === "ImportDefaultSpecifier"
+      const namespaceSpec = specifiers.find(
+        x => x.type === "ImportNamespaceSpecifier"
       );
 
-      if (importSpecifiers.length !== specifiers.length) {
+      if (namespaceSpec) {
+        console.warn(
+          format(
+            [
+              'babel-plugin-direct-import: Can not optimize `import * as %s from "%s"`.',
+              "See plugin limitations https://git.io/vFDOO for more details.",
+            ].join("\n"),
+            namespaceSpec.local.name,
+            settings.name
+          )
+        );
+
         return;
       }
 
-      importSpecifiers.forEach(spec => {
-        const { name } = spec.imported || spec.local;
-        const moduleSettings = settings.exports[name];
+      const unknownSpec = specifiers.find(
+        x => !settings.exports[getSpecName(x)]
+      );
 
-        if (!moduleSettings) {
-          throw new Error(
-            format(
-              'babel-plugin-direct-import: %s does not contain module "%s"',
-              settings.name,
-              name
-            )
-          );
-        }
+      if (unknownSpec) {
+        const name = getSpecName(unknownSpec);
+
+        console.warn(
+          format(
+            [
+              'babel-plugin-direct-import: Can not optimize `import { %s } from "%s"`.',
+              "This could be because of two reasons:",
+              "1. `%s` does not exports `%s` member.",
+              "2. `%s` exports `%s` the way it can not be optimized.",
+              "See plugin limitations https://git.io/vFDOO for more details.",
+            ].join("\n"),
+            name,
+            settings.name,
+            settings.name,
+            name,
+            settings.name,
+            name
+          )
+        );
+
+        return;
+      }
+
+      specifiers.forEach(spec => {
+        const name = getSpecName(spec);
+        const moduleSettings = settings.exports[name];
 
         declaration.insertBefore(
           types.importDeclaration(
