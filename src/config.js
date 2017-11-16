@@ -38,7 +38,7 @@ const prepareConfig = fp.flow(
 
     config.name = name;
 
-    if (indexFile != null) {
+    if (!fp.isNil(indexFile)) {
       if (!fp.isString(indexFile)) {
         throw new Error(
           "babel-plugin-direct-import: { indexFile } expected to be a string"
@@ -53,7 +53,7 @@ const prepareConfig = fp.flow(
     }
 
     if (
-      indexFile != null &&
+      !fp.isNil(indexFile) &&
       config.indexFile !== config.name &&
       config.indexFile.split("/")[0] !== config.name.split("/")[0]
     ) {
