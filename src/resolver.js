@@ -1,4 +1,5 @@
 const Module = require("module");
+const { format } = require("util");
 
 /**
  * Resolve module file.
@@ -18,7 +19,7 @@ function resolveFilename(fileName, cwd = process.cwd()) {
     return Module._resolveFilename(fileName, parent);
   } catch (error) {
     if (error.code === "MODULE_NOT_FOUND") {
-      console.warn(`babel-plugin-direct-import: ${error.message}`);
+      console.warn(format("babel-plugin-direct-import: %s", error.message));
 
       return null;
     }
