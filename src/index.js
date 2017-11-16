@@ -1,4 +1,5 @@
 const _ = require("lodash");
+const { format } = require("util");
 const { dirname } = require("path");
 const { prepareConfig } = require("./config");
 const { fulfillConfigExports } = require("./mapper");
@@ -53,7 +54,11 @@ module.exports = babel => ({
 
         if (!moduleSettings) {
           throw new Error(
-            `babel-plugin-direct-import: ${settings.name} does not contain module "${name}"`
+            format(
+              'babel-plugin-direct-import: %s does not contain module "%s"',
+              settings.name,
+              name
+            )
           );
         }
 
