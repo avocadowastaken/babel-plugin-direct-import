@@ -20,7 +20,7 @@
     "cover": "jest --coverage --no-cache",
     "codecov": "codecov -f ./coverage/lcov.info",
     "lint": "eslint \"{src,tools}/**/*.js\"",
-    "format": "prettier --write \"{src,tools}/**/*.js\"",
+    "format": "prettier --write \"{README.md,{src,tools}/**/*.js}\"",
     "report": "opener ./coverage/lcov-report/index.html"
   },
   "dependencies": {
@@ -41,7 +41,7 @@
     "jest": "^21.2.1",
     "npm-run-all": "^4.1.1",
     "opener": "^1.4.3",
-    "prettier": "^1.5.3",
+    "prettier": "^1.8.2",
     "rimraf": "^2.6.1"
   }
 }
