@@ -1,3 +1,4 @@
+const path = require("path");
 const { resolveFilename } = require("../resolver");
 
 describe("resolver", () => {
@@ -5,7 +6,9 @@ describe("resolver", () => {
     it("should resolve package path", () => {
       const filePath = resolveFilename("lodash");
 
-      expect(filePath).toContain("node_modules/lodash/lodash.js");
+      expect(filePath).toContain(
+        path.join("node_modules", "lodash", "lodash.js")
+      );
     });
 
     it("should throw errors from `Module` package", () => {
