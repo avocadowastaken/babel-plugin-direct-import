@@ -2,6 +2,7 @@ const fs = require("fs");
 const fp = require("lodash/fp");
 const path = require("path");
 const babylon = require("babylon");
+const { format } = require("util");
 const { resolveFilename } = require("./resolver");
 
 function getFileRoot(indexFilePath, packageName) {
@@ -44,7 +45,10 @@ function fulfillConfigExports(config) {
         indexFile = path.posix.join(config.name, packageJson["jsnext:main"]);
       } else {
         throw new Error(
-          `babel-plugin-direct-import: no indexFile specified for ${config.name} and its package.json does not specify "module" or "jsnext:main"`
+          format(
+            `babel-plugin-direct-import: no indexFile specified for %s and its package.json does not specify "module" or "jsnext:main"`,
+            config.name
+          )
         );
       }
     }
