@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-plugin-syntax-flow": "^6.18.0",
     "codecov": "^2.3.1",
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.1.0",

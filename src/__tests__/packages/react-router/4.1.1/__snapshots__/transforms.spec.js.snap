@@ -1,6 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Transform: react-router@4.1.1 should transform with: "each-module.js" 1`] = `
+import type { ContextRouter } from "react-router";
 import {
   matchPath,
   MemoryRouter,
@@ -13,6 +14,7 @@ import {
   withRouter,
 } from "react-router";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import type { ContextRouter } from "react-router";
 import matchPath from "react-router/es/matchPath";
 import MemoryRouter from "react-router/es/MemoryRouter";
 import Prompt from "react-router/es/Prompt";
