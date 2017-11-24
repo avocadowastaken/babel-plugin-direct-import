@@ -1,3 +1,4 @@
+import type { ContextRouter } from "react-router";
 import {
   matchPath,
   MemoryRouter,
