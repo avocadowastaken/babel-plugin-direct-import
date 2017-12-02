@@ -7,6 +7,10 @@
 
 Babel plugin to cherry pick imports of es6 modules.
 
+## Babel 7 User?
+
+If you want to use version for Babel 7 please check [next](https://github.com/umidbekkarimov/babel-plugin-direct-import/tree/next) branch.
+
 ## Heads Up
 
 Webpack 4 comes with `sideEffects` flag
