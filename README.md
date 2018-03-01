@@ -1,4 +1,7 @@
-# babel-plugin-direct-import
+# [DEPRECATED] babel-plugin-direct-import
+
+
+> Webpack 4 comes with `sideEffects` flag [support](https://github.com/webpack/webpack/tree/master/examples/side-effects)!
 
 [![build status](https://img.shields.io/travis/umidbekkarimov/babel-plugin-direct-import/master.svg?style=flat-square)](https://travis-ci.org/umidbekkarimov/babel-plugin-direct-import)
 [![npm version](https://img.shields.io/npm/v/babel-plugin-direct-import.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-direct-import)
@@ -10,11 +13,6 @@ Babel plugin to cherry pick imports of es6 modules.
 ## Babel 7 User?
 
 If you want to use version for Babel 7 please check [next](https://github.com/umidbekkarimov/babel-plugin-direct-import/tree/next) branch.
-
-## Heads Up
-
-Webpack 4 comes with `sideEffects` flag
-[support](https://github.com/webpack/webpack/tree/next/examples/side-effects)!
 
 ## Motivation
 
