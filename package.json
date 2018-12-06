@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "babylon": "^6.18.0",
-    "lodash": "^4.0.0"
+    "lodash": "^4.17.5"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
