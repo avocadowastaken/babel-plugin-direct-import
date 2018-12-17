@@ -1,3 +1,5 @@
+"use strict";
+
 const fp = require("lodash/fp");
 const { format } = require("util");
 

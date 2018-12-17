@@ -10,34 +10,32 @@
   "author": "Umidbek Karimov <uma.karimov@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "all": "run-s format lint cover",
-    "test": "jest",
+    "ci": "yarn lint && yarn cover --ci",
+    "ci-fix": "yarn lint --fix && yarn cover",
+    "lint": "stylotron lint",
+    "test": "jest --watch",
     "cover": "jest --coverage --no-cache",
-    "codecov": "codecov -f ./coverage/lcov.info",
-    "lint": "eslint \"{src,tools}/**/*.js\"",
-    "format": "prettier --write \"{README.md,{src,tools}/**/*.js}\"",
-    "report": "opener ./coverage/lcov-report/index.html"
+    "codecov": "codecov -f ./coverage/lcov.info"
   },
   "dependencies": {
     "babylon": "^6.18.0",
     "lodash": "^4.0.0"
   },
   "devDependencies": {
+    "@dc0de/eslint-config-base": "^0.4.0",
+    "@dc0de/eslint-config-node": "^0.4.8",
     "babel-core": "^6.26.0",
     "babel-plugin-syntax-flow": "^6.18.0",
     "codecov": "^3.0.0",
-    "eslint": "^4.11.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-config-prettier": "^2.8.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-prettier": "^2.3.1",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
     "fs-extra": "^4.0.1",
     "glob": "^7.1.2",
-    "jest": "^21.2.1",
-    "npm-run-all": "^4.1.2",
-    "opener": "^1.4.3",
-    "prettier": "^1.8.2",
-    "rimraf": "^2.6.1"
+    "jest": "^23.0.0",
+    "prettier": "^1.15.0",
+    "stylotron": "^0.0.10"
   }
 }

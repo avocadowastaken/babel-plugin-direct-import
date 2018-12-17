@@ -1,3 +1,5 @@
+"use strict";
+
 const fs = require("fs");
 const fp = require("lodash/fp");
 const path = require("path");
@@ -53,6 +55,7 @@ function fulfillConfigExports(config) {
       }
     }
     const indexFilePath = resolveFilename(indexFile, programPath);
+
     indexFileContent = fs.readFileSync(indexFilePath, "utf-8");
   }
 
