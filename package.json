@@ -9,11 +9,6 @@
   "repository": "https://github.com/umidbekkarimov/babel-plugin-direct-import.git",
   "author": "Umidbek Karimov <uma.karimov@gmail.com>",
   "license": "MIT",
-  "jest": {
-    "testMatch": [
-      "**/__tests__/**/*.spec.js"
-    ]
-  },
   "scripts": {
     "all": "run-s format lint cover",
     "test": "jest",
