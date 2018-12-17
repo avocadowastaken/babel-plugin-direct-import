@@ -3,7 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 const util = require("util");
-const babel = require("babel-core");
+const babel = require("@babel/core");
 const plugin = require("../src/index");
 const { fulfillConfigExports } = require("../src/mapper");
 
@@ -34,19 +34,14 @@ function runSpec(dir, spec) {
   const [version, pkg] = dir.split(path.sep).reverse();
 
   expect.addSnapshotSerializer({
-    print(x) {
-      return x[RAW];
-    },
-    test(x) {
-      return x && typeof x[RAW] === "string";
-    },
+    print: x => x[RAW],
+    test: x => x && typeof x[RAW] === "string",
   });
 
   describe(util.format(spec.title, `${pkg}@${version}`), () => {
-    // eslint-disable-next-line global-require, import/no-dynamic-require
-    const configs = require(path.join(dir, "config.json"));
+    const config = require(path.join(dir, "config.json"));
 
-    const transformConfig = configs.map(({ name, indexFile }) => {
+    const modules = config.map(({ name, indexFile }) => {
       const indexFileContent = fs.readFileSync(
         require.resolve(path.join(dir, indexFile.slice(pkg.length))),
         "utf-8"
@@ -55,15 +50,15 @@ function runSpec(dir, spec) {
       return { name, indexFile, indexFileContent };
     });
 
-    spec.run(transformConfig);
+    spec.run({ modules });
   });
 }
 
 function runMappingSpec(dir) {
   runSpec(dir, {
     title: "Fulfill mappings for: %s",
-    run(transformConfig) {
-      transformConfig.forEach(config => {
+    run({ modules }) {
+      modules.forEach(config => {
         it(`should fulfill exports for "${config.indexFile}"`, () => {
           expect(fulfillConfigExports(config)).toMatchSnapshot();
         });
@@ -72,16 +67,17 @@ function runMappingSpec(dir) {
   });
 }
 
-function transform(content, transformConfig) {
-  return babel.transform(content, {
-    plugins: ["syntax-flow", [plugin, transformConfig]],
+function transform(filename, content, pluginOptions) {
+  return babel.transformSync(content, {
+    filename,
+    plugins: ["@babel/plugin-syntax-flow", [plugin, pluginOptions]],
   });
 }
 
 function runTransformSpec(dir) {
   runSpec(dir, {
     title: "Transform: %s",
-    run(transformConfig) {
+    run(pluginOptions) {
       const {
         error: errorFixtures,
         transform: transformFixtures,
@@ -94,7 +90,7 @@ function runTransformSpec(dir) {
           console.warn = jest.fn();
 
           const content = fs.readFileSync(filename, "utf-8");
-          const result = transform(content, transformConfig);
+          const result = transform(filename, content, pluginOptions);
 
           expect(result.code.trim()).toBe(content.trim());
           expect(console.warn).toBeCalled();
@@ -110,7 +106,7 @@ function runTransformSpec(dir) {
       transformFixtures.forEach(filename => {
         it(`should transform with: "${path.basename(filename)}"`, () => {
           const content = fs.readFileSync(filename, "utf-8");
-          const result = transform(content, transformConfig);
+          const result = transform(filename, content, pluginOptions);
 
           expect(makeRaw(content, result.code)).toMatchSnapshot();
         });

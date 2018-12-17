@@ -21,10 +21,10 @@
     "babylon": "^6.18.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-syntax-flow": "^7.2.0",
     "@dc0de/eslint-config-base": "^0.4.0",
     "@dc0de/eslint-config-node": "^0.4.8",
-    "babel-core": "^6.26.0",
-    "babel-plugin-syntax-flow": "^6.18.0",
     "codecov": "^3.0.0",
     "eslint": "^5.3.0",
     "eslint-config-airbnb-base": "^13.1.0",
