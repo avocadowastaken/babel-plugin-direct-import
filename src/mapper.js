@@ -1,7 +1,6 @@
 "use strict";
 
 const fs = require("fs");
-const fp = require("lodash/fp");
 const path = require("path");
 const babylon = require("babylon");
 const { format } = require("util");
@@ -33,17 +32,17 @@ function fulfillConfigExports(config) {
 
   const exports = {};
 
-  if (!fp.isString(indexFileContent)) {
-    if (!fp.isString(indexFile)) {
+  if (typeof indexFileContent !== "string") {
+    if (typeof indexFile !== "string") {
       const packageJsonPath = resolveFilename(
         `${config.name}/package.json`,
         programPath
       );
       const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf-8"));
 
-      if (fp.isString(packageJson.module)) {
+      if (typeof packageJson.module === "string") {
         indexFile = path.posix.join(config.name, packageJson.module);
-      } else if (fp.isString(packageJson["jsnext:main"])) {
+      } else if (typeof packageJson["jsnext:main"] === "string") {
         indexFile = path.posix.join(config.name, packageJson["jsnext:main"]);
       } else {
         throw new Error(
