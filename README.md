@@ -1,4 +1,4 @@
-# [DEPRECATED] babel-plugin-direct-import 
+# [DEPRECATED] babel-plugin-direct-import
 
 [Deprecation note](https://github.com/umidbekkarimov/babel-plugin-direct-import/issues/13#issuecomment-419017347).
 
