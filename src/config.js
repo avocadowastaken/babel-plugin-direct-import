@@ -1,23 +1,29 @@
 "use strict";
 
-const fp = require("lodash/fp");
 const { format } = require("util");
 
-const getUnknownKeys = fp.flow(
-  fp.omit(["name", "indexFile", "indexFileContent"]),
-  fp.keys
-);
+const CONFIG_KEYS = new Set(["name", "indexFile", "indexFileContent"]);
 
-const prepareConfig = fp.flow(
-  fp.castArray,
-  fp.map(options => {
-    if (fp.isString(options)) {
+function getUnknownKeys(options) {
+  return Object.keys(options)
+    .sort()
+    .filter(key => !CONFIG_KEYS.has(key));
+}
+
+function castArray(value) {
+  return Array.isArray(value) ? value : [value];
+}
+
+function prepareConfig(args) {
+  return castArray(args).map(options => {
+    if (typeof options === "string") {
       return {
         name: options,
         indexFile: null,
         indexFileContent: null,
       };
     }
+
     const { name, indexFile, indexFileContent } = options;
     const unknownKeys = getUnknownKeys(options);
 
@@ -32,24 +38,26 @@ const prepareConfig = fp.flow(
       );
     }
 
-    if (!fp.isString(name)) {
+    if (typeof name !== "string") {
       throw new Error(
         "babel-plugin-direct-import: { name } expected to be a string"
       );
-    } else if (fp.isEmpty(name)) {
+    }
+
+    if (!name) {
       throw new Error("babel-plugin-direct-import: { name } is empty");
     }
 
     config.name = name;
 
-    if (!fp.isNil(indexFile)) {
-      if (!fp.isString(indexFile)) {
+    if (indexFile != null) {
+      if (typeof indexFile !== "string") {
         throw new Error(
           "babel-plugin-direct-import: { indexFile } expected to be a string"
         );
       }
 
-      if (fp.isEmpty(indexFile)) {
+      if (!indexFile) {
         throw new Error("babel-plugin-direct-import: { indexFile } is empty");
       }
 
@@ -57,7 +65,7 @@ const prepareConfig = fp.flow(
     }
 
     if (
-      !fp.isNil(indexFile) &&
+      indexFile != null &&
       config.indexFile !== config.name &&
       config.indexFile.split("/")[0] !== config.name.split("/")[0]
     ) {
@@ -70,16 +78,16 @@ const prepareConfig = fp.flow(
       );
     }
 
-    if (fp.isUndefined(indexFileContent)) {
+    if (indexFileContent === undefined) {
       config.indexFileContent = null;
     } else {
-      if (!fp.isString(indexFileContent)) {
+      if (typeof indexFileContent !== "string") {
         throw new Error(
           "babel-plugin-direct-import: { indexFileContent } expected to be a string"
         );
       }
 
-      if (fp.isEmpty(indexFileContent)) {
+      if (!indexFileContent) {
         throw new Error(
           "babel-plugin-direct-import: { indexFileContent } is empty"
         );
@@ -89,7 +97,7 @@ const prepareConfig = fp.flow(
     }
 
     return config;
-  })
-);
+  });
+}
 
 module.exports = { prepareConfig };
