@@ -1,6 +1,5 @@
 # [DEPRECATED] babel-plugin-direct-import
 
-
 > Webpack 4 comes with `sideEffects` flag [support](https://github.com/webpack/webpack/tree/master/examples/side-effects)!
 
 [![build status](https://img.shields.io/travis/umidbekkarimov/babel-plugin-direct-import/master.svg?style=flat-square)](https://travis-ci.org/umidbekkarimov/babel-plugin-direct-import)
@@ -213,8 +212,8 @@ export const noop = () => {};
 
 Heavily inspired by:
 
-* [babel-plugin-date-fns](https://github.com/date-fns/babel-plugin-date-fns)
-* [babel-plugin-lodash](https://github.com/lodash/babel-plugin-lodash)
-* [babel-plugin-recharts](https://github.com/recharts/babel-plugin-recharts)
-* [babel-transform-imports](https://bitbucket.org/amctheatres/babel-transform-imports)
-* [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
+- [babel-plugin-date-fns](https://github.com/date-fns/babel-plugin-date-fns)
+- [babel-plugin-lodash](https://github.com/lodash/babel-plugin-lodash)
+- [babel-plugin-recharts](https://github.com/recharts/babel-plugin-recharts)
+- [babel-transform-imports](https://bitbucket.org/amctheatres/babel-transform-imports)
+- [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
