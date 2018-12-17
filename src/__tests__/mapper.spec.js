@@ -1,3 +1,5 @@
+"use strict";
+
 const fse = require("fs-extra");
 const path = require("path");
 const { fulfillConfigExports } = require("../mapper");
@@ -31,6 +33,7 @@ describe("mapper", () => {
         "node_modules",
         "__dummy-module"
       );
+
       fse.removeSync(dummyModulePath);
       fse.mkdirpSync(dummyModulePath);
       fse.writeFileSync(
@@ -78,6 +81,7 @@ describe("mapper", () => {
         "node_modules",
         "__dummy-module"
       );
+
       fse.removeSync(dummyModulePath);
       fse.mkdirpSync(dummyModulePath);
       fse.writeFileSync(
@@ -125,6 +129,7 @@ describe("mapper", () => {
         "node_modules",
         "__dummy-module"
       );
+
       fse.removeSync(dummyModulePath);
       fse.mkdirpSync(dummyModulePath);
       fse.writeFileSync(
