@@ -1,22 +1,36 @@
 "use strict";
 
-const _ = require("lodash");
 const { format } = require("util");
 const { dirname } = require("path");
 const { prepareConfig } = require("./config");
 const { fulfillConfigExports } = require("./mapper");
 
-// note: memoize uses the first argument as key, so programPath is ignored here, which is expected
-const fulfillConfigs = _.memoize(
-  (opts, programPath) =>
-    prepareConfig(opts).reduce((acc, x) => {
-      const config = fulfillConfigExports(Object.assign(x, { programPath }));
+function memoize(fn) {
+  const cache = new Map();
 
-      acc[config.name] = config;
+  return (...args) => {
+    const key = JSON.stringify(args);
 
-      return acc;
-    }, {}),
-  opts => JSON.stringify(opts)
+    if (cache.has(key)) {
+      return cache.get(key);
+    }
+
+    const value = fn(...args);
+
+    cache.set(key, value);
+
+    return value;
+  };
+}
+
+const fulfillConfigs = memoize((opts, programPath) =>
+  prepareConfig(opts).reduce((acc, x) => {
+    const config = fulfillConfigExports(Object.assign(x, { programPath }));
+
+    acc[config.name] = config;
+
+    return acc;
+  }, {})
 );
 
 let configs;
