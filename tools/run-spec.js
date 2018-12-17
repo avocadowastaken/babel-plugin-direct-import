@@ -7,8 +7,6 @@ const babel = require("babel-core");
 const plugin = require("../src/index");
 const { fulfillConfigExports } = require("../src/mapper");
 
-const fp = require("lodash/fp");
-
 const RAW = Symbol("raw");
 
 function makeRaw(input, output) {
@@ -17,19 +15,20 @@ function makeRaw(input, output) {
   };
 }
 
-const safeReadDir = dir => {
+function safeReadDir(dir) {
   try {
     return fs.readdirSync(dir).map(x => path.join(dir, x));
   } catch (e) {
     return [];
   }
-};
+}
 
-const getFixtures = fp.flow(
-  x => [[x, "error"], [x, "transform"]],
-  fp.map(([x, dir]) => [dir, safeReadDir(path.join(x, dir))]),
-  fp.fromPairs
-);
+function getFixtures(testDir) {
+  return {
+    error: safeReadDir(path.join(testDir, "error")),
+    transform: safeReadDir(path.join(testDir, "transform")),
+  };
+}
 
 function runSpec(dir, spec) {
   const [version, pkg] = dir.split(path.sep).reverse();
