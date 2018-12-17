@@ -1,3 +1,5 @@
+"use strict";
+
 const Module = require("module");
 const { format } = require("util");
 

@@ -1,25 +1,3 @@
 {
-  "env": {
-    "es6": true,
-    "node": true,
-    "jest": true
-  },
-  "parserOptions": {
-    "ecmaVersion": 2017
-  },
-  "extends": [
-    "airbnb-base",
-    "prettier",
-    "plugin:node/recommended"
-  ],
-  "plugins": [
-    "node",
-    "import",
-    "prettier"
-  ],
-  "rules": {
-    "no-console": "off",
-    "no-nested-ternary": "off",
-    "prettier/prettier": "error"
-  }
+  "extends": "@dc0de/eslint-config-node"
 }

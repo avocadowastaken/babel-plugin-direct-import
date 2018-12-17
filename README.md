@@ -1,4 +1,4 @@
-# [DEPRECATED] babel-plugin-direct-import 
+# [DEPRECATED] babel-plugin-direct-import
 
 [Deprecation note](https://github.com/umidbekkarimov/babel-plugin-direct-import/issues/13#issuecomment-419017347).
 
@@ -212,8 +212,8 @@ export const noop = () => {};
 
 Heavily inspired by:
 
-* [babel-plugin-date-fns](https://github.com/date-fns/babel-plugin-date-fns)
-* [babel-plugin-lodash](https://github.com/lodash/babel-plugin-lodash)
-* [babel-plugin-recharts](https://github.com/recharts/babel-plugin-recharts)
-* [babel-transform-imports](https://bitbucket.org/amctheatres/babel-transform-imports)
-* [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
+- [babel-plugin-date-fns](https://github.com/date-fns/babel-plugin-date-fns)
+- [babel-plugin-lodash](https://github.com/lodash/babel-plugin-lodash)
+- [babel-plugin-recharts](https://github.com/recharts/babel-plugin-recharts)
+- [babel-transform-imports](https://bitbucket.org/amctheatres/babel-transform-imports)
+- [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)

@@ -1,33 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`config prepareConfig should throw when \`indexFile\` does not belongs to package 1`] = `"babel-plugin-direct-import: Index file \\"lodash-es/index\\" must belong to \\"lodash\\" package"`;
+exports[`prepareConfig should throw when \`indexFile\` does not belongs to package 1`] = `"babel-plugin-direct-import: Index file \\"lodash-es/index\\" must belong to \\"lodash\\" package"`;
 
-exports[`config prepareConfig should throw when \`indexFile\` is an empty string 1`] = `"babel-plugin-direct-import: { indexFile } is empty"`;
+exports[`prepareConfig should throw when \`indexFile\` is an empty string 1`] = `"babel-plugin-direct-import: { indexFile } is empty"`;
 
-exports[`config prepareConfig should throw when \`indexFile\` is not a string 1`] = `"babel-plugin-direct-import: { indexFile } expected to be a string"`;
+exports[`prepareConfig should throw when \`indexFile\` is not a string 1`] = `"babel-plugin-direct-import: { indexFile } expected to be a string"`;
 
-exports[`config prepareConfig should throw when \`indexFile\` is not a string 2`] = `"babel-plugin-direct-import: { indexFile } expected to be a string"`;
+exports[`prepareConfig should throw when \`indexFile\` is not a string 2`] = `"babel-plugin-direct-import: { indexFile } expected to be a string"`;
 
-exports[`config prepareConfig should throw when \`indexFile\` is not a string 3`] = `"babel-plugin-direct-import: { indexFile } expected to be a string"`;
+exports[`prepareConfig should throw when \`indexFile\` is not a string 3`] = `"babel-plugin-direct-import: { indexFile } expected to be a string"`;
 
-exports[`config prepareConfig should throw when \`indexFileContent\` is an empty string 1`] = `"babel-plugin-direct-import: { indexFileContent } is empty"`;
+exports[`prepareConfig should throw when \`indexFileContent\` is an empty string 1`] = `"babel-plugin-direct-import: { indexFileContent } is empty"`;
 
-exports[`config prepareConfig should throw when \`indexFileContent\` is not a string 1`] = `"babel-plugin-direct-import: { indexFileContent } expected to be a string"`;
+exports[`prepareConfig should throw when \`indexFileContent\` is not a string 1`] = `"babel-plugin-direct-import: { indexFileContent } expected to be a string"`;
 
-exports[`config prepareConfig should throw when \`indexFileContent\` is not a string 2`] = `"babel-plugin-direct-import: { indexFileContent } expected to be a string"`;
+exports[`prepareConfig should throw when \`indexFileContent\` is not a string 2`] = `"babel-plugin-direct-import: { indexFileContent } expected to be a string"`;
 
-exports[`config prepareConfig should throw when \`indexFileContent\` is not a string 3`] = `"babel-plugin-direct-import: { indexFileContent } expected to be a string"`;
+exports[`prepareConfig should throw when \`indexFileContent\` is not a string 3`] = `"babel-plugin-direct-import: { indexFileContent } expected to be a string"`;
 
-exports[`config prepareConfig should throw when \`indexFileContent\` is not a string 4`] = `"babel-plugin-direct-import: { indexFileContent } expected to be a string"`;
+exports[`prepareConfig should throw when \`indexFileContent\` is not a string 4`] = `"babel-plugin-direct-import: { indexFileContent } expected to be a string"`;
 
-exports[`config prepareConfig should throw when \`name\` is an empty string 1`] = `"babel-plugin-direct-import: { name } is empty"`;
+exports[`prepareConfig should throw when \`name\` is an empty string 1`] = `"babel-plugin-direct-import: { name } is empty"`;
 
-exports[`config prepareConfig should throw when \`name\` is not a string 1`] = `"babel-plugin-direct-import: { name } expected to be a string"`;
+exports[`prepareConfig should throw when \`name\` is not a string 1`] = `"babel-plugin-direct-import: { name } expected to be a string"`;
 
-exports[`config prepareConfig should throw when \`name\` is not a string 2`] = `"babel-plugin-direct-import: { name } expected to be a string"`;
+exports[`prepareConfig should throw when \`name\` is not a string 2`] = `"babel-plugin-direct-import: { name } expected to be a string"`;
 
-exports[`config prepareConfig should throw when \`name\` is not a string 3`] = `"babel-plugin-direct-import: { name } expected to be a string"`;
+exports[`prepareConfig should throw when \`name\` is not a string 3`] = `"babel-plugin-direct-import: { name } expected to be a string"`;
 
-exports[`config prepareConfig should throw when \`name\` is not a string 4`] = `"babel-plugin-direct-import: { name } expected to be a string"`;
+exports[`prepareConfig should throw when \`name\` is not a string 4`] = `"babel-plugin-direct-import: { name } expected to be a string"`;
 
-exports[`config prepareConfig should throw when for unknown keys 1`] = `"babel-plugin-direct-import: contains unknown keys { foo, baz }"`;
+exports[`prepareConfig should throw when for unknown keys 1`] = `"babel-plugin-direct-import: contains unknown keys { baz, foo }"`;
