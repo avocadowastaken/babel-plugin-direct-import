@@ -4,7 +4,7 @@
   "description": "Babel plugin to cherry pick imports of es6 modules.",
   "main": "src/index.js",
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=8.0.0"
   },
   "repository": "https://github.com/umidbekkarimov/babel-plugin-direct-import.git",
   "author": "Umidbek Karimov <4734297+umidbekk@users.noreply.github.com>",
