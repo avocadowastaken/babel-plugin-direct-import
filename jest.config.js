@@ -1,5 +1,5 @@
-"use strict";
+'use strict';
 
 module.exports = {
-  testMatch: ["**/__tests__/**/*.spec.js"],
+  testMatch: ['**/__tests__/**/*.spec.js'],
 };

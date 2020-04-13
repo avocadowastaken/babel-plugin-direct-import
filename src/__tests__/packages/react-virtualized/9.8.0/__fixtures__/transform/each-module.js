@@ -19,4 +19,4 @@ import {
   SortIndicator,
   Table,
   WindowScroller,
-} from "react-virtualized";
+} from 'react-virtualized';

@@ -1,4 +1,4 @@
-import type { ContextRouter } from "react-router";
+import type { ContextRouter } from 'react-router';
 import {
   matchPath,
   MemoryRouter,
@@ -9,4 +9,4 @@ import {
   StaticRouter,
   Switch,
   withRouter,
-} from "react-router";
+} from 'react-router';

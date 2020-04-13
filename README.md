@@ -45,23 +45,23 @@ npm install --save-dev babel-plugin-direct-import
 **In**
 
 ```javascript
-import { TextField, SelectField, FlatButton } from "material-ui";
+import { TextField, SelectField, FlatButton } from 'material-ui';
 import {
   ActionAccessibility,
   ActionAccessible,
   ActionAccountBalance as BalanceIcon,
-} from "material-ui/svg-icons";
+} from 'material-ui/svg-icons';
 ```
 
 **Out**
 
 ```javascript
-import TextField from "material-ui/TextField";
-import SelectField from "material-ui/SelectField";
-import FlatButton from "material-ui/FlatButton";
-import ActionAccessibility from "material-ui/svg-icons/action/accessibility";
-import ActionAccessible from "material-ui/svg-icons/action/accessible";
-import BalanceIcon from "material-ui/svg-icons/action/account-balance";
+import TextField from 'material-ui/TextField';
+import SelectField from 'material-ui/SelectField';
+import FlatButton from 'material-ui/FlatButton';
+import ActionAccessibility from 'material-ui/svg-icons/action/accessibility';
+import ActionAccessible from 'material-ui/svg-icons/action/accessible';
+import BalanceIcon from 'material-ui/svg-icons/action/account-balance';
 ```
 
 ## Usage
@@ -90,15 +90,15 @@ import BalanceIcon from "material-ui/svg-icons/action/account-balance";
 ### **Via Node API**
 
 ```javascript
-require("babel-core").transform("code", {
+require('babel-core').transform('code', {
   plugins: [
     [
-      "direct-import",
+      'direct-import',
       [
-        "my-package-name",
+        'my-package-name',
         {
-          name: "my-package-name/sub-package",
-          indexFile: "my-package-name/sub-package/index.es.js",
+          name: 'my-package-name/sub-package',
+          indexFile: 'my-package-name/sub-package/index.es.js',
         },
       ],
     ],
@@ -116,9 +116,9 @@ suggestions are welcomed).
 To keep it simple currently it ignores namespace imports.
 
 ```javascript
-import * as MUI from "material-ui";
+import * as MUI from 'material-ui';
 
-return props => <MUI.Checkbox {...props} />;
+return (props) => <MUI.Checkbox {...props} />;
 ```
 
 #### Mapping of variable exports:
@@ -129,7 +129,7 @@ for it, otherwise plugin will throw `package does not contain module` errors.
 e.g:
 
 ```javascript
-import foo from "./foo";
+import foo from './foo';
 
 export const bar = foo.bar;
 export const baz = foo.baz;

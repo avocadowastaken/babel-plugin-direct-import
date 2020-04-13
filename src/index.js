@@ -1,9 +1,9 @@
-"use strict";
+'use strict';
 
-const { format } = require("util");
-const { dirname } = require("path");
-const { prepareConfig } = require("./config");
-const { fulfillConfigExports } = require("./mapper");
+const { format } = require('util');
+const { dirname } = require('path');
+const { prepareConfig } = require('./config');
+const { fulfillConfigExports } = require('./mapper');
 
 function memoize(fn) {
   const cache = new Map();
@@ -30,32 +30,32 @@ const fulfillConfigs = memoize((opts, programPath) =>
     acc[config.name] = config;
 
     return acc;
-  }, {})
+  }, {}),
 );
 
 let configs;
 
 function getSpecName(spec) {
   switch (spec.type) {
-    case "ImportDefaultSpecifier":
-      return "default";
+    case 'ImportDefaultSpecifier':
+      return 'default';
     default:
       return spec.imported.name;
   }
 }
 
-module.exports = babel => ({
+module.exports = (babel) => ({
   visitor: {
     Program(path, state) {
       configs = fulfillConfigs(
         state.opts.modules,
-        dirname(state.file.opts.filename)
+        dirname(state.file.opts.filename),
       );
     },
     ImportDeclaration(declaration) {
       const { specifiers, importKind } = declaration.node;
 
-      if (importKind === "type") {
+      if (importKind === 'type') {
         return;
       }
 
@@ -70,7 +70,7 @@ module.exports = babel => ({
       }
 
       const namespaceSpec = specifiers.find(
-        x => x.type === "ImportNamespaceSpecifier"
+        (x) => x.type === 'ImportNamespaceSpecifier',
       );
 
       if (namespaceSpec) {
@@ -78,18 +78,18 @@ module.exports = babel => ({
           format(
             [
               'babel-plugin-direct-import: Can not optimize `import * as %s from "%s"`.',
-              "See plugin limitations https://git.io/vFDOO for more details.",
-            ].join("\n"),
+              'See plugin limitations https://git.io/vFDOO for more details.',
+            ].join('\n'),
             namespaceSpec.local.name,
-            settings.name
-          )
+            settings.name,
+          ),
         );
 
         return;
       }
 
       const unknownSpec = specifiers.find(
-        x => !settings.exports[getSpecName(x)]
+        (x) => !settings.exports[getSpecName(x)],
       );
 
       if (unknownSpec) {
@@ -99,18 +99,18 @@ module.exports = babel => ({
           format(
             [
               'babel-plugin-direct-import: Can not optimize `import { %s } from "%s"`.',
-              "This could be because of two reasons:",
-              "1. `%s` does not exports `%s` member.",
-              "2. `%s` exports `%s` the way it can not be optimized.",
-              "See plugin limitations https://git.io/vFDOO for more details.",
-            ].join("\n"),
+              'This could be because of two reasons:',
+              '1. `%s` does not exports `%s` member.',
+              '2. `%s` exports `%s` the way it can not be optimized.',
+              'See plugin limitations https://git.io/vFDOO for more details.',
+            ].join('\n'),
             name,
             settings.name,
             settings.name,
             name,
             settings.name,
-            name
-          )
+            name,
+          ),
         );
 
         return;
@@ -118,28 +118,28 @@ module.exports = babel => ({
 
       const { types } = babel;
 
-      specifiers.forEach(spec => {
+      specifiers.forEach((spec) => {
         const name = getSpecName(spec);
         const moduleSettings = settings.exports[name];
 
         declaration.insertBefore(
           types.importDeclaration(
             [
-              moduleSettings.local === "*"
+              moduleSettings.local === '*'
                 ? types.importNamespaceSpecifier(
-                    types.identifier(spec.local.name)
+                    types.identifier(spec.local.name),
                   )
-                : moduleSettings.local === "default"
+                : moduleSettings.local === 'default'
                 ? types.importDefaultSpecifier(
-                    types.identifier(spec.local.name)
+                    types.identifier(spec.local.name),
                   )
                 : types.importSpecifier(
                     types.identifier(spec.local.name),
-                    types.identifier(moduleSettings.local)
+                    types.identifier(moduleSettings.local),
                   ),
             ],
-            types.stringLiteral(moduleSettings.source)
-          )
+            types.stringLiteral(moduleSettings.source),
+          ),
         );
       });
 

@@ -1,14 +1,14 @@
-"use strict";
+'use strict';
 
-const fs = require("fs");
-const path = require("path");
-const babylon = require("babylon");
-const { format } = require("util");
-const { resolveFilename } = require("./resolver");
+const fs = require('fs');
+const path = require('path');
+const babylon = require('babylon');
+const { format } = require('util');
+const { resolveFilename } = require('./resolver');
 
 function getFileRoot(indexFilePath, packageName) {
-  const packageRoot = packageName.split("/")[0];
-  const absPath = indexFilePath.split(path.sep).join("/");
+  const [packageRoot] = packageName.split('/');
+  const absPath = indexFilePath.split(path.sep).join('/');
   const idx = absPath.indexOf(packageRoot);
 
   return path.dirname(absPath.slice(idx));
@@ -32,42 +32,42 @@ function fulfillConfigExports(config) {
 
   const exports = {};
 
-  if (typeof indexFileContent !== "string") {
-    if (typeof indexFile !== "string") {
+  if (typeof indexFileContent !== 'string') {
+    if (typeof indexFile !== 'string') {
       const packageJsonPath = resolveFilename(
         `${config.name}/package.json`,
-        programPath
+        programPath,
       );
-      const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf-8"));
+      const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
 
-      if (typeof packageJson.module === "string") {
+      if (typeof packageJson.module === 'string') {
         indexFile = path.posix.join(config.name, packageJson.module);
-      } else if (typeof packageJson["jsnext:main"] === "string") {
-        indexFile = path.posix.join(config.name, packageJson["jsnext:main"]);
+      } else if (typeof packageJson['jsnext:main'] === 'string') {
+        indexFile = path.posix.join(config.name, packageJson['jsnext:main']);
       } else {
         throw new Error(
           format(
-            `babel-plugin-direct-import: no indexFile specified for %s and its package.json does not specify "module" or "jsnext:main"`,
-            config.name
-          )
+            'babel-plugin-direct-import: no indexFile specified for %s and its package.json does not specify "module" or "jsnext:main"',
+            config.name,
+          ),
         );
       }
     }
     const indexFilePath = resolveFilename(indexFile, programPath);
 
-    indexFileContent = fs.readFileSync(indexFilePath, "utf-8");
+    indexFileContent = fs.readFileSync(indexFilePath, 'utf-8');
   }
 
   const imports = {};
   const fileRoot = getFileRoot(indexFile, config.name);
-  const ast = babylon.parse(indexFileContent, { sourceType: "module" });
+  const ast = babylon.parse(indexFileContent, { sourceType: 'module' });
 
-  ast.program.body.forEach(node => {
-    if (node.type === "ImportDeclaration") {
+  ast.program.body.forEach((node) => {
+    if (node.type === 'ImportDeclaration') {
       const source = path.posix.join(fileRoot, node.source.value);
 
-      node.specifiers.forEach(specifier => {
-        if (specifier.type === "ImportSpecifier") {
+      node.specifiers.forEach((specifier) => {
+        if (specifier.type === 'ImportSpecifier') {
           imports[specifier.local.name] = {
             source,
             local: specifier.local.name,
@@ -75,36 +75,36 @@ function fulfillConfigExports(config) {
           };
         }
 
-        if (specifier.type === "ImportDefaultSpecifier") {
+        if (specifier.type === 'ImportDefaultSpecifier') {
           imports[specifier.local.name] = {
             source,
-            imported: "default",
+            imported: 'default',
             local: specifier.local.name,
           };
         }
 
-        if (specifier.type === "ImportNamespaceSpecifier") {
+        if (specifier.type === 'ImportNamespaceSpecifier') {
           imports[specifier.local.name] = {
             source,
-            imported: "*",
+            imported: '*',
             local: specifier.local.name,
           };
         }
       });
     }
 
-    if (node.type === "ExportNamedDeclaration") {
+    if (node.type === 'ExportNamedDeclaration') {
       const exportSource = !node.source
         ? null
         : path.posix.join(fileRoot, node.source.value);
 
       if (node.declaration) {
-        if (node.declaration.type === "VariableDeclaration") {
-          node.declaration.declarations.forEach(declaration => {
+        if (node.declaration.type === 'VariableDeclaration') {
+          node.declaration.declarations.forEach((declaration) => {
             if (
-              declaration.type === "VariableDeclarator" &&
+              declaration.type === 'VariableDeclarator' &&
               declaration.init &&
-              declaration.init.type === "Identifier"
+              declaration.init.type === 'Identifier'
             ) {
               const {
                 init: { name: local },
@@ -123,7 +123,7 @@ function fulfillConfigExports(config) {
         }
       }
 
-      node.specifiers.forEach(specifier => {
+      node.specifiers.forEach((specifier) => {
         const {
           local: { name: local },
           exported: { name: exported },

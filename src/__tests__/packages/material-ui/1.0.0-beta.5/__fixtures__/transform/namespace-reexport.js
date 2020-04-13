@@ -1,2 +1,1 @@
-import { colors } from "material-ui";
-import { colors as muiColors } from "material-ui";
+import { colors, colors as muiColors } from 'material-ui';

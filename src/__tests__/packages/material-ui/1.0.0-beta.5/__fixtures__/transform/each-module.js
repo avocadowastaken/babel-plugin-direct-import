@@ -69,4 +69,4 @@ import {
   Typography,
   withStyles,
   withTheme,
-} from "material-ui";
+} from 'material-ui';

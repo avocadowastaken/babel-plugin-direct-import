@@ -1,1 +1,1 @@
-import { foo } from "material-ui";
+import { foo } from 'material-ui';

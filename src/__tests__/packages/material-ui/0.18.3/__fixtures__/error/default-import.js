@@ -1,1 +1,1 @@
-import MUI from "material-ui";
+import MUI from 'material-ui';

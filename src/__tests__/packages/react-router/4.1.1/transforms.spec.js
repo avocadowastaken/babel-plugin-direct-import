@@ -1,3 +1,3 @@
-const { runTransformSpec } = require("../../../../../tools/run-spec");
+const { runTransformSpec } = require('../../../../__testutils__/run-spec');
 
 runTransformSpec(__dirname);

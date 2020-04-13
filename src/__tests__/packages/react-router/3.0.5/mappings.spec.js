@@ -1,3 +1,3 @@
-const { runMappingSpec } = require("../../../../../tools/run-spec");
+const { runMappingSpec } = require('../../../../__testutils__/run-spec');
 
 runMappingSpec(__dirname);
