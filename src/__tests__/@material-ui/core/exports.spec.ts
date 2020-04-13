@@ -6,7 +6,7 @@ it('resolves exports for `@material-ui/core`', () => {
     Map {
       "colors" => Object {
         "external": "colors",
-        "internal": "colors",
+        "internal": "*",
         "source": "@material-ui/core/esm/colors/index.js",
       },
       "createMuiTheme" => Object {

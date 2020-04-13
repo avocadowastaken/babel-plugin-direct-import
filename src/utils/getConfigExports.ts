@@ -56,7 +56,7 @@ function fulfillExports(
   assertNotNull(program, "failed to parse '%s'.", filePath);
 
   const fileDir = dirname(filePath);
-  const imports = new Map<string, PluginConfigExports>();
+  const imports = new Map<string, { imported: string; source: string }>();
 
   for (const node of program.body) {
     if (types.isImportDeclaration(node)) {
@@ -68,13 +68,12 @@ function fulfillExports(
 
       for (const specifier of node.specifiers) {
         imports.set(specifier.local.name, {
-          external: types.isImportNamespaceSpecifier(specifier)
+          source: toRelativeSource(sourcePath),
+          imported: types.isImportNamespaceSpecifier(specifier)
             ? '*'
             : types.isImportDefaultSpecifier(specifier)
             ? 'default'
             : specifier.imported.name,
-          internal: specifier.local.name,
-          source: toRelativeSource(sourcePath),
         });
       }
     } else if (types.isExportNamedDeclaration(node)) {
@@ -94,7 +93,7 @@ function fulfillExports(
               exports.set(external, {
                 external,
                 source: imported.source,
-                internal: imported.external,
+                internal: imported.imported,
               });
             }
           }
@@ -120,7 +119,11 @@ function fulfillExports(
             const imported = imports.get(internal);
 
             if (imported) {
-              exports.set(external, { ...imported, external });
+              exports.set(external, {
+                external,
+                source: imported.source,
+                internal: imported.imported,
+              });
             }
           }
         }
