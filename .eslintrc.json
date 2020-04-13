@@ -8,7 +8,10 @@
         "plugin:@superdispatch/node",
         "plugin:@superdispatch/typescript"
       ],
-      "rules": {}
+      "rules": {
+        "node/no-missing-import": "off",
+        "node/no-unsupported-features/es-syntax": "off"
+      }
     },
     {
       "files": "**/{__tests__,__testutils__}/**/*.{js,ts}",

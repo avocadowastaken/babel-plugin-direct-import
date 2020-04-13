@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`resolver resolveFilename should throw errors from \`Module\` package 1`] = `"Path must be a string."`;
