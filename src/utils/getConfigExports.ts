@@ -45,42 +45,22 @@ function resolveIndexPath(
   return indexFilePath;
 }
 
-export interface PluginConfigExports {
-  source: string;
-  internal: string;
-  external: string;
-}
-
-export function getConfigExports(
-  config: PluginConfig,
-): Map<string, PluginConfigExports> {
-  const pkgJSONPath = resolveModule(`${config.name}/package.json`);
-
-  if (!pkgJSONPath) {
-    return new Map();
-  }
-
-  const indexPath = resolveIndexPath(
-    config.name,
-    pkgJSONPath,
-    config.indexFile,
-  );
-
-  const indexContent =
-    config.indexFileContent || readFileSync(indexPath, 'utf-8');
-
-  const indexFileDir = dirname(indexPath);
-  const ast = parse(indexContent, { sourceType: 'module' });
+function fulfillExports(
+  exports: Map<string, PluginConfigExports>,
+  filePath: string,
+): void {
+  const content = readFileSync(filePath, 'utf-8');
+  const ast = parse(content, { sourceType: 'module' });
   const program = !ast ? null : ast.type === 'File' ? ast.program : ast;
 
-  assertNotNull(program, "failed to parse index file of '%s'.", config.name);
+  assertNotNull(program, "failed to parse '%s'.", filePath);
 
+  const fileDir = dirname(filePath);
   const imports = new Map<string, PluginConfigExports>();
-  const exports = new Map<string, PluginConfigExports>();
 
   for (const node of program.body) {
-    if (node.type === 'ImportDeclaration') {
-      const sourcePath = resolveModule(node.source.value, indexFileDir);
+    if (types.isImportDeclaration(node)) {
+      const sourcePath = resolveModule(node.source.value, fileDir);
 
       if (!sourcePath) {
         continue;
@@ -88,24 +68,23 @@ export function getConfigExports(
 
       for (const specifier of node.specifiers) {
         imports.set(specifier.local.name, {
-          external:
-            specifier.type === 'ImportNamespaceSpecifier'
-              ? '*'
-              : specifier.type === 'ImportDefaultSpecifier'
-              ? 'default'
-              : specifier.imported.name,
+          external: types.isImportNamespaceSpecifier(specifier)
+            ? '*'
+            : types.isImportDefaultSpecifier(specifier)
+            ? 'default'
+            : specifier.imported.name,
           internal: specifier.local.name,
           source: toRelativeSource(sourcePath),
         });
       }
-    } else if (node.type === 'ExportNamedDeclaration') {
-      const nodeDeclaration: null | types.Statement = node.declaration;
+    } else if (types.isExportNamedDeclaration(node)) {
+      const nodeDeclaration = node.declaration;
 
-      if (nodeDeclaration?.type === 'VariableDeclaration') {
+      if (types.isVariableDeclaration(nodeDeclaration)) {
         for (const declaration of nodeDeclaration.declarations) {
           if (
-            declaration.id.type === 'Identifier' &&
-            declaration.init?.type === 'Identifier'
+            types.isIdentifier(declaration.id) &&
+            types.isIdentifier(declaration.init)
           ) {
             const external = declaration.id.name;
             const internal = declaration.init.name;
@@ -124,7 +103,7 @@ export function getConfigExports(
 
       const sourcePath = !node.source
         ? null
-        : resolveModule(node.source.value, indexFileDir);
+        : resolveModule(node.source.value, fileDir);
 
       for (const specifier of node.specifiers) {
         if (specifier.type === 'ExportSpecifier') {
@@ -146,8 +125,40 @@ export function getConfigExports(
           }
         }
       }
+    } else if (types.isExportAllDeclaration(node)) {
+      const sourcePath = resolveModule(node.source.value, fileDir);
+
+      assertNotNull(sourcePath, 'failed to resolve %s', sourcePath);
+
+      fulfillExports(exports, sourcePath);
     }
   }
+}
+
+export interface PluginConfigExports {
+  source: string;
+  internal: string;
+  external: string;
+}
+
+export function getConfigExports(
+  config: PluginConfig,
+): Map<string, PluginConfigExports> {
+  const pkgJSONPath = resolveModule(`${config.name}/package.json`);
+
+  if (!pkgJSONPath) {
+    return new Map();
+  }
+
+  const indexPath = resolveIndexPath(
+    config.name,
+    pkgJSONPath,
+    config.indexFile,
+  );
+
+  const exports = new Map<string, PluginConfigExports>();
+
+  fulfillExports(exports, indexPath);
 
   return exports;
 }

@@ -9,6 +9,11 @@ it('resolves exports for `@material-ui/styles`', () => {
         "internal": "default",
         "source": "@material-ui/styles/esm/createGenerateClassName/index.js",
       },
+      "default" => Object {
+        "external": "default",
+        "internal": "default",
+        "source": "@material-ui/styles/esm/withTheme/withTheme.js",
+      },
       "createStyles" => Object {
         "external": "createStyles",
         "internal": "default",
