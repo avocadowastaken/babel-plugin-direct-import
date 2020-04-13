@@ -7,9 +7,13 @@
   "author": "Umidbek Karimov <uma.karimov@gmail.com>",
   "main": "src/index.js",
   "scripts": {
+    "build": "pika build",
+    "prebump": "tsc && yarn lint",
+    "bump": "pika publish --no-publish",
     "lint": "js-tools lint",
     "tdd": "jest --watch",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "version": "npm run build"
   },
   "husky": {
     "hooks": {
