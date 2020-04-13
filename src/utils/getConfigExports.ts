@@ -50,7 +50,7 @@ function fulfillExports(
   filePath: string,
 ): void {
   const content = readFileSync(filePath, 'utf-8');
-  const ast = parse(content, { sourceType: 'module' });
+  const ast = parse(content, { filename: filePath, sourceType: 'module' });
   const program = !ast ? null : ast.type === 'File' ? ast.program : ast;
 
   assertNotNull(program, "failed to parse '%s'.", filePath);
