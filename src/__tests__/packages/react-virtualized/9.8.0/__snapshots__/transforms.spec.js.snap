@@ -22,7 +22,7 @@ import {
   SortIndicator,
   Table,
   WindowScroller,
-} from "react-virtualized";
+} from 'react-virtualized';
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import { accessibilityOverscanIndicesGetter } from "react-virtualized/dist/es/Grid";
 import { ArrowKeyStepper } from "react-virtualized/dist/es/ArrowKeyStepper";

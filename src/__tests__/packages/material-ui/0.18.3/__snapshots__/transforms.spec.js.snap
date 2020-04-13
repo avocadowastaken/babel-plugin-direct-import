@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Transform: material-ui@0.18.3 should transform with: "both-modules.js" 1`] = `
-import { TextField, SelectField, FlatButton } from "material-ui";
+import { TextField, SelectField, FlatButton } from 'material-ui';
 import {
   ActionAccessibility,
   ActionAccessible,
   ActionAccountBalance,
-} from "material-ui/svg-icons";
+} from 'material-ui/svg-icons';
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import TextField from "material-ui/TextField";
 import SelectField from "material-ui/SelectField";
@@ -84,7 +84,7 @@ import {
   ToolbarGroup,
   ToolbarSeparator,
   ToolbarTitle,
-} from "material-ui";
+} from 'material-ui';
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import AppBar from "material-ui/AppBar";
 import AutoComplete from "material-ui/AutoComplete";
@@ -159,7 +159,7 @@ import {
   ActionAccessibility,
   ActionAccessible,
   ActionAccountBalance,
-} from "material-ui/svg-icons";
+} from 'material-ui/svg-icons';
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import ActionAccessibility from "material-ui/svg-icons/action/accessibility";
 import ActionAccessible from "material-ui/svg-icons/action/accessible";
@@ -167,9 +167,9 @@ import ActionAccountBalance from "material-ui/svg-icons/action/account-balance";
 `;
 
 exports[`Transform: material-ui@0.18.3 should transform with: "with-empty-specifiers.js" 1`] = `
-import "material-ui";
+import 'material-ui';
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import "material-ui";
+import 'material-ui';
 `;
 
 exports[`Transform: material-ui@0.18.3 should transform with: "with-local-name.js" 1`] = `
@@ -177,7 +177,7 @@ import {
   TextField as MUITextField,
   SelectField as MUISelectField,
   FlatButton as MUIFlatButton,
-} from "material-ui";
+} from 'material-ui';
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import MUITextField from "material-ui/TextField";
 import MUISelectField from "material-ui/SelectField";

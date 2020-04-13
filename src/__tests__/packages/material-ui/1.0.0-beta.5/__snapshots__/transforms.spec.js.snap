@@ -72,7 +72,7 @@ import {
   Typography,
   withStyles,
   withTheme,
-} from "material-ui";
+} from 'material-ui';
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import AppBar from "material-ui/AppBar";
 import Avatar from "material-ui/Avatar";
@@ -147,9 +147,9 @@ import { withTheme } from "material-ui/styles";
 `;
 
 exports[`Transform: material-ui@1.0.0-beta.5 should transform with: "empty-specifiers.js" 1`] = `
-import "material-ui";
+import 'material-ui';
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import "material-ui";
+import 'material-ui';
 `;
 
 exports[`Transform: material-ui@1.0.0-beta.5 should transform with: "local-name.js" 1`] = `
@@ -157,7 +157,7 @@ import {
   Button as MUIButton,
   Checkbox as MUICheckbox,
   TextField as MUITextField,
-} from "material-ui";
+} from 'material-ui';
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import MUIButton from "material-ui/Button";
 import MUICheckbox from "material-ui/Checkbox";
@@ -165,8 +165,7 @@ import MUITextField from "material-ui/TextField";
 `;
 
 exports[`Transform: material-ui@1.0.0-beta.5 should transform with: "namespace-reexport.js" 1`] = `
-import { colors } from "material-ui";
-import { colors as muiColors } from "material-ui";
+import { colors, colors as muiColors } from 'material-ui';
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import * as colors from "material-ui/colors";
 import * as muiColors from "material-ui/colors";
