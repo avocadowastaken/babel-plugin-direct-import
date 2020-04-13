@@ -1,0 +1,60 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - 'v*.*.*'
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node v10
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+
+      - name: Obtain Yarn cache directory
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Typecheck
+        run: yarn tsc
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Test
+        run: yarn test
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v1
+
+      - name: Build
+        run: yarn build
+
+      - name: Publish
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_TOKEN}}" > ./.npmrc
+          npm publish pkg --access public
