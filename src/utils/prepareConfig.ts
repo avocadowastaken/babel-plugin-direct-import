@@ -3,7 +3,6 @@ import { format } from 'util';
 export interface PluginConfig {
   name: string;
   indexFile?: null | string;
-  indexFileContent?: null | string;
 }
 
 export function prepareConfig(

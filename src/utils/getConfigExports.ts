@@ -18,23 +18,23 @@ function toRelativeSource(filePath: string): string {
 
 function resolveIndexPath(
   name: string,
-  pkgJSONPath: string,
-  file: null | undefined | string,
+  indexFile: null | undefined | string,
 ): string {
-  if (!file) {
-    const pkgJSON = JSON.parse(readFileSync(pkgJSONPath, 'utf-8'));
-    const mainField =
-      pkgJSON.module ||
-      pkgJSON.esnext ||
-      pkgJSON['jsnext:main'] ||
-      pkgJSON.main;
+  if (!indexFile) {
+    const indexFilePath = resolveModule(name);
 
-    assertNotNull(mainField, "failed to find 'indexFile' of '%s'.", name);
+    assertNotNull(indexFilePath, "failed to find 'indexFile' of '%s'.", name);
 
-    return join(dirname(pkgJSONPath), mainField);
+    return indexFilePath;
   }
 
-  const indexFilePath = resolveModule(file, dirname(pkgJSONPath));
+  const pkgJSON = resolveModule(`${name}/package.json`);
+
+  assertNotNull(pkgJSON, "failed to resolve package.json for '%s'", name);
+
+  const pkgDir = dirname(pkgJSON);
+
+  const indexFilePath = resolveModule(join(pkgDir, indexFile));
 
   assertNotNull(
     indexFilePath,
@@ -144,18 +144,7 @@ export interface PluginConfigExports {
 export function getConfigExports(
   config: PluginConfig,
 ): Map<string, PluginConfigExports> {
-  const pkgJSONPath = resolveModule(`${config.name}/package.json`);
-
-  if (!pkgJSONPath) {
-    return new Map();
-  }
-
-  const indexPath = resolveIndexPath(
-    config.name,
-    pkgJSONPath,
-    config.indexFile,
-  );
-
+  const indexPath = resolveIndexPath(config.name, config.indexFile);
   const exports = new Map<string, PluginConfigExports>();
 
   fulfillExports(exports, indexPath);
