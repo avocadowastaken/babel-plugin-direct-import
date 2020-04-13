@@ -15,17 +15,7 @@ it('should throw errors from `Module` package', () => {
 });
 
 it('should not throw when module is not installed', () => {
-  const warn = jest.spyOn(console, 'warn').mockImplementation();
-
   const filePath = resolveModule('foo');
 
   expect(filePath).toBeNull();
-  expect(warn).toHaveBeenCalledTimes(1);
-  expect(warn).toHaveBeenLastCalledWith(
-    expect.stringMatching(
-      /^babel-plugin-direct-import: Cannot find module 'foo' from '.+'$/,
-    ),
-  );
-
-  warn.mockRestore();
 });
