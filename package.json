@@ -12,7 +12,8 @@
   },
   "prettier": "@superdispatch/prettier-config",
   "dependencies": {
-    "babylon": "^6.18.0"
+    "babylon": "^6.18.0",
+    "resolve": "^1.15.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

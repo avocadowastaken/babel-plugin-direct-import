@@ -25,7 +25,9 @@ describe('resolver', () => {
       expect(filePath).toBeNull();
       expect(fn).toHaveBeenCalledTimes(1);
       expect(fn).toHaveBeenLastCalledWith(
-        "babel-plugin-direct-import: Cannot find module 'foo'",
+        expect.stringMatching(
+          /^babel-plugin-direct-import: Cannot find module 'foo' from '.+'$/,
+        ),
       );
 
       fn.mockRestore();
