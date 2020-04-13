@@ -20,13 +20,8 @@ bundle size.
 > [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) and
 > [babel-transform-imports](https://bitbucket.org/amctheatres/babel-transform-imports)!"
 
-Right! And this plugins are awesome! But they does not work with complicated
-structures like
-[material-ui@next](https://github.com/callemall/material-ui/blob/next/src/index.js)
-has. I started in
-[babel-plugin-material-ui@next](https://github.com/umidbekkarimov/babel-plugin-material-ui/tree/next)
-but soon this idea has grow up to create generic plugin that will work with any
-es6 package.
+Right! And these plugins are awesome! But they does not work with complicated structures like [material-ui](https://github.com/mui-org/material-ui/blob/master/packages/material-ui/src/index.js) has.
+I started in [babel-plugin-material-ui](https://www.npmjs.com/package/babel-plugin-material-ui), but soon this idea has grown up to create a generic plugin that will work with any es6 package.
 
 ## Installation
 
@@ -39,23 +34,18 @@ npm install --save-dev babel-plugin-direct-import
 **In**
 
 ```javascript
-import { TextField, SelectField, FlatButton } from 'material-ui';
-import {
-  ActionAccessibility,
-  ActionAccessible,
-  ActionAccountBalance as BalanceIcon,
-} from 'material-ui/svg-icons';
+import { Button, makeStyles, ServerStyleSheets } from '@material-ui/core';
+import { ChevronLeft, ChevronRight } from '@material-ui/icons';
 ```
 
 **Out**
 
 ```javascript
-import TextField from 'material-ui/TextField';
-import SelectField from 'material-ui/SelectField';
-import FlatButton from 'material-ui/FlatButton';
-import ActionAccessibility from 'material-ui/svg-icons/action/accessibility';
-import ActionAccessible from 'material-ui/svg-icons/action/accessible';
-import BalanceIcon from 'material-ui/svg-icons/action/account-balance';
+import Button from '@material-ui/core/esm/Button/index.js';
+import makeStyles from '@material-ui/core/esm/styles/makeStyles.js';
+import { ServerStyleSheets } from '@material-ui/styles/esm/index.js';
+import ChevronLeft from '@material-ui/icons/esm/ChevronLeft.js';
+import ChevronRight from '@material-ui/icons/esm/ChevronRight.js';
 ```
 
 ## Usage
@@ -68,14 +58,8 @@ import BalanceIcon from 'material-ui/svg-icons/action/account-balance';
 {
   "plugins": [
     [
-      "direct-import",
-      [
-        "my-package-name",
-        {
-          "name": "my-package-name/sub-package",
-          "indexFile": "my-package-name/sub-package/index.es.js"
-        }
-      ]
+      "babel-plugin-direct-import",
+      [{ "modules": ["luxon", "@material-ui/core", "@material-ui/icons"] }]
     ]
   ]
 }
@@ -87,23 +71,14 @@ import BalanceIcon from 'material-ui/svg-icons/action/account-balance';
 require('babel-core').transform('code', {
   plugins: [
     [
-      'direct-import',
-      [
-        'my-package-name',
-        {
-          name: 'my-package-name/sub-package',
-          indexFile: 'my-package-name/sub-package/index.es.js',
-        },
-      ],
+      'babel-plugin-direct-import',
+      [{ modules: ['luxon', '@material-ui/core', '@material-ui/icons'] }],
     ],
   ],
 });
 ```
 
 ## Limitations
-
-Since this plugin just started to operate, It has it's limitations (PRs or
-suggestions are welcomed).
 
 #### Transformation of namespace imports:
 
@@ -117,11 +92,6 @@ return (props) => <MUI.Checkbox {...props} />;
 
 #### Mapping of variable exports:
 
-If index file of package exports a variable - you will have to disable mapping
-for it, otherwise plugin will throw `package does not contain module` errors.
-
-e.g:
-
 ```javascript
 import foo from './foo';
 
@@ -132,69 +102,28 @@ export const noop = () => {};
 
 ## Tested Packages
 
-#### [Material UI](https://github.com/callemall/material-ui)
+#### [Luxon](https://github.com/moment/luxon)
+
+```json
+{
+  "plugins": [["babel-plugin-direct-import", [{ "modules": ["luxon"] }]]]
+}
+```
+
+#### [Material UI](https://github.com/mui-org/material-ui)
 
 ```json
 {
   "plugins": [
     [
-      "direct-import",
+      "babel-plugin-direct-import",
       [
-        "material-ui",
         {
-          "name": "material-ui/svg-icons",
-          "indexFile": "material-ui/svg-icons/index.es"
-        }
-      ]
-    ]
-  ]
-}
-```
-
-#### [Material UI Next](https://github.com/callemall/material-ui/tree/next)
-
-```json
-{
-  "plugins": [["direct-import", ["material-ui"]]]
-}
-```
-
-#### [React Virtualized](https://github.com/bvaughn/react-virtualized)
-
-```json
-{
-  "plugins": [["direct-import", ["react-virtualized"]]]
-}
-```
-
-#### [React Router 3](https://github.com/ReactTraining/react-router/tree/v3)
-
-```json
-{
-  "plugins": [["direct-import", ["react-router"]]]
-}
-```
-
-#### [React Router 4](https://github.com/ReactTraining/react-router)
-
-```json
-{
-  "plugins": [["direct-import", ["react-router", "react-router-dom"]]]
-}
-```
-
-#### [Redux Form](https://github.com/erikras/redux-form) (Partial support)
-
-```json
-{
-  "plugins": [
-    [
-      "direct-import",
-      [
-        "redux-form",
-        {
-          "name": "redux-form/immutable",
-          "indexFile": "redux-form/es/immutable"
+          "modules": [
+            "@material-ui/core",
+            "@material-ui/icons",
+            "@material-ui/styles"
+          ]
         }
       ]
     ]
