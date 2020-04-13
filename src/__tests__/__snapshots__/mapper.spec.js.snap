@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`mapper fulfillConfigExports should throw if no \`indexFile\` could be found 1`] = `"babel-plugin-direct-import: no indexFile specified for __dummy-module and its package.json does not specify \\"module\\" or \\"jsnext:main\\""`;

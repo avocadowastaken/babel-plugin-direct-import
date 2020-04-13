@@ -1,0 +1,5 @@
+/pkg
+/coverage
+
+**/__fixtures__/*
+**/__tests__/packages/*
