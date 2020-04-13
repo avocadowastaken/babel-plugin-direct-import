@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const babylon = require('babylon');
+const { parse } = require('@babel/parser');
 const { format } = require('util');
 const { resolveFilename } = require('./resolver');
 
@@ -60,7 +60,7 @@ function fulfillConfigExports(config) {
 
   const imports = {};
   const fileRoot = getFileRoot(indexFile, config.name);
-  const ast = babylon.parse(indexFileContent, { sourceType: 'module' });
+  const ast = parse(indexFileContent, { sourceType: 'module' });
 
   ast.program.body.forEach((node) => {
     if (node.type === 'ImportDeclaration') {
