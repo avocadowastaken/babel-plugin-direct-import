@@ -2,7 +2,7 @@
 
 [Deprecation note](https://github.com/umidbekkarimov/babel-plugin-direct-import/issues/13#issuecomment-419017347).
 
-[![build status](https://img.shields.io/travis/umidbekkarimov/babel-plugin-direct-import/master.svg?style=flat-square)](https://travis-ci.org/umidbekkarimov/babel-plugin-direct-import)
+[![build status](https://img.shields.io/travis/com/umidbekkarimov/babel-plugin-direct-import/master.svg?style=flat-square)](https://travis-ci.com/umidbekkarimov/babel-plugin-direct-import)
 [![npm version](https://img.shields.io/npm/v/babel-plugin-direct-import.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-direct-import)
 [![npm downloads](https://img.shields.io/npm/dm/babel-plugin-direct-import.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-direct-import)
 [![Codecov](https://img.shields.io/codecov/c/gh/umidbekkarimov/babel-plugin-direct-import.svg?style=flat-square)](https://codecov.io/gh/umidbekkarimov/babel-plugin-direct-import)
