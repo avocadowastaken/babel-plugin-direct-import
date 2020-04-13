@@ -84,7 +84,7 @@ require('babel-core').transform('code', {
 
 To keep it simple currently it ignores namespace imports.
 
-```javascript
+```jsx
 import * as MUI from 'material-ui';
 
 return (props) => <MUI.Checkbox {...props} />;
@@ -92,7 +92,7 @@ return (props) => <MUI.Checkbox {...props} />;
 
 #### Mapping of variable exports:
 
-```javascript
+```js
 import foo from './foo';
 
 export const bar = foo.bar;
