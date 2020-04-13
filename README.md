@@ -1,17 +1,11 @@
-# [DEPRECATED] babel-plugin-direct-import
+# babel-plugin-direct-import
 
-[Deprecation note](https://github.com/umidbekkarimov/babel-plugin-direct-import/issues/13#issuecomment-419017347).
-
-[![build status](https://img.shields.io/travis/com/umidbekkarimov/babel-plugin-direct-import/master.svg?style=flat-square)](https://travis-ci.com/umidbekkarimov/babel-plugin-direct-import)
-[![npm version](https://img.shields.io/npm/v/babel-plugin-direct-import.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-direct-import)
-[![npm downloads](https://img.shields.io/npm/dm/babel-plugin-direct-import.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-direct-import)
+[![Build](https://github.com/umidbekkarimov/babel-plugin-direct-import/workflows/Build/badge.svg?branch=master)](https://github.com/umidbekkarimov/babel-plugin-direct-import/actions)
+[![npm version](https://img.shields.io/npm/v/babel-plugin-direct-import.svg)](https://www.npmjs.com/package/babel-plugin-direct-import)
+[![npm downloads](https://img.shields.io/npm/dm/babel-plugin-direct-import.svg)](https://www.npmjs.com/package/babel-plugin-direct-import)
 [![Codecov](https://img.shields.io/codecov/c/gh/umidbekkarimov/babel-plugin-direct-import.svg?style=flat-square)](https://codecov.io/gh/umidbekkarimov/babel-plugin-direct-import)
 
-Babel plugin to cherry pick imports of es6 modules.
-
-## Babel 7 User?
-
-If you want to use version for Babel 7 please check [next](https://github.com/umidbekkarimov/babel-plugin-direct-import/tree/next) branch.
+Babel plugin to cherry pick imports of ES modules.
 
 ## Motivation
 
