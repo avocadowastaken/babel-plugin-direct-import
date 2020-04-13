@@ -5,52 +5,52 @@ it('resolves exports for `luxon`', () => {
     Map {
       "DateTime" => Object {
         "external": "DateTime",
-        "internal": "DateTime",
+        "internal": "default",
         "source": "luxon/src/datetime.js",
       },
       "Duration" => Object {
         "external": "Duration",
-        "internal": "Duration",
+        "internal": "default",
         "source": "luxon/src/duration.js",
       },
       "Interval" => Object {
         "external": "Interval",
-        "internal": "Interval",
+        "internal": "default",
         "source": "luxon/src/interval.js",
       },
       "Info" => Object {
         "external": "Info",
-        "internal": "Info",
+        "internal": "default",
         "source": "luxon/src/info.js",
       },
       "Zone" => Object {
         "external": "Zone",
-        "internal": "Zone",
+        "internal": "default",
         "source": "luxon/src/zone.js",
       },
       "FixedOffsetZone" => Object {
         "external": "FixedOffsetZone",
-        "internal": "FixedOffsetZone",
+        "internal": "default",
         "source": "luxon/src/zones/fixedOffsetZone.js",
       },
       "IANAZone" => Object {
         "external": "IANAZone",
-        "internal": "IANAZone",
+        "internal": "default",
         "source": "luxon/src/zones/IANAZone.js",
       },
       "InvalidZone" => Object {
         "external": "InvalidZone",
-        "internal": "InvalidZone",
+        "internal": "default",
         "source": "luxon/src/zones/invalidZone.js",
       },
       "LocalZone" => Object {
         "external": "LocalZone",
-        "internal": "LocalZone",
+        "internal": "default",
         "source": "luxon/src/zones/localZone.js",
       },
       "Settings" => Object {
         "external": "Settings",
-        "internal": "Settings",
+        "internal": "default",
         "source": "luxon/src/settings.js",
       },
     }
