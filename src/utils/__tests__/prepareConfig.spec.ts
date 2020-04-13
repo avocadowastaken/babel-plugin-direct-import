@@ -74,24 +74,6 @@ it('throws when `indexFile` does not belongs to package', () => {
   expect(() => {
     prepareConfig({ name: 'lodash', indexFile: 'lodash-es/index' });
   }).toThrow(
-    "babel-plugin-direct-import: Index file 'lodash-es/index' must belong to 'lodash' package",
+    "babel-plugin-direct-import: index file 'lodash-es/index' must belong to 'lodash' package",
   );
-});
-
-it('throws when `indexFileContent` is not a string', () => {
-  const indexFileContents: any[] = [10, {}, []];
-
-  for (const indexFileContent of indexFileContents) {
-    expect(() => {
-      prepareConfig({ name: 'lodash', indexFileContent });
-    }).toThrow(
-      'babel-plugin-direct-import: { indexFileContent } expected to be a string',
-    );
-  }
-});
-
-it('throws when `indexFileContent` is an empty string', () => {
-  expect(() => {
-    prepareConfig({ name: 'lodash', indexFileContent: '' });
-  }).toThrow('babel-plugin-direct-import: { indexFileContent } is empty');
 });

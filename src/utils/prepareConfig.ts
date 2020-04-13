@@ -1,4 +1,4 @@
-import { format } from 'util';
+import { assert } from './asserts';
 
 export interface PluginConfig {
   name: string;
@@ -15,66 +15,37 @@ export function prepareConfig(
       return { name: options };
     }
 
-    const { name, indexFile, indexFileContent, ...unknownOptions } = options;
+    const { name, indexFile, ...unknownOptions } = options;
 
-    if (typeof name !== 'string') {
-      throw new Error(
-        'babel-plugin-direct-import: { name } expected to be a string',
-      );
-    } else if (!name) {
-      throw new Error('babel-plugin-direct-import: { name } is empty');
-    }
+    assert(typeof name === 'string', '{ name } expected to be a string');
+    assert(!!name, '{ name } is empty');
 
     if (indexFile != null) {
-      if (typeof indexFile !== 'string') {
-        throw new Error(
-          'babel-plugin-direct-import: { indexFile } expected to be a string',
-        );
-      }
-
-      if (!indexFile) {
-        throw new Error('babel-plugin-direct-import: { indexFile } is empty');
-      }
+      assert(
+        typeof indexFile === 'string',
+        '{ indexFile } expected to be a string',
+      );
+      assert(!!indexFile, '{ indexFile } is empty');
     }
 
     if (indexFile != null && indexFile !== name) {
       const [nameID] = name.split('/');
       const [indexFileID] = indexFile.split('/');
 
-      if (nameID !== indexFileID) {
-        throw new Error(
-          format(
-            "babel-plugin-direct-import: Index file '%s' must belong to '%s' package",
-            indexFile,
-            name,
-          ),
-        );
-      }
-    }
-
-    if (indexFileContent != null) {
-      if (typeof indexFileContent !== 'string') {
-        throw new Error(
-          'babel-plugin-direct-import: { indexFileContent } expected to be a string',
-        );
-      }
-
-      if (!indexFileContent) {
-        throw new Error(
-          'babel-plugin-direct-import: { indexFileContent } is empty',
-        );
-      }
+      assert(
+        nameID === indexFileID,
+        "index file '%s' must belong to '%s' package",
+        indexFile,
+        name,
+      );
     }
 
     const unknownOptionsKeys = Object.keys(unknownOptions);
-    if (unknownOptionsKeys.length > 0) {
-      throw new Error(
-        format(
-          'babel-plugin-direct-import: contains unknown keys { %s }',
-          unknownOptionsKeys.join(', '),
-        ),
-      );
-    }
+    assert(
+      unknownOptionsKeys.length === 0,
+      'contains unknown keys { %s }',
+      unknownOptionsKeys.join(', '),
+    );
 
     return options;
   });
