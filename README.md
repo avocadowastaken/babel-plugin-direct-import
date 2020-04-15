@@ -137,6 +137,30 @@ export const noop = () => {};
 }
 ```
 
+## Migration
+
+# 0.5.0 to 0.6.0
+
+After migration to Babel v7 it's impossible to pass arrays as configs, and now you have to pass an object with `modules` property:
+
+Before:
+
+```json
+{
+  "plugins": [["babel-plugin-direct-import", ["@material-ui/core"]]]
+}
+```
+
+After:
+
+```json
+{
+  "plugins": [
+    ["babel-plugin-direct-import", [{ "modules": ["@material-ui/core"] }]]
+  ]
+}
+```
+
 ## Thanks
 
 Heavily inspired by:
