@@ -14,6 +14,11 @@ it('resolves exports for `@material-ui/core`', () => {
         "internal": "default",
         "source": "@material-ui/core/esm/styles/createMuiTheme.js",
       },
+      "unstable_createMuiStrictModeTheme" => Object {
+        "external": "unstable_createMuiStrictModeTheme",
+        "internal": "default",
+        "source": "@material-ui/core/esm/styles/createMuiStrictModeTheme.js",
+      },
       "createStyles" => Object {
         "external": "createStyles",
         "internal": "default",
@@ -87,7 +92,7 @@ it('resolves exports for `@material-ui/core`', () => {
       "createChainedFunction" => Object {
         "external": "createChainedFunction",
         "internal": "default",
-        "source": "@material-ui/core/esm/utils/deprecatedPropType.js",
+        "source": "@material-ui/core/esm/utils/createChainedFunction.js",
       },
       "createSvgIcon" => Object {
         "external": "createSvgIcon",
@@ -159,15 +164,35 @@ it('resolves exports for `@material-ui/core`', () => {
         "internal": "default",
         "source": "@material-ui/core/esm/utils/useIsFocusVisible.js",
       },
-      "AppBar" => Object {
-        "external": "AppBar",
+      "Accordion" => Object {
+        "external": "Accordion",
         "internal": "default",
-        "source": "@material-ui/core/esm/AppBar/index.js",
+        "source": "@material-ui/core/esm/Accordion/index.js",
       },
       "default" => Object {
         "external": "default",
         "internal": "default",
         "source": "@material-ui/core/esm/Zoom/Zoom.js",
+      },
+      "AccordionActions" => Object {
+        "external": "AccordionActions",
+        "internal": "default",
+        "source": "@material-ui/core/esm/AccordionActions/index.js",
+      },
+      "AccordionDetails" => Object {
+        "external": "AccordionDetails",
+        "internal": "default",
+        "source": "@material-ui/core/esm/AccordionDetails/index.js",
+      },
+      "AccordionSummary" => Object {
+        "external": "AccordionSummary",
+        "internal": "default",
+        "source": "@material-ui/core/esm/AccordionSummary/index.js",
+      },
+      "AppBar" => Object {
+        "external": "AppBar",
+        "internal": "default",
+        "source": "@material-ui/core/esm/AppBar/index.js",
       },
       "Avatar" => Object {
         "external": "Avatar",
@@ -709,6 +734,11 @@ it('resolves exports for `@material-ui/core`', () => {
         "internal": "default",
         "source": "@material-ui/core/esm/Tabs/index.js",
       },
+      "TabScrollButton" => Object {
+        "external": "TabScrollButton",
+        "internal": "default",
+        "source": "@material-ui/core/esm/TabScrollButton/index.js",
+      },
       "TextField" => Object {
         "external": "TextField",
         "internal": "default",
@@ -733,6 +763,11 @@ it('resolves exports for `@material-ui/core`', () => {
         "external": "Typography",
         "internal": "default",
         "source": "@material-ui/core/esm/Typography/index.js",
+      },
+      "Unstable_TrapFocus" => Object {
+        "external": "Unstable_TrapFocus",
+        "internal": "default",
+        "source": "@material-ui/core/esm/Unstable_TrapFocus/index.js",
       },
       "useMediaQuery" => Object {
         "external": "useMediaQuery",
