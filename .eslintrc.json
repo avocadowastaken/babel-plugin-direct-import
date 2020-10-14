@@ -1,25 +1,32 @@
 {
   "root": true,
   "overrides": [
-    { "files": "*.js", "extends": "plugin:@superdispatch/node" },
     {
+      "files": "*.js",
+      "extends": "plugin:@superdispatch/node"
+    },
+
+    {
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
       "files": "*.ts",
       "extends": [
         "plugin:@superdispatch/node",
         "plugin:@superdispatch/typescript"
       ],
       "rules": {
+        "no-console": "off",
         "node/no-missing-import": "off",
         "node/no-unsupported-features/es-syntax": "off"
       }
     },
+
     {
-      "files": "**/{__tests__,__testutils__}/**/*.{js,ts}",
-      "extends": "plugin:@superdispatch/jest",
-      "rules": {
-        "@typescript-eslint/no-explicit-any": "off"
-      }
+      "files": ["**/__tests__/**/*.ts", "**/__testutils__/**/*.ts"],
+      "extends": "plugin:@superdispatch/ts-jest"
     },
+
     {
       "parserOptions": {
         "sourceType": "module"
