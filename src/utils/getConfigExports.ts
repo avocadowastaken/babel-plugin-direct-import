@@ -6,6 +6,12 @@ import { assertNotNull } from './asserts';
 import { PluginConfig } from './prepareConfig';
 import { resolveModule } from './resolveModule';
 
+export interface PluginConfigExports {
+  source: string;
+  internal: string;
+  external: string;
+}
+
 function toRelativeSource(filePath: string): string {
   const pathChunks = filePath.split(sep);
 
@@ -136,12 +142,6 @@ function fulfillExports(
       fulfillExports(exports, sourcePath);
     }
   }
-}
-
-export interface PluginConfigExports {
-  source: string;
-  internal: string;
-  external: string;
 }
 
 export function getConfigExports(

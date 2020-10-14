@@ -1,3 +1,6 @@
 {
-  "extends": "@superdispatch/tsconfig"
+  "extends": "@superdispatch/tsconfig",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.cache/tsconfig.tsbuildinfo"
+  }
 }

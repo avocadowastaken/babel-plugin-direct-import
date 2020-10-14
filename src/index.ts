@@ -7,8 +7,8 @@ import {
 } from './utils/getConfigExports';
 import { PluginConfig, prepareConfig } from './utils/prepareConfig';
 
-const configsCache: Map<string, PluginConfig> = new Map();
-const exportsCache: Map<string, Map<string, PluginConfigExports>> = new Map();
+const configsCache = new Map<string, PluginConfig>();
+const exportsCache = new Map<string, Map<string, PluginConfigExports>>();
 
 function getConfigs(modules: unknown[]): Map<string, PluginConfig> {
   if (configsCache.size === 0) {
@@ -77,7 +77,6 @@ export default function plugin(): {
 
         for (const specifier of specifiers) {
           if (types.isImportNamespaceSpecifier(specifier)) {
-            // eslint-disable-next-line no-console
             console.warn(
               format(
                 'babel-plugin-direct-import: Can not optimize `import * as %s from "%s"`.'.concat(
