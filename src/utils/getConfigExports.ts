@@ -57,7 +57,7 @@ function fulfillExports(
 ): void {
   const content = readFileSync(filePath, 'utf-8');
   const ast = parse(content, { filename: filePath, sourceType: 'module' });
-  const program = !ast ? null : ast.type === 'File' ? ast.program : ast;
+  const program = !ast ? null : types.isFile(ast) ? ast.program : ast;
 
   assertNotNull(program, "failed to parse '%s'.", filePath);
 
@@ -79,7 +79,9 @@ function fulfillExports(
             ? '*'
             : types.isImportDefaultSpecifier(specifier)
             ? 'default'
-            : specifier.imported.name,
+            : types.isIdentifier(specifier.imported)
+            ? specifier.imported.name
+            : specifier.imported.value,
         });
       }
     } else if (types.isExportNamedDeclaration(node)) {
@@ -111,9 +113,11 @@ function fulfillExports(
         : resolveModule(node.source.value, fileDir);
 
       for (const specifier of node.specifiers) {
-        if (specifier.type === 'ExportSpecifier') {
+        if (types.isExportSpecifier(specifier)) {
           const internal = specifier.local.name;
-          const external = specifier.exported.name;
+          const external = types.isIdentifier(specifier.exported)
+            ? specifier.exported.name
+            : specifier.exported.value;
 
           if (sourcePath) {
             exports.set(external, {
