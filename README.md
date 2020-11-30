@@ -7,22 +7,6 @@
 
 Babel plugin to cherry pick imports of ES modules.
 
-## Motivation
-
-[Tree shaking](https://webpack.js.org/guides/tree-shaking/) is awesome! And
-[Rollup](https://rollupjs.org/) with [webpack](https://webpack.js.org) teams
-doing great job making it more better! But still not all libs can be "tree
-shaked" right now and as a developer I don't want to wait, I want to use sweet
-`import { module } from "package"` syntax right now without caring about final
-bundle size.
-
-> "But we already have
-> [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) and
-> [babel-transform-imports](https://bitbucket.org/amctheatres/babel-transform-imports)!"
-
-Right! And these plugins are awesome! But they does not work with complicated structures like [material-ui](https://github.com/mui-org/material-ui/blob/master/packages/material-ui/src/index.js) has.
-I started in [babel-plugin-material-ui](https://www.npmjs.com/package/babel-plugin-material-ui), but soon this idea has grown up to create a generic plugin that will work with any es6 package.
-
 ## Installation
 
 ```bash
@@ -88,7 +72,7 @@ require('babel-core').transform('code', {
 
 #### Transformation of namespace imports:
 
-To keep it simple currently it ignores namespace imports.
+Namespace imports are complicate to analyze, that's why we skip them.
 
 ```jsx
 import * as MUI from 'material-ui';
@@ -126,6 +110,7 @@ export const noop = () => {};
       [
         {
           "modules": [
+            "@material-ui/lab",
             "@material-ui/core",
             "@material-ui/icons",
             "@material-ui/styles"
