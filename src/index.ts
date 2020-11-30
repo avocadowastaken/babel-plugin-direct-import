@@ -93,7 +93,9 @@ export default function plugin(): {
 
           const moduleName = types.isImportDefaultSpecifier(specifier)
             ? 'default'
-            : specifier.imported.name;
+            : types.isIdentifier(specifier.imported)
+            ? specifier.imported.name
+            : specifier.imported.value;
           const moduleExports = exports.get(moduleName);
 
           if (moduleExports) {
