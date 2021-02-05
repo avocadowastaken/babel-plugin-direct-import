@@ -6,7 +6,7 @@
 node_modules/
 
 # Distributive
-/pkg
+/dist
 
 # Testing
 /coverage

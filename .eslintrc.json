@@ -11,15 +11,7 @@
         "project": "./tsconfig.json"
       },
       "files": "*.ts",
-      "extends": [
-        "plugin:@superdispatch/node",
-        "plugin:@superdispatch/typescript"
-      ],
-      "rules": {
-        "no-console": "off",
-        "node/no-missing-import": "off",
-        "node/no-unsupported-features/es-syntax": "off"
-      }
+      "extends": ["plugin:@superdispatch/ts-node"]
     },
 
     {
@@ -33,8 +25,7 @@
       },
       "files": "**/__tests__/packages/**/*.js",
       "rules": {
-        "strict": "off",
-        "@superdispatch/directory-name": "off"
+        "strict": "off"
       }
     }
   ]

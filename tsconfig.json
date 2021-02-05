@@ -1,6 +1,8 @@
 {
   "extends": "@superdispatch/tsconfig",
   "compilerOptions": {
+    "target": "ES2019",
+    "module": "CommonJS",
     "tsBuildInfoFile": "./node_modules/.cache/tsconfig.tsbuildinfo"
   }
 }

@@ -1,5 +1,4 @@
 import path from 'path';
-
 import { resolveModule } from '../resolveModule';
 
 it('should resolve package path', () => {
