@@ -49,7 +49,9 @@ import ChevronRight from '@material-ui/icons/esm/ChevronRight.js';
   "plugins": [
     [
       "babel-plugin-direct-import",
-      [{ "modules": ["luxon", "@material-ui/core", "@material-ui/icons"] }]
+      {
+        "modules": ["luxon", "@material-ui/core", "@material-ui/icons"]
+      }
     ]
   ]
 }
@@ -62,7 +64,9 @@ require('babel-core').transform('code', {
   plugins: [
     [
       'babel-plugin-direct-import',
-      [{ modules: ['luxon', '@material-ui/core', '@material-ui/icons'] }],
+      {
+        modules: ['luxon', '@material-ui/core', '@material-ui/icons'],
+      },
     ],
   ],
 });
@@ -96,7 +100,14 @@ export const noop = () => {};
 
 ```json
 {
-  "plugins": [["babel-plugin-direct-import", [{ "modules": ["luxon"] }]]]
+  "plugins": [
+    [
+      "babel-plugin-direct-import",
+      {
+        "modules": ["luxon"]
+      }
+    ]
+  ]
 }
 ```
 
@@ -107,16 +118,14 @@ export const noop = () => {};
   "plugins": [
     [
       "babel-plugin-direct-import",
-      [
-        {
-          "modules": [
-            "@material-ui/lab",
-            "@material-ui/core",
-            "@material-ui/icons",
-            "@material-ui/styles"
-          ]
-        }
-      ]
+      {
+        "modules": [
+          "@material-ui/lab",
+          "@material-ui/core",
+          "@material-ui/icons",
+          "@material-ui/styles"
+        ]
+      }
     ]
   ]
 }
@@ -141,7 +150,12 @@ After:
 ```json
 {
   "plugins": [
-    ["babel-plugin-direct-import", [{ "modules": ["@material-ui/core"] }]]
+    [
+      "babel-plugin-direct-import",
+      {
+        "modules": ["@material-ui/core"]
+      }
+    ]
   ]
 }
 ```
