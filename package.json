@@ -2,7 +2,7 @@
   "name": "babel-plugin-direct-import",
   "version": "0.6.2",
   "description": "Babel plugin to cherry-pick ES module imports",
-  "repository": "https://github.com/umidbekkarimov/babel-plugin-direct-import.git",
+  "repository": "https://github.com/umidbekk/babel-plugin-direct-import.git",
   "license": "MIT",
   "author": "Umidbek Karimov <uma.karimov@gmail.com>",
   "main": "src/index.js",
