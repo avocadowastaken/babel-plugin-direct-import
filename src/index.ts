@@ -1,6 +1,5 @@
 import { NodePath, types, Visitor } from '@babel/core';
 import { format } from 'util';
-
 import {
   getConfigExports,
   PluginConfigExports,

@@ -1,7 +1,6 @@
 import { parse, types } from '@babel/core';
 import { readFileSync } from 'fs';
 import { dirname, join, sep } from 'path';
-
 import { assertNotNull } from './asserts';
 import { PluginConfig } from './prepareConfig';
 import { resolveModule } from './resolveModule';
