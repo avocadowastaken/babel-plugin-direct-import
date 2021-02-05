@@ -5,7 +5,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/babel-plugin-direct-import.svg)](https://www.npmjs.com/package/babel-plugin-direct-import)
 [![Codecov](https://img.shields.io/codecov/c/gh/umidbekkarimov/babel-plugin-direct-import.svg?style=flat-square)](https://codecov.io/gh/umidbekkarimov/babel-plugin-direct-import)
 
-Babel plugin to cherry pick imports of ES modules.
+Babel plugin to cherry-pick ES module imports.
 
 ## Installation
 
