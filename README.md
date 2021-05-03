@@ -3,7 +3,7 @@
 [![Build](https://github.com/umidbekk/babel-plugin-direct-import/workflows/Build/badge.svg?branch=master)](https://github.com/umidbekk/babel-plugin-direct-import/actions)
 [![npm version](https://img.shields.io/npm/v/babel-plugin-direct-import.svg)](https://www.npmjs.com/package/babel-plugin-direct-import)
 [![npm downloads](https://img.shields.io/npm/dm/babel-plugin-direct-import.svg)](https://www.npmjs.com/package/babel-plugin-direct-import)
-[![Codecov](https://img.shields.io/codecov/c/gh/umidbekk/babel-plugin-direct-import.svg?style=flat-square)](https://codecov.io/gh/umidbekk/babel-plugin-direct-import)
+[![Codecov](https://img.shields.io/codecov/c/gh/umidbekk/babel-plugin-direct-import.svg)](https://codecov.io/gh/umidbekk/babel-plugin-direct-import)
 
 Babel plugin to cherry-pick ES module imports.
 
