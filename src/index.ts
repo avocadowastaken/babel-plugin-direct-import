@@ -1,4 +1,4 @@
-import { NodePath, types, Visitor } from '@babel/core';
+import { PluginObj, PluginOptions, types } from '@babel/core';
 import { format } from 'util';
 import {
   getConfigExports,
@@ -10,8 +10,8 @@ const configsCache = new Map<string, PluginConfig>();
 const exportsCache = new Map<string, Map<string, PluginConfigExports>>();
 
 function getConfigs(modules: unknown[]): Map<string, PluginConfig> {
-  if (configsCache.size === 0) {
-    for (const config of prepareConfig(modules as PluginConfig[])) {
+  if (!configsCache.size) {
+    for (const config of prepareConfig(modules)) {
       configsCache.set(config.name, config);
     }
   }
@@ -27,52 +27,37 @@ function getExports(
 
   if (!pkgExports) {
     const config = getConfigs(modules).get(name);
-
-    if (!config) {
-      pkgExports = new Map();
-    } else {
-      pkgExports = getConfigExports(config);
-    }
-
+    pkgExports = !config ? new Map() : getConfigExports(config);
     exportsCache.set(name, pkgExports);
   }
 
   return pkgExports;
 }
 
-export default function plugin(): {
-  visitor: Visitor<{
-    file: { path: NodePath };
-    opts?: { modules?: unknown[] };
-  }>;
-} {
+function getModules(opts: PluginOptions): unknown[] {
+  if (opts && 'modules' in opts) {
+    const { modules } = opts as { modules?: unknown };
+
+    if (modules) {
+      return Array.isArray(modules) ? modules : [modules];
+    }
+  }
+
+  return [];
+}
+
+export default function plugin(): PluginObj {
   return {
     visitor: {
       ImportDeclaration(declaration, { opts }) {
+        const modules = getModules(opts);
+        if (!modules.length) return;
+
         const { source, specifiers, importKind } = declaration.node;
+        if (!specifiers.length || importKind === 'type') return;
 
-        if (
-          !opts ||
-          !opts.modules ||
-          !Array.isArray(opts.modules) ||
-          opts.modules.length === 0
-        ) {
-          return;
-        }
-
-        if (importKind === 'type') {
-          return;
-        }
-
-        if (specifiers.length === 0) {
-          return;
-        }
-
-        const exports = getExports(source.value, opts.modules);
-
-        if (exports.size === 0) {
-          return;
-        }
+        const exports = getExports(source.value, modules);
+        if (!exports.size) return;
 
         for (const specifier of specifiers) {
           if (types.isImportNamespaceSpecifier(specifier)) {
@@ -124,9 +109,7 @@ export default function plugin(): {
           }
         }
 
-        if (declaration.node.specifiers.length === 0) {
-          declaration.remove();
-        }
+        if (!declaration.node.specifiers.length) declaration.remove();
       },
     },
   };

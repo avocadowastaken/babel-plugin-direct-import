@@ -5,48 +5,48 @@ export interface PluginConfig {
   indexFile?: null | string;
 }
 
-export function prepareConfig(
-  args: string | PluginConfig | Array<string | PluginConfig>,
-): PluginConfig[] {
-  const configs = Array.isArray(args) ? args : [args];
+export function prepareConfig(args: unknown): PluginConfig[] {
+  const configs: PluginConfig[] = [];
 
-  return configs.map((options) => {
-    if (typeof options === 'string') {
-      return { name: options };
-    }
+  for (const config of (Array.isArray(args) ? args : [args]) as unknown[]) {
+    if (typeof config == 'string') {
+      configs.push({ name: config });
+    } else if (typeof config == 'object' && config) {
+      const { name, indexFile, ...unknownOptions } = config as PluginConfig;
 
-    const { name, indexFile, ...unknownOptions } = options;
+      assert(typeof name == 'string', '{ name } expected to be a string');
+      assert(!!name, '{ name } is empty');
 
-    assert(typeof name === 'string', '{ name } expected to be a string');
-    assert(!!name, '{ name } is empty');
+      if (indexFile != null) {
+        assert(
+          typeof indexFile == 'string',
+          '{ indexFile } expected to be a string',
+        );
+        assert(!!indexFile, '{ indexFile } is empty');
+      }
 
-    if (indexFile != null) {
+      if (indexFile != null && indexFile !== name) {
+        const [nameID] = name.split('/');
+        const [indexFileID] = indexFile.split('/');
+
+        assert(
+          nameID === indexFileID,
+          "index file '%s' must belong to '%s' package",
+          indexFile,
+          name,
+        );
+      }
+
+      const unknownOptionsKeys = Object.keys(unknownOptions);
       assert(
-        typeof indexFile === 'string',
-        '{ indexFile } expected to be a string',
+        !unknownOptionsKeys.length,
+        'contains unknown keys { %s }',
+        unknownOptionsKeys.join(', '),
       );
-      assert(!!indexFile, '{ indexFile } is empty');
+
+      configs.push({ name, indexFile });
     }
+  }
 
-    if (indexFile != null && indexFile !== name) {
-      const [nameID] = name.split('/');
-      const [indexFileID] = indexFile.split('/');
-
-      assert(
-        nameID === indexFileID,
-        "index file '%s' must belong to '%s' package",
-        indexFile,
-        name,
-      );
-    }
-
-    const unknownOptionsKeys = Object.keys(unknownOptions);
-    assert(
-      unknownOptionsKeys.length === 0,
-      'contains unknown keys { %s }',
-      unknownOptionsKeys.join(', '),
-    );
-
-    return options;
-  });
+  return configs;
 }
