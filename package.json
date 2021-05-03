@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-direct-import",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "Babel plugin to cherry-pick ES module imports",
   "keywords": [
     "babel-plugin",
