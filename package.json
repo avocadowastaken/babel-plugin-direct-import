@@ -2,6 +2,12 @@
   "name": "babel-plugin-direct-import",
   "version": "0.6.3",
   "description": "Babel plugin to cherry-pick ES module imports",
+  "keywords": [
+    "babel-plugin",
+    "modules",
+    "materia-ui",
+    "luxon"
+  ],
   "repository": "https://github.com/umidbekk/babel-plugin-direct-import.git",
   "license": "MIT",
   "author": "Umidbek Karimov <uma.karimov@gmail.com>",
