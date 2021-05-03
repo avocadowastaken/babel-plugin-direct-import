@@ -1,4 +1,4 @@
-# babel-plugin-direct-import
+## babel-plugin-direct-import
 
 [![Build](https://github.com/umidbekk/babel-plugin-direct-import/workflows/Build/badge.svg?branch=master)](https://github.com/umidbekk/babel-plugin-direct-import/actions)
 [![npm version](https://img.shields.io/npm/v/babel-plugin-direct-import.svg)](https://www.npmjs.com/package/babel-plugin-direct-import)
@@ -7,13 +7,13 @@
 
 Babel plugin to cherry-pick ES module imports.
 
-## Installation
+### Installation
 
 ```bash
 npm install --save-dev babel-plugin-direct-import
 ```
 
-## Example
+### Example
 
 **In**
 
@@ -38,9 +38,9 @@ import ChevronLeft from '@material-ui/icons/esm/ChevronLeft.js';
 import ChevronRight from '@material-ui/icons/esm/ChevronRight.js';
 ```
 
-## Usage
+### Usage
 
-### **Via .babelrc (Recommended)**
+#### **Via .babelrc (Recommended)**
 
 **.babelrc**
 
@@ -57,24 +57,22 @@ import ChevronRight from '@material-ui/icons/esm/ChevronRight.js';
 }
 ```
 
-### **Via Node API**
+#### **Via Node API**
 
 ```javascript
 require('babel-core').transform('code', {
   plugins: [
     [
       'babel-plugin-direct-import',
-      {
-        modules: ['luxon', '@material-ui/core', '@material-ui/icons'],
-      },
+      { modules: ['luxon', '@material-ui/core', '@material-ui/icons'] },
     ],
   ],
 });
 ```
 
-## Limitations
+### Limitations
 
-#### Transformation of namespace imports:
+##### Transformation of namespace imports:
 
 Namespace imports are complicate to analyze, that's why we skip them.
 
@@ -84,7 +82,7 @@ import * as MUI from 'material-ui';
 return (props) => <MUI.Checkbox {...props} />;
 ```
 
-#### Mapping of variable exports:
+##### Mapping of variable exports:
 
 ```js
 import foo from './foo';
@@ -94,24 +92,17 @@ export const baz = foo.baz;
 export const noop = () => {};
 ```
 
-## Tested Packages
+### Tested Packages
 
-#### [Luxon](https://github.com/moment/luxon)
+##### [Luxon](https://github.com/moment/luxon)
 
 ```json
 {
-  "plugins": [
-    [
-      "babel-plugin-direct-import",
-      {
-        "modules": ["luxon"]
-      }
-    ]
-  ]
+  "plugins": [["babel-plugin-direct-import", { "modules": ["luxon"] }]]
 }
 ```
 
-#### [Material UI](https://github.com/mui-org/material-ui)
+##### [Material UI](https://github.com/mui-org/material-ui)
 
 ```json
 {
@@ -131,9 +122,9 @@ export const noop = () => {};
 }
 ```
 
-## Migration
+### Migration
 
-### 0.5.0 to 0.6.0
+#### 0.5.0 to 0.6.0
 
 After migration to Babel v7 it's impossible to pass arrays as configs, and now you have to pass an object with `modules` property:
 
@@ -150,19 +141,12 @@ After:
 ```json
 {
   "plugins": [
-    [
-      "babel-plugin-direct-import",
-      {
-        "modules": ["@material-ui/core"]
-      }
-    ]
+    ["babel-plugin-direct-import", { "modules": ["@material-ui/core"] }]
   ]
 }
 ```
 
-## Thanks
-
-Heavily inspired by:
+### Heavily inspired by:
 
 - [babel-plugin-date-fns](https://github.com/date-fns/babel-plugin-date-fns)
 - [babel-plugin-lodash](https://github.com/lodash/babel-plugin-lodash)
