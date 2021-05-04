@@ -31,14 +31,10 @@
   "prettier": "@superdispatch/prettier-config",
   "jest": {
     "coverageProvider": "v8",
-    "globals": {
-      "ts-jest": {
-        "isolatedModules": true,
-        "tsconfig": "tsconfig.test.json"
-      }
-    },
-    "preset": "ts-jest",
     "testEnvironment": "node",
+    "transform": {
+      "^.+\\.tsx?$": "esbuild-jest"
+    },
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
@@ -61,6 +57,8 @@
     "@types/jest": "^26.0.23",
     "@types/node": "^15.0.1",
     "@types/resolve": "^1.20.0",
+    "esbuild": "^0.11.18",
+    "esbuild-jest": "^0.5.0",
     "eslint": "^7.25.0",
     "husky": "^6.0.0",
     "jest": "^26.5.3",
@@ -69,7 +67,6 @@
     "luxon": "^1.26.0",
     "np": "^7.5.0",
     "prettier": "^2.0.2",
-    "ts-jest": "^26.5.5",
     "typescript": "^4.2.4"
   },
   "peerDependencies": {
