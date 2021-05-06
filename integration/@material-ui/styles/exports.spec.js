@@ -1,8 +1,9 @@
-import { getConfigExports } from '../../../utils/getConfigExports';
+'use strict';
+
+const getModuleExports = require('../../../lib/internal/getModuleExports');
 
 it('resolves exports for `@material-ui/styles`', () => {
-  expect(getConfigExports({ name: '@material-ui/styles' }))
-    .toMatchInlineSnapshot(`
+  expect(getModuleExports('@material-ui/styles')).toMatchInlineSnapshot(`
     Map {
       "createGenerateClassName" => Object {
         "external": "createGenerateClassName",

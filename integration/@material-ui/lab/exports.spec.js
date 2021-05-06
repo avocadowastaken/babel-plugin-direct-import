@@ -1,7 +1,9 @@
-import { getConfigExports } from '../../../utils/getConfigExports';
+'use strict';
+
+const getModuleExports = require('../../../lib/internal/getModuleExports');
 
 test('exports', () => {
-  expect(getConfigExports({ name: '@material-ui/lab' })).toMatchInlineSnapshot(`
+  expect(getModuleExports('@material-ui/lab')).toMatchInlineSnapshot(`
     Map {
       "Alert" => Object {
         "external": "Alert",

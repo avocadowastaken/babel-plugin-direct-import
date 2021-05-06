@@ -1,4 +1,6 @@
-import { runPlugin } from '../../__testutils__/runPlugin';
+'use strict';
+
+const runPlugin = require('../runPlugin');
 
 describe('luxon', () => {
   it('transforms imports', () => {

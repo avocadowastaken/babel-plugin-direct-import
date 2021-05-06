@@ -1,8 +1,9 @@
-import { getConfigExports } from '../../../utils/getConfigExports';
+'use strict';
+
+const getModuleExports = require('../../../lib/internal/getModuleExports');
 
 it('resolves exports for `@material-ui/core`', () => {
-  expect(getConfigExports({ name: '@material-ui/core' }))
-    .toMatchInlineSnapshot(`
+  expect(getModuleExports('@material-ui/core')).toMatchInlineSnapshot(`
     Map {
       "colors" => Object {
         "external": "colors",

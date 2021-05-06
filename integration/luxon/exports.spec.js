@@ -1,7 +1,9 @@
-import { getConfigExports } from '../../utils/getConfigExports';
+'use strict';
+
+const getModuleExports = require('../../lib/internal/getModuleExports');
 
 it('resolves exports for `luxon`', () => {
-  expect(getConfigExports({ name: 'luxon' })).toMatchInlineSnapshot(`
+  expect(getModuleExports('luxon')).toMatchInlineSnapshot(`
     Map {
       "DateTime" => Object {
         "external": "DateTime",
