@@ -10,8 +10,8 @@ describe("@material-ui/icons", () => {
         ["@material-ui/icons"]
       )
     ).toMatchInlineSnapshot(`
-    import ChevronLeft from "@material-ui/icons/esm/ChevronLeft.js";
-    import ChevronRight from "@material-ui/icons/esm/ChevronRight.js";
-  `);
+      import ChevronLeft from "@material-ui/icons/esm/ChevronLeft.js";
+      import ChevronRight from "@material-ui/icons/esm/ChevronRight.js";
+    `);
   });
 });
