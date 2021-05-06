@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 
-const getModuleExports = require('../../../lib/internal/getModuleExports');
+const getModuleExports = require("../../../lib/internal/getModuleExports");
 
-it('resolves exports for `@material-ui/core`', () => {
-  expect(getModuleExports('@material-ui/core')).toMatchInlineSnapshot(`
+it("resolves exports for `@material-ui/core`", () => {
+  expect(getModuleExports("@material-ui/core")).toMatchInlineSnapshot(`
     Map {
       "colors" => Object {
         "external": "colors",

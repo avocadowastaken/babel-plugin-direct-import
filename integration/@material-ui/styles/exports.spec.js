@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 
-const getModuleExports = require('../../../lib/internal/getModuleExports');
+const getModuleExports = require("../../../lib/internal/getModuleExports");
 
-it('resolves exports for `@material-ui/styles`', () => {
-  expect(getModuleExports('@material-ui/styles')).toMatchInlineSnapshot(`
+it("resolves exports for `@material-ui/styles`", () => {
+  expect(getModuleExports("@material-ui/styles")).toMatchInlineSnapshot(`
     Map {
       "createGenerateClassName" => Object {
         "external": "createGenerateClassName",

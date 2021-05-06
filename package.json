@@ -28,7 +28,6 @@
       "js-tools lint --fix"
     ]
   },
-  "prettier": "@superdispatch/prettier-config",
   "jest": {
     "coveragePathIgnorePatterns": [
       "/integration/",
@@ -53,7 +52,6 @@
     "@material-ui/lab": "^4.0.0-alpha.58",
     "@superdispatch/eslint-plugin": "^0.3.0",
     "@superdispatch/js-tools": "^0.3.0",
-    "@superdispatch/prettier-config": "^0.3.0",
     "@superdispatch/tsconfig": "^0.3.0",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.0.1",
