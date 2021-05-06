@@ -1,8 +1,12 @@
 {
-  "extends": "@superdispatch/tsconfig",
+  "include": ["lib", "integration"],
   "compilerOptions": {
-    "target": "ES2019",
+    "target": "ESNext",
     "module": "CommonJS",
-    "tsBuildInfoFile": "./node_modules/.cache/tsconfig.tsbuildinfo"
+
+    "noEmit": true,
+    "strict": true,
+    "allowJs": true,
+    "checkJs": true
   }
 }

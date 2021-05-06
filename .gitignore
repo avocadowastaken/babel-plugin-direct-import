@@ -1,12 +1,5 @@
-# Editors
-.idea
-.vscode
-
 # Dependencies
 node_modules/
-
-# Distributive
-/dist
 
 # Testing
 /coverage

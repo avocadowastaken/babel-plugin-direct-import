@@ -1,6 +1,6 @@
 ## babel-plugin-direct-import
 
-[![Build](https://github.com/umidbekk/babel-plugin-direct-import/workflows/Build/badge.svg?branch=master)](https://github.com/umidbekk/babel-plugin-direct-import/actions)
+[![Main](https://github.com/umidbekk/babel-plugin-direct-import/workflows/Main/badge.svg?branch=master)](https://github.com/umidbekk/babel-plugin-direct-import/actions)
 [![npm version](https://img.shields.io/npm/v/babel-plugin-direct-import.svg)](https://www.npmjs.com/package/babel-plugin-direct-import)
 [![npm downloads](https://img.shields.io/npm/dm/babel-plugin-direct-import.svg)](https://www.npmjs.com/package/babel-plugin-direct-import)
 [![Codecov](https://img.shields.io/codecov/c/gh/umidbekk/babel-plugin-direct-import.svg)](https://codecov.io/gh/umidbekk/babel-plugin-direct-import)
@@ -49,9 +49,7 @@ import ChevronRight from '@material-ui/icons/esm/ChevronRight.js';
   "plugins": [
     [
       "babel-plugin-direct-import",
-      {
-        "modules": ["luxon", "@material-ui/core", "@material-ui/icons"]
-      }
+      { "modules": ["luxon", "@material-ui/core", "@material-ui/icons"] }
     ]
   ]
 }
