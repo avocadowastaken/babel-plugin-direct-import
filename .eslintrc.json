@@ -7,26 +7,8 @@
     },
 
     {
-      "parserOptions": {
-        "project": "./tsconfig.json"
-      },
-      "files": "*.ts",
-      "extends": ["plugin:@superdispatch/ts-node"]
-    },
-
-    {
-      "files": ["**/__tests__/**/*.ts", "**/__testutils__/**/*.ts"],
-      "extends": "plugin:@superdispatch/ts-jest"
-    },
-
-    {
-      "parserOptions": {
-        "sourceType": "module"
-      },
-      "files": "**/__tests__/packages/**/*.js",
-      "rules": {
-        "strict": "off"
-      }
+      "files": ["*.spec.js", "integration/**/*.js"],
+      "extends": "plugin:@superdispatch/jest"
     }
   ]
 }

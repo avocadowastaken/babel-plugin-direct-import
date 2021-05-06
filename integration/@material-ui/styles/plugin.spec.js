@@ -1,4 +1,6 @@
-import { runPlugin } from '../../../__testutils__/runPlugin';
+'use strict';
+
+const runPlugin = require('../../runPlugin');
 
 describe('@material-ui/styles', () => {
   it('transforms imports', () => {
