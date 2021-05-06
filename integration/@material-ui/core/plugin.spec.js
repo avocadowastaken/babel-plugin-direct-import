@@ -1,14 +1,14 @@
-'use strict';
+"use strict";
 
-const runPlugin = require('../../runPlugin');
+const runPlugin = require("../../runPlugin");
 
-describe('@material-ui/core', () => {
-  it('transforms imports', () => {
+describe("@material-ui/core", () => {
+  it("transforms imports", () => {
     expect(
       runPlugin(
         'import { Button, colors, makeStyles, ServerStyleSheets } from "@material-ui/core"',
-        ['@material-ui/core'],
-      ),
+        ["@material-ui/core"]
+      )
     ).toMatchInlineSnapshot(`
       import Button from "@material-ui/core/esm/Button/index.js";
       import * as colors from "@material-ui/core/esm/colors/index.js";

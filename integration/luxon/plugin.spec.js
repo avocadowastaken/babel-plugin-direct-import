@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-const runPlugin = require('../runPlugin');
+const runPlugin = require("../runPlugin");
 
-describe('luxon', () => {
-  it('transforms imports', () => {
+describe("luxon", () => {
+  it("transforms imports", () => {
     expect(
       runPlugin('import { DateTime, Interval, Duration } from "luxon"', [
-        'luxon',
-      ]),
+        "luxon",
+      ])
     ).toMatchInlineSnapshot(`
       import DateTime from "luxon/src/datetime.js";
       import Interval from "luxon/src/interval.js";

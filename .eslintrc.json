@@ -3,12 +3,18 @@
   "overrides": [
     {
       "files": "*.js",
-      "extends": "plugin:@superdispatch/node"
+      "extends": "plugin:@superdispatch/node",
+      "rules": {
+        "quotes": "off"
+      }
     },
 
     {
       "files": ["*.spec.js", "integration/**/*.js"],
-      "extends": "plugin:@superdispatch/jest"
+      "extends": "plugin:@superdispatch/jest",
+      "rules": {
+        "quotes": "off"
+      }
     }
   ]
 }

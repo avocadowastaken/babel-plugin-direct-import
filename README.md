@@ -23,19 +23,19 @@ import {
   colors,
   makeStyles,
   ServerStyleSheets,
-} from '@material-ui/core';
-import { ChevronLeft, ChevronRight } from '@material-ui/icons';
+} from "@material-ui/core";
+import { ChevronLeft, ChevronRight } from "@material-ui/icons";
 ```
 
 **Out**
 
 ```javascript
-import Button from '@material-ui/core/esm/Button/index.js';
-import * as colors from '@material-ui/core/esm/colors/index.js';
-import makeStyles from '@material-ui/core/esm/styles/makeStyles.js';
-import { ServerStyleSheets } from '@material-ui/styles/esm/index.js';
-import ChevronLeft from '@material-ui/icons/esm/ChevronLeft.js';
-import ChevronRight from '@material-ui/icons/esm/ChevronRight.js';
+import Button from "@material-ui/core/esm/Button/index.js";
+import * as colors from "@material-ui/core/esm/colors/index.js";
+import makeStyles from "@material-ui/core/esm/styles/makeStyles.js";
+import { ServerStyleSheets } from "@material-ui/styles/esm/index.js";
+import ChevronLeft from "@material-ui/icons/esm/ChevronLeft.js";
+import ChevronRight from "@material-ui/icons/esm/ChevronRight.js";
 ```
 
 ### Usage
@@ -58,11 +58,11 @@ import ChevronRight from '@material-ui/icons/esm/ChevronRight.js';
 #### **Via Node API**
 
 ```javascript
-require('babel-core').transform('code', {
+require("babel-core").transform("code", {
   plugins: [
     [
-      'babel-plugin-direct-import',
-      { modules: ['luxon', '@material-ui/core', '@material-ui/icons'] },
+      "babel-plugin-direct-import",
+      { modules: ["luxon", "@material-ui/core", "@material-ui/icons"] },
     ],
   ],
 });
@@ -75,7 +75,7 @@ require('babel-core').transform('code', {
 Namespace imports are complicate to analyze, that's why we skip them.
 
 ```jsx
-import * as MUI from 'material-ui';
+import * as MUI from "material-ui";
 
 return (props) => <MUI.Checkbox {...props} />;
 ```
@@ -83,7 +83,7 @@ return (props) => <MUI.Checkbox {...props} />;
 ##### Mapping of variable exports:
 
 ```js
-import foo from './foo';
+import foo from "./foo";
 
 export const bar = foo.bar;
 export const baz = foo.baz;

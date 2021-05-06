@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 
-const getModuleExports = require('../../lib/internal/getModuleExports');
+const getModuleExports = require("../../lib/internal/getModuleExports");
 
-it('resolves exports for `luxon`', () => {
-  expect(getModuleExports('luxon')).toMatchInlineSnapshot(`
+it("resolves exports for `luxon`", () => {
+  expect(getModuleExports("luxon")).toMatchInlineSnapshot(`
     Map {
       "DateTime" => Object {
         "external": "DateTime",

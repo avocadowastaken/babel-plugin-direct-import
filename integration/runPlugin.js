@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-const babel = require('@babel/core');
-const plugin = require('../lib/plugin');
+const babel = require("@babel/core");
+const plugin = require("../lib/plugin");
 
 /** @type {Set<string>} */
 const transformed = new Set();
@@ -24,7 +24,7 @@ module.exports = function runPlugin(input, modules) {
   const result = babel.transformSync(input, {
     plugins: [[plugin, { modules }]],
   });
-  if (!result?.code) return '';
+  if (!result?.code) return "";
   transformed.add(result.code);
   return result.code;
 };
