@@ -10,7 +10,7 @@
     },
 
     {
-      "files": ["*.spec.js", "integration/**/*.js"],
+      "files": ["*.spec.js", "test/**/*.js"],
       "extends": "plugin:@superdispatch/jest",
       "rules": {
         "quotes": "off"

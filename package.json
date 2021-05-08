@@ -30,7 +30,7 @@
   },
   "jest": {
     "coveragePathIgnorePatterns": [
-      "/integration/",
+      "/test/",
       "/node_modules/"
     ],
     "coverageProvider": "v8",
