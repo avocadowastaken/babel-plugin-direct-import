@@ -1,5 +1,5 @@
 {
-  "include": ["lib", "integration"],
+  "include": ["lib", "test"],
   "compilerOptions": {
     "target": "ESNext",
     "module": "CommonJS",
