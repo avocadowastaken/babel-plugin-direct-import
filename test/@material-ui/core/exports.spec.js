@@ -1,179 +1,14 @@
 "use strict";
 
-const getModuleExports = require("../../../lib/internal/getModuleExports");
+const testExports = require("../../testExports");
 
 test("exports", () => {
-  expect(getModuleExports("@material-ui/core")).toMatchInlineSnapshot(`
+  expect(testExports("@material-ui/core")).toMatchInlineSnapshot(`
     Map {
-      "colors" => Object {
-        "external": "colors",
-        "internal": "*",
-        "source": "@material-ui/core/esm/colors/index.js",
-      },
-      "createMuiTheme" => Object {
-        "external": "createMuiTheme",
-        "internal": "default",
-        "source": "@material-ui/core/esm/styles/createMuiTheme.js",
-      },
-      "unstable_createMuiStrictModeTheme" => Object {
-        "external": "unstable_createMuiStrictModeTheme",
-        "internal": "default",
-        "source": "@material-ui/core/esm/styles/createMuiStrictModeTheme.js",
-      },
-      "createStyles" => Object {
-        "external": "createStyles",
-        "internal": "default",
-        "source": "@material-ui/core/esm/styles/createStyles.js",
-      },
-      "makeStyles" => Object {
-        "external": "makeStyles",
-        "internal": "default",
-        "source": "@material-ui/core/esm/styles/makeStyles.js",
-      },
-      "responsiveFontSizes" => Object {
-        "external": "responsiveFontSizes",
-        "internal": "default",
-        "source": "@material-ui/core/esm/styles/responsiveFontSizes.js",
-      },
-      "styled" => Object {
-        "external": "styled",
-        "internal": "default",
-        "source": "@material-ui/core/esm/styles/styled.js",
-      },
-      "useTheme" => Object {
-        "external": "useTheme",
-        "internal": "default",
-        "source": "@material-ui/core/esm/styles/useTheme.js",
-      },
-      "withStyles" => Object {
-        "external": "withStyles",
-        "internal": "default",
-        "source": "@material-ui/core/esm/styles/withStyles.js",
-      },
-      "withTheme" => Object {
-        "external": "withTheme",
-        "internal": "default",
-        "source": "@material-ui/core/esm/styles/withTheme.js",
-      },
-      "createGenerateClassName" => Object {
-        "external": "createGenerateClassName",
-        "internal": "createGenerateClassName",
-        "source": "@material-ui/styles/esm/index.js",
-      },
-      "jssPreset" => Object {
-        "external": "jssPreset",
-        "internal": "jssPreset",
-        "source": "@material-ui/styles/esm/index.js",
-      },
-      "ServerStyleSheets" => Object {
-        "external": "ServerStyleSheets",
-        "internal": "ServerStyleSheets",
-        "source": "@material-ui/styles/esm/index.js",
-      },
-      "StylesProvider" => Object {
-        "external": "StylesProvider",
-        "internal": "StylesProvider",
-        "source": "@material-ui/styles/esm/index.js",
-      },
-      "MuiThemeProvider" => Object {
-        "external": "MuiThemeProvider",
-        "internal": "ThemeProvider",
-        "source": "@material-ui/styles/esm/index.js",
-      },
-      "ThemeProvider" => Object {
-        "external": "ThemeProvider",
-        "internal": "ThemeProvider",
-        "source": "@material-ui/styles/esm/index.js",
-      },
-      "capitalize" => Object {
-        "external": "capitalize",
-        "internal": "default",
-        "source": "@material-ui/core/esm/utils/capitalize.js",
-      },
-      "createChainedFunction" => Object {
-        "external": "createChainedFunction",
-        "internal": "default",
-        "source": "@material-ui/core/esm/utils/createChainedFunction.js",
-      },
-      "createSvgIcon" => Object {
-        "external": "createSvgIcon",
-        "internal": "default",
-        "source": "@material-ui/core/esm/utils/createSvgIcon.js",
-      },
-      "debounce" => Object {
-        "external": "debounce",
-        "internal": "default",
-        "source": "@material-ui/core/esm/utils/debounce.js",
-      },
-      "deprecatedPropType" => Object {
-        "external": "deprecatedPropType",
-        "internal": "default",
-        "source": "@material-ui/core/esm/utils/deprecatedPropType.js",
-      },
-      "isMuiElement" => Object {
-        "external": "isMuiElement",
-        "internal": "default",
-        "source": "@material-ui/core/esm/utils/isMuiElement.js",
-      },
-      "ownerDocument" => Object {
-        "external": "ownerDocument",
-        "internal": "default",
-        "source": "@material-ui/core/esm/utils/ownerDocument.js",
-      },
-      "ownerWindow" => Object {
-        "external": "ownerWindow",
-        "internal": "default",
-        "source": "@material-ui/core/esm/utils/ownerWindow.js",
-      },
-      "requirePropFactory" => Object {
-        "external": "requirePropFactory",
-        "internal": "default",
-        "source": "@material-ui/core/esm/utils/requirePropFactory.js",
-      },
-      "setRef" => Object {
-        "external": "setRef",
-        "internal": "default",
-        "source": "@material-ui/core/esm/utils/setRef.js",
-      },
-      "unsupportedProp" => Object {
-        "external": "unsupportedProp",
-        "internal": "default",
-        "source": "@material-ui/core/esm/utils/unsupportedProp.js",
-      },
-      "useControlled" => Object {
-        "external": "useControlled",
-        "internal": "default",
-        "source": "@material-ui/core/esm/utils/useControlled.js",
-      },
-      "useEventCallback" => Object {
-        "external": "useEventCallback",
-        "internal": "default",
-        "source": "@material-ui/core/esm/utils/useEventCallback.js",
-      },
-      "useForkRef" => Object {
-        "external": "useForkRef",
-        "internal": "default",
-        "source": "@material-ui/core/esm/utils/useForkRef.js",
-      },
-      "unstable_useId" => Object {
-        "external": "unstable_useId",
-        "internal": "default",
-        "source": "@material-ui/core/esm/utils/unstable_useId.js",
-      },
-      "useIsFocusVisible" => Object {
-        "external": "useIsFocusVisible",
-        "internal": "default",
-        "source": "@material-ui/core/esm/utils/useIsFocusVisible.js",
-      },
       "Accordion" => Object {
         "external": "Accordion",
         "internal": "default",
         "source": "@material-ui/core/esm/Accordion/index.js",
-      },
-      "default" => Object {
-        "external": "default",
-        "internal": "default",
-        "source": "@material-ui/core/esm/Zoom/Zoom.js",
       },
       "AccordionActions" => Object {
         "external": "AccordionActions",
@@ -225,11 +60,6 @@ test("exports", () => {
         "internal": "default",
         "source": "@material-ui/core/esm/Box/index.js",
       },
-      "styleFunction" => Object {
-        "external": "styleFunction",
-        "internal": "styleFunction",
-        "source": "@material-ui/core/esm/Box/Box.js",
-      },
       "Breadcrumbs" => Object {
         "external": "Breadcrumbs",
         "internal": "default",
@@ -249,6 +79,11 @@ test("exports", () => {
         "external": "ButtonGroup",
         "internal": "default",
         "source": "@material-ui/core/esm/ButtonGroup/index.js",
+      },
+      "capitalize" => Object {
+        "external": "capitalize",
+        "internal": "default",
+        "source": "@material-ui/core/esm/utils/capitalize.js",
       },
       "Card" => Object {
         "external": "Card",
@@ -305,15 +140,55 @@ test("exports", () => {
         "internal": "default",
         "source": "@material-ui/core/esm/Collapse/index.js",
       },
+      "colors" => Object {
+        "external": "colors",
+        "internal": "*",
+        "source": "@material-ui/core/esm/colors/index.js",
+      },
       "Container" => Object {
         "external": "Container",
         "internal": "default",
         "source": "@material-ui/core/esm/Container/index.js",
       },
+      "createChainedFunction" => Object {
+        "external": "createChainedFunction",
+        "internal": "default",
+        "source": "@material-ui/core/esm/utils/createChainedFunction.js",
+      },
+      "createGenerateClassName" => Object {
+        "external": "createGenerateClassName",
+        "internal": "createGenerateClassName",
+        "source": "@material-ui/styles/esm/index.js",
+      },
+      "createMuiTheme" => Object {
+        "external": "createMuiTheme",
+        "internal": "default",
+        "source": "@material-ui/core/esm/styles/createMuiTheme.js",
+      },
+      "createStyles" => Object {
+        "external": "createStyles",
+        "internal": "default",
+        "source": "@material-ui/core/esm/styles/createStyles.js",
+      },
+      "createSvgIcon" => Object {
+        "external": "createSvgIcon",
+        "internal": "default",
+        "source": "@material-ui/core/esm/utils/createSvgIcon.js",
+      },
       "CssBaseline" => Object {
         "external": "CssBaseline",
         "internal": "default",
         "source": "@material-ui/core/esm/CssBaseline/index.js",
+      },
+      "debounce" => Object {
+        "external": "debounce",
+        "internal": "default",
+        "source": "@material-ui/core/esm/utils/debounce.js",
+      },
+      "deprecatedPropType" => Object {
+        "external": "deprecatedPropType",
+        "internal": "default",
+        "source": "@material-ui/core/esm/utils/deprecatedPropType.js",
       },
       "Dialog" => Object {
         "external": "Dialog",
@@ -389,11 +264,6 @@ test("exports", () => {
         "external": "FormControl",
         "internal": "default",
         "source": "@material-ui/core/esm/FormControl/index.js",
-      },
-      "useFormControl" => Object {
-        "external": "useFormControl",
-        "internal": "default",
-        "source": "@material-ui/core/esm/FormControl/useFormControl.js",
       },
       "FormControlLabel" => Object {
         "external": "FormControlLabel",
@@ -475,6 +345,16 @@ test("exports", () => {
         "internal": "default",
         "source": "@material-ui/core/esm/InputLabel/index.js",
       },
+      "isMuiElement" => Object {
+        "external": "isMuiElement",
+        "internal": "default",
+        "source": "@material-ui/core/esm/utils/isMuiElement.js",
+      },
+      "jssPreset" => Object {
+        "external": "jssPreset",
+        "internal": "jssPreset",
+        "source": "@material-ui/styles/esm/index.js",
+      },
       "LinearProgress" => Object {
         "external": "LinearProgress",
         "internal": "default",
@@ -520,6 +400,11 @@ test("exports", () => {
         "internal": "default",
         "source": "@material-ui/core/esm/ListSubheader/index.js",
       },
+      "makeStyles" => Object {
+        "external": "makeStyles",
+        "internal": "default",
+        "source": "@material-ui/core/esm/styles/makeStyles.js",
+      },
       "Menu" => Object {
         "external": "Menu",
         "internal": "default",
@@ -550,6 +435,11 @@ test("exports", () => {
         "internal": "default",
         "source": "@material-ui/core/esm/Modal/ModalManager.js",
       },
+      "MuiThemeProvider" => Object {
+        "external": "MuiThemeProvider",
+        "internal": "ThemeProvider",
+        "source": "@material-ui/styles/esm/index.js",
+      },
       "NativeSelect" => Object {
         "external": "NativeSelect",
         "internal": "default",
@@ -564,6 +454,16 @@ test("exports", () => {
         "external": "OutlinedInput",
         "internal": "default",
         "source": "@material-ui/core/esm/OutlinedInput/index.js",
+      },
+      "ownerDocument" => Object {
+        "external": "ownerDocument",
+        "internal": "default",
+        "source": "@material-ui/core/esm/utils/ownerDocument.js",
+      },
+      "ownerWindow" => Object {
+        "external": "ownerWindow",
+        "internal": "default",
+        "source": "@material-ui/core/esm/utils/ownerWindow.js",
       },
       "Paper" => Object {
         "external": "Paper",
@@ -595,10 +495,15 @@ test("exports", () => {
         "internal": "default",
         "source": "@material-ui/core/esm/RadioGroup/index.js",
       },
-      "useRadioGroup" => Object {
-        "external": "useRadioGroup",
+      "requirePropFactory" => Object {
+        "external": "requirePropFactory",
         "internal": "default",
-        "source": "@material-ui/core/esm/RadioGroup/useRadioGroup.js",
+        "source": "@material-ui/core/esm/utils/requirePropFactory.js",
+      },
+      "responsiveFontSizes" => Object {
+        "external": "responsiveFontSizes",
+        "internal": "default",
+        "source": "@material-ui/core/esm/styles/responsiveFontSizes.js",
       },
       "RootRef" => Object {
         "external": "RootRef",
@@ -609,6 +514,16 @@ test("exports", () => {
         "external": "Select",
         "internal": "default",
         "source": "@material-ui/core/esm/Select/index.js",
+      },
+      "ServerStyleSheets" => Object {
+        "external": "ServerStyleSheets",
+        "internal": "ServerStyleSheets",
+        "source": "@material-ui/styles/esm/index.js",
+      },
+      "setRef" => Object {
+        "external": "setRef",
+        "internal": "default",
+        "source": "@material-ui/core/esm/utils/setRef.js",
       },
       "Slide" => Object {
         "external": "Slide",
@@ -664,6 +579,21 @@ test("exports", () => {
         "external": "Stepper",
         "internal": "default",
         "source": "@material-ui/core/esm/Stepper/index.js",
+      },
+      "styled" => Object {
+        "external": "styled",
+        "internal": "default",
+        "source": "@material-ui/core/esm/styles/styled.js",
+      },
+      "styleFunction" => Object {
+        "external": "styleFunction",
+        "internal": "styleFunction",
+        "source": "@material-ui/core/esm/Box/Box.js",
+      },
+      "StylesProvider" => Object {
+        "external": "StylesProvider",
+        "internal": "StylesProvider",
+        "source": "@material-ui/styles/esm/index.js",
       },
       "SvgIcon" => Object {
         "external": "SvgIcon",
@@ -740,15 +670,20 @@ test("exports", () => {
         "internal": "default",
         "source": "@material-ui/core/esm/TabScrollButton/index.js",
       },
+      "TextareaAutosize" => Object {
+        "external": "TextareaAutosize",
+        "internal": "default",
+        "source": "@material-ui/core/esm/TextareaAutosize/index.js",
+      },
       "TextField" => Object {
         "external": "TextField",
         "internal": "default",
         "source": "@material-ui/core/esm/TextField/index.js",
       },
-      "TextareaAutosize" => Object {
-        "external": "TextareaAutosize",
-        "internal": "default",
-        "source": "@material-ui/core/esm/TextareaAutosize/index.js",
+      "ThemeProvider" => Object {
+        "external": "ThemeProvider",
+        "internal": "ThemeProvider",
+        "source": "@material-ui/styles/esm/index.js",
       },
       "Toolbar" => Object {
         "external": "Toolbar",
@@ -765,25 +700,85 @@ test("exports", () => {
         "internal": "default",
         "source": "@material-ui/core/esm/Typography/index.js",
       },
+      "unstable_createMuiStrictModeTheme" => Object {
+        "external": "unstable_createMuiStrictModeTheme",
+        "internal": "default",
+        "source": "@material-ui/core/esm/styles/createMuiStrictModeTheme.js",
+      },
       "Unstable_TrapFocus" => Object {
         "external": "Unstable_TrapFocus",
         "internal": "default",
         "source": "@material-ui/core/esm/Unstable_TrapFocus/index.js",
+      },
+      "unstable_useId" => Object {
+        "external": "unstable_useId",
+        "internal": "default",
+        "source": "@material-ui/core/esm/utils/unstable_useId.js",
+      },
+      "unsupportedProp" => Object {
+        "external": "unsupportedProp",
+        "internal": "default",
+        "source": "@material-ui/core/esm/utils/unsupportedProp.js",
+      },
+      "useControlled" => Object {
+        "external": "useControlled",
+        "internal": "default",
+        "source": "@material-ui/core/esm/utils/useControlled.js",
+      },
+      "useEventCallback" => Object {
+        "external": "useEventCallback",
+        "internal": "default",
+        "source": "@material-ui/core/esm/utils/useEventCallback.js",
+      },
+      "useForkRef" => Object {
+        "external": "useForkRef",
+        "internal": "default",
+        "source": "@material-ui/core/esm/utils/useForkRef.js",
+      },
+      "useFormControl" => Object {
+        "external": "useFormControl",
+        "internal": "default",
+        "source": "@material-ui/core/esm/FormControl/useFormControl.js",
+      },
+      "useIsFocusVisible" => Object {
+        "external": "useIsFocusVisible",
+        "internal": "default",
+        "source": "@material-ui/core/esm/utils/useIsFocusVisible.js",
       },
       "useMediaQuery" => Object {
         "external": "useMediaQuery",
         "internal": "default",
         "source": "@material-ui/core/esm/useMediaQuery/index.js",
       },
+      "useRadioGroup" => Object {
+        "external": "useRadioGroup",
+        "internal": "default",
+        "source": "@material-ui/core/esm/RadioGroup/useRadioGroup.js",
+      },
       "useScrollTrigger" => Object {
         "external": "useScrollTrigger",
         "internal": "default",
         "source": "@material-ui/core/esm/useScrollTrigger/index.js",
       },
+      "useTheme" => Object {
+        "external": "useTheme",
+        "internal": "default",
+        "source": "@material-ui/core/esm/styles/useTheme.js",
+      },
       "withMobileDialog" => Object {
         "external": "withMobileDialog",
         "internal": "default",
         "source": "@material-ui/core/esm/withMobileDialog/index.js",
+      },
+      "withStyles" => Object {
+        "external": "withStyles",
+        "internal": "default",
+        "source": "@material-ui/core/esm/styles/withStyles.js",
+      },
+      "withTheme" => Object {
+        "external": "withTheme",
+        "internal": "default",
+        "source": "@material-ui/core/esm/styles/withTheme.js",
       },
       "withWidth" => Object {
         "external": "withWidth",

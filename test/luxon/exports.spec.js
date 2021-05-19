@@ -1,9 +1,9 @@
 "use strict";
 
-const getModuleExports = require("../../lib/internal/getModuleExports");
+const testExports = require("../testExports");
 
 test("exports", () => {
-  expect(getModuleExports("luxon")).toMatchInlineSnapshot(`
+  expect(testExports("luxon")).toMatchInlineSnapshot(`
     Map {
       "DateTime" => Object {
         "external": "DateTime",
@@ -15,21 +15,6 @@ test("exports", () => {
         "internal": "default",
         "source": "luxon/src/duration.js",
       },
-      "Interval" => Object {
-        "external": "Interval",
-        "internal": "default",
-        "source": "luxon/src/interval.js",
-      },
-      "Info" => Object {
-        "external": "Info",
-        "internal": "default",
-        "source": "luxon/src/info.js",
-      },
-      "Zone" => Object {
-        "external": "Zone",
-        "internal": "default",
-        "source": "luxon/src/zone.js",
-      },
       "FixedOffsetZone" => Object {
         "external": "FixedOffsetZone",
         "internal": "default",
@@ -39,6 +24,16 @@ test("exports", () => {
         "external": "IANAZone",
         "internal": "default",
         "source": "luxon/src/zones/IANAZone.js",
+      },
+      "Info" => Object {
+        "external": "Info",
+        "internal": "default",
+        "source": "luxon/src/info.js",
+      },
+      "Interval" => Object {
+        "external": "Interval",
+        "internal": "default",
+        "source": "luxon/src/interval.js",
       },
       "InvalidZone" => Object {
         "external": "InvalidZone",
@@ -54,6 +49,11 @@ test("exports", () => {
         "external": "Settings",
         "internal": "default",
         "source": "luxon/src/settings.js",
+      },
+      "Zone" => Object {
+        "external": "Zone",
+        "internal": "default",
+        "source": "luxon/src/zone.js",
       },
     }
   `);
