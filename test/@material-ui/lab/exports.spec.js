@@ -1,19 +1,14 @@
 "use strict";
 
-const getModuleExports = require("../../../lib/internal/getModuleExports");
+const testExports = require("../../testExports");
 
 test("exports", () => {
-  expect(getModuleExports("@material-ui/lab")).toMatchInlineSnapshot(`
+  expect(testExports("@material-ui/lab")).toMatchInlineSnapshot(`
     Map {
       "Alert" => Object {
         "external": "Alert",
         "internal": "default",
         "source": "@material-ui/lab/esm/Alert/index.js",
-      },
-      "default" => Object {
-        "external": "default",
-        "internal": "default",
-        "source": "@material-ui/lab/esm/TreeView/TreeView.js",
       },
       "AlertTitle" => Object {
         "external": "AlertTitle",
@@ -25,25 +20,20 @@ test("exports", () => {
         "internal": "default",
         "source": "@material-ui/lab/esm/Autocomplete/index.js",
       },
-      "createFilterOptions" => Object {
-        "external": "createFilterOptions",
-        "internal": "createFilterOptions",
-        "source": "@material-ui/lab/esm/Autocomplete/Autocomplete.js",
-      },
       "AvatarGroup" => Object {
         "external": "AvatarGroup",
         "internal": "default",
         "source": "@material-ui/lab/esm/AvatarGroup/index.js",
       },
+      "createFilterOptions" => Object {
+        "external": "createFilterOptions",
+        "internal": "createFilterOptions",
+        "source": "@material-ui/lab/esm/Autocomplete/Autocomplete.js",
+      },
       "Pagination" => Object {
         "external": "Pagination",
         "internal": "default",
         "source": "@material-ui/lab/esm/Pagination/index.js",
-      },
-      "usePagination" => Object {
-        "external": "usePagination",
-        "internal": "default",
-        "source": "@material-ui/lab/esm/Pagination/usePagination.js",
       },
       "PaginationItem" => Object {
         "external": "PaginationItem",
@@ -149,6 +139,11 @@ test("exports", () => {
         "external": "useAutocomplete",
         "internal": "default",
         "source": "@material-ui/lab/esm/useAutocomplete/index.js",
+      },
+      "usePagination" => Object {
+        "external": "usePagination",
+        "internal": "default",
+        "source": "@material-ui/lab/esm/Pagination/usePagination.js",
       },
     }
   `);

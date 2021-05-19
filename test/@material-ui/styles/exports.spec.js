@@ -1,19 +1,14 @@
 "use strict";
 
-const getModuleExports = require("../../../lib/internal/getModuleExports");
+const testExports = require("../../testExports");
 
 test("exports", () => {
-  expect(getModuleExports("@material-ui/styles")).toMatchInlineSnapshot(`
+  expect(testExports("@material-ui/styles")).toMatchInlineSnapshot(`
     Map {
       "createGenerateClassName" => Object {
         "external": "createGenerateClassName",
         "internal": "default",
         "source": "@material-ui/styles/esm/createGenerateClassName/index.js",
-      },
-      "default" => Object {
-        "external": "default",
-        "internal": "default",
-        "source": "@material-ui/styles/esm/withTheme/withTheme.js",
       },
       "createStyles" => Object {
         "external": "createStyles",
