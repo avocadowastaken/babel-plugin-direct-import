@@ -1,5 +1,6 @@
 "use strict";
 
+const babel = require("@babel/core");
 const getModuleExports = require("../lib/internal/getModuleExports");
 
 /**
@@ -9,7 +10,7 @@ const getModuleExports = require("../lib/internal/getModuleExports");
  */
 module.exports = function testExports(name, indexFile) {
   return new Map(
-    Array.from(getModuleExports(name, indexFile)).sort(([a], [b]) =>
+    Array.from(getModuleExports(name, indexFile, babel)).sort(([a], [b]) =>
       a.localeCompare(b)
     )
   );
