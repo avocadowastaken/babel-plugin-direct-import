@@ -1,15 +1,17 @@
 "use strict";
 
 const babel = require("@babel/core");
+
+const NodeModule = require("../lib/internal/NodeModule");
 const getModuleExports = require("../lib/internal/getModuleExports");
 
 /**
- * @param {string} name
+ * @param {string} id
  * @returns {Map<string, unknown>}
  */
-module.exports = function testExports(name) {
+module.exports = function testExports(id) {
   return new Map(
-    Array.from(getModuleExports(name, babel)).sort(([a], [b]) =>
+    Array.from(getModuleExports(NodeModule.get(id), babel)).sort(([a], [b]) =>
       a.localeCompare(b)
     )
   );
