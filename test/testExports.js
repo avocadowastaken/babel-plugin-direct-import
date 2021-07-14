@@ -5,12 +5,11 @@ const getModuleExports = require("../lib/internal/getModuleExports");
 
 /**
  * @param {string} name
- * @param {string} [indexFile]
  * @returns {Map<string, unknown>}
  */
-module.exports = function testExports(name, indexFile) {
+module.exports = function testExports(name) {
   return new Map(
-    Array.from(getModuleExports(name, indexFile, babel)).sort(([a], [b]) =>
+    Array.from(getModuleExports(name, babel)).sort(([a], [b]) =>
       a.localeCompare(b)
     )
   );
