@@ -24,7 +24,10 @@ import {
   makeStyles,
   ServerStyleSheets,
 } from "@material-ui/core";
-import { ChevronLeft, ChevronRight } from "@material-ui/icons";
+import {
+  ChevronLeft as ChevronLeftIcon,
+  ChevronRight as ChevronRightIcon,
+} from "@material-ui/icons";
 ```
 
 **Out**
@@ -33,9 +36,9 @@ import { ChevronLeft, ChevronRight } from "@material-ui/icons";
 import Button from "@material-ui/core/esm/Button/index.js";
 import * as colors from "@material-ui/core/esm/colors/index.js";
 import makeStyles from "@material-ui/core/esm/styles/makeStyles.js";
-import { ServerStyleSheets } from "@material-ui/styles/esm/index.js";
-import ChevronLeft from "@material-ui/icons/esm/ChevronLeft.js";
-import ChevronRight from "@material-ui/icons/esm/ChevronRight.js";
+import { ServerStyleSheets } from "@material-ui/styles/esm/ServerStyleSheets/ServerStyleSheets.js";
+import ChevronLeftIcon from "@material-ui/icons/esm/ChevronLeft.js";
+import ChevronLeftIcon from "@material-ui/icons/esm/ChevronRight.js";
 ```
 
 ### Usage
