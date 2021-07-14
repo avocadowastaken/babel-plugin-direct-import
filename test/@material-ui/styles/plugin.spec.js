@@ -9,7 +9,7 @@ test("transformation", () => {
       ["@material-ui/styles"]
     )
   ).toMatchInlineSnapshot(`
-    import makeStyles from "@material-ui/styles/esm/makeStyles/index.js";
+    import makeStyles from "@material-ui/styles/esm/makeStyles/makeStyles.js";
     import { ClassNameMap } from "@material-ui/styles";
   `);
 });
