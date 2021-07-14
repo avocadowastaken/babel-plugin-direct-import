@@ -3,16 +3,18 @@
 const babel = require("@babel/core");
 
 const NodeModule = require("../lib/internal/NodeModule");
-const getModuleExports = require("../lib/internal/getModuleExports");
+const DependencyTree = require("../lib/internal/DependencyTree");
 
 /**
  * @param {string} id
- * @returns {Map<string, unknown>}
+ * @returns {unknown[]}
  */
 module.exports = function testExports(id) {
-  return new Map(
-    Array.from(getModuleExports(NodeModule.get(id), babel)).sort(([a], [b]) =>
-      a.localeCompare(b)
-    )
-  );
+  const { dependencies } = DependencyTree.create(NodeModule.get(id), babel);
+
+  return Array.from(dependencies.values(), (dependency) => [
+    dependency.id,
+    dependency.internalID,
+    dependency.source,
+  ]).sort(([, , a], [, , b]) => a.localeCompare(b));
 };
