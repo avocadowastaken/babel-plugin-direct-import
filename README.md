@@ -75,7 +75,7 @@ require("babel-core").transform("code", {
 
 ##### Transformation of namespace imports:
 
-Namespace imports are complicate to analyze, that's why we skip them.
+Namespace imports are hard to analyze, that's why we skip them.
 
 ```jsx
 import * as MUI from "material-ui";
