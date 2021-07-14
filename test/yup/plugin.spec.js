@@ -11,7 +11,7 @@ test("transformation", () => {
   ).toMatchInlineSnapshot(`
     import { create as object } from "yup/es/object.js";
     import setLocale from "yup/es/setLocale.js";
+    import { addMethod } from "yup/es/index.js";
     import StringSchema from "yup/es/string.js";
-    import { addMethod } from "yup";
   `);
 });

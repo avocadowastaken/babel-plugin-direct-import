@@ -4,72 +4,87 @@ const testExports = require("../../testExports");
 
 test("exports", () => {
   expect(testExports("@material-ui/styles")).toMatchInlineSnapshot(`
-    Map {
-      "createGenerateClassName" => Object {
-        "external": "createGenerateClassName",
-        "internal": "default",
-        "source": "@material-ui/styles/esm/createGenerateClassName/index.js",
-      },
-      "createStyles" => Object {
-        "external": "createStyles",
-        "internal": "default",
-        "source": "@material-ui/styles/esm/createStyles/index.js",
-      },
-      "getThemeProps" => Object {
-        "external": "getThemeProps",
-        "internal": "default",
-        "source": "@material-ui/styles/esm/getThemeProps/index.js",
-      },
-      "jssPreset" => Object {
-        "external": "jssPreset",
-        "internal": "default",
-        "source": "@material-ui/styles/esm/jssPreset/index.js",
-      },
-      "makeStyles" => Object {
-        "external": "makeStyles",
-        "internal": "default",
-        "source": "@material-ui/styles/esm/makeStyles/index.js",
-      },
-      "mergeClasses" => Object {
-        "external": "mergeClasses",
-        "internal": "default",
-        "source": "@material-ui/styles/esm/mergeClasses/index.js",
-      },
-      "ServerStyleSheets" => Object {
-        "external": "ServerStyleSheets",
-        "internal": "default",
-        "source": "@material-ui/styles/esm/ServerStyleSheets/index.js",
-      },
-      "styled" => Object {
-        "external": "styled",
-        "internal": "default",
-        "source": "@material-ui/styles/esm/styled/index.js",
-      },
-      "StylesProvider" => Object {
-        "external": "StylesProvider",
-        "internal": "default",
-        "source": "@material-ui/styles/esm/StylesProvider/index.js",
-      },
-      "ThemeProvider" => Object {
-        "external": "ThemeProvider",
-        "internal": "default",
-        "source": "@material-ui/styles/esm/ThemeProvider/index.js",
-      },
-      "useTheme" => Object {
-        "external": "useTheme",
-        "internal": "default",
-        "source": "@material-ui/styles/esm/useTheme/index.js",
-      },
-      "withStyles" => Object {
-        "external": "withStyles",
-        "internal": "default",
-        "source": "@material-ui/styles/esm/withStyles/index.js",
-      },
-      "withTheme" => Object {
-        "external": "withTheme",
-        "internal": "default",
-        "source": "@material-ui/styles/esm/withTheme/index.js",
-      },
-    }
+    Array [
+      Array [
+        "createGenerateClassName",
+        "default",
+        "@material-ui/styles/esm/createGenerateClassName/createGenerateClassName.js",
+      ],
+      Array [
+        "createStyles",
+        "default",
+        "@material-ui/styles/esm/createStyles/createStyles.js",
+      ],
+      Array [
+        "getThemeProps",
+        "default",
+        "@material-ui/styles/esm/getThemeProps/getThemeProps.js",
+      ],
+      Array [
+        "jssPreset",
+        "default",
+        "@material-ui/styles/esm/jssPreset/jssPreset.js",
+      ],
+      Array [
+        "makeStyles",
+        "default",
+        "@material-ui/styles/esm/makeStyles/makeStyles.js",
+      ],
+      Array [
+        "mergeClasses",
+        "default",
+        "@material-ui/styles/esm/mergeClasses/mergeClasses.js",
+      ],
+      Array [
+        "ServerStyleSheets",
+        "ServerStyleSheets",
+        "@material-ui/styles/esm/ServerStyleSheets/ServerStyleSheets.js",
+      ],
+      Array [
+        "styled",
+        "default",
+        "@material-ui/styles/esm/styled/styled.js",
+      ],
+      Array [
+        "StylesProvider",
+        "default",
+        "@material-ui/styles/esm/StylesProvider/StylesProvider.js",
+      ],
+      Array [
+        "sheetsManager",
+        "sheetsManager",
+        "@material-ui/styles/esm/StylesProvider/StylesProvider.js",
+      ],
+      Array [
+        "StylesContext",
+        "StylesContext",
+        "@material-ui/styles/esm/StylesProvider/StylesProvider.js",
+      ],
+      Array [
+        "ThemeProvider",
+        "default",
+        "@material-ui/styles/esm/ThemeProvider/ThemeProvider.js",
+      ],
+      Array [
+        "useTheme",
+        "default",
+        "@material-ui/styles/esm/useTheme/useTheme.js",
+      ],
+      Array [
+        "withStyles",
+        "default",
+        "@material-ui/styles/esm/withStyles/withStyles.js",
+      ],
+      Array [
+        "withTheme",
+        "default",
+        "@material-ui/styles/esm/withTheme/withTheme.js",
+      ],
+      Array [
+        "withThemeCreator",
+        "withThemeCreator",
+        "@material-ui/styles/esm/withTheme/withTheme.js",
+      ],
+    ]
   `);
 });
