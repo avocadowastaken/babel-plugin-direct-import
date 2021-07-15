@@ -36,7 +36,7 @@ import {
 import Button from "@material-ui/core/esm/Button/index.js";
 import * as colors from "@material-ui/core/esm/colors/index.js";
 import makeStyles from "@material-ui/core/esm/styles/makeStyles.js";
-import { ServerStyleSheets } from "@material-ui/styles/esm/ServerStyleSheets/ServerStyleSheets.js";
+import ServerStyleSheets from "@material-ui/styles/esm/ServerStyleSheets/ServerStyleSheets.js";
 import ChevronLeftIcon from "@material-ui/icons/esm/ChevronLeft.js";
 import ChevronLeftIcon from "@material-ui/icons/esm/ChevronRight.js";
 ```

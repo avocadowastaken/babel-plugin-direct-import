@@ -872,7 +872,7 @@ Array [
   ],
   Array [
     "ServerStyleSheets",
-    "ServerStyleSheets",
+    "default",
     "@material-ui/styles/esm/ServerStyleSheets/ServerStyleSheets.js",
   ],
   Array [

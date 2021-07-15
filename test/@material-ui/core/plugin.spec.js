@@ -15,6 +15,6 @@ test("transformation", () => {
     import Button from "@material-ui/core/esm/Button/Button.js";
     import * as colors from "@material-ui/core/esm/colors/index.js";
     import makeStyles from "@material-ui/core/esm/styles/makeStyles.js";
-    import { ServerStyleSheets } from "@material-ui/styles/esm/ServerStyleSheets/ServerStyleSheets.js";
+    import ServerStyleSheets from "@material-ui/styles/esm/ServerStyleSheets/ServerStyleSheets.js";
   `);
 });
