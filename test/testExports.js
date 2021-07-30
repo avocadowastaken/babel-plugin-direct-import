@@ -10,9 +10,8 @@ const DependencyTree = require("../lib/internal/DependencyTree");
  * @returns {unknown[]}
  */
 module.exports = function testExports(id) {
-  const { dependencies } = DependencyTree.create(NodeModule.get(id), babel);
-
-  return Array.from(dependencies.values(), (dependency) => [
+  const tree = DependencyTree.create(NodeModule.get(id), babel);
+  return Array.from(tree.getDependencies().values(), (dependency) => [
     dependency.id,
     dependency.internalID,
     dependency.source,
