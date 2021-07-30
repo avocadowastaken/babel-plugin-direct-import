@@ -17,10 +17,10 @@
     "!*.spec.js"
   ],
   "scripts": {
+    "lint": "js-tools lint",
     "prepare": "husky install",
     "release": "np --no-2fa",
     "tdd": "jest --watch",
-    "pretest": "tsc && js-tools lint",
     "test": "jest --coverage"
   },
   "lint-staged": {
