@@ -51,7 +51,7 @@
     "@material-ui/lab": "^4.0.0-alpha.60",
     "@superdispatch/eslint-plugin": "^0.4.1",
     "@superdispatch/js-tools": "^0.4.0",
-    "@types/jest": "^26.0.24",
+    "@types/jest": "^27.0.0",
     "@types/node": "^16.3.2",
     "@types/resolve": "^1.20.1",
     "eslint": "^7.30.0",
