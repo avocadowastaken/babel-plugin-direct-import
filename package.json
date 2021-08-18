@@ -17,17 +17,16 @@
     "!*.spec.js"
   ],
   "scripts": {
-    "lint": "js-tools lint",
+    "lint": "prettier . --check",
     "prepare": "husky install",
-    "prerelease": "npm i && npm ddp && npm t && npm run lint",
+    "prerelease": "npm i && npm ddp && npm run lint",
     "release": "np --no-2fa",
     "tdd": "jest --watch",
     "test": "jest --coverage"
   },
   "lint-staged": {
-    "*": [
-      "js-tools lint --fix"
-    ]
+    "*": "prettier --write",
+    "package-lock.json": "npm ddp"
   },
   "jest": {
     "coveragePathIgnorePatterns": [
@@ -50,12 +49,9 @@
     "@material-ui/core": "5.0.0-beta.4",
     "@material-ui/icons": "5.0.0-beta.4",
     "@material-ui/lab": "5.0.0-alpha.43",
-    "@superdispatch/eslint-plugin": "0.4.1",
-    "@superdispatch/js-tools": "0.4.0",
     "@types/jest": "27.0.1",
     "@types/node": "16.6.1",
     "@types/resolve": "1.20.1",
-    "eslint": "7.32.0",
     "husky": "7.0.1",
     "jest": "27.0.6",
     "jest-watch-typeahead": "0.6.4",
