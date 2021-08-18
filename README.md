@@ -52,7 +52,14 @@ import ChevronLeftIcon from "@material-ui/icons/esm/ChevronRight.js";
   "plugins": [
     [
       "babel-plugin-direct-import",
-      { "modules": ["luxon", "@material-ui/core", "@material-ui/icons"] }
+      {
+        "modules": [
+          "luxon",
+          "@material-ui/core",
+          "@material-ui/icons",
+          "@material-ui/styles"
+        ]
+      }
     ]
   ]
 }
@@ -65,7 +72,14 @@ require("babel-core").transform("code", {
   plugins: [
     [
       "babel-plugin-direct-import",
-      { modules: ["luxon", "@material-ui/core", "@material-ui/icons"] },
+      {
+        modules: [
+          "luxon",
+          "@material-ui/core",
+          "@material-ui/icons",
+          "@material-ui/styles",
+        ],
+      },
     ],
   ],
 });
