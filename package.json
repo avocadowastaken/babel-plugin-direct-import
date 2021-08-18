@@ -19,6 +19,7 @@
   "scripts": {
     "lint": "js-tools lint",
     "prepare": "husky install",
+    "prerelease": "npm i && npm ddp && npm t && npm run lint",
     "release": "np --no-2fa",
     "tdd": "jest --watch",
     "test": "jest --coverage"
