@@ -862,28 +862,28 @@ Array [
   ],
   Array [
     "createGenerateClassName",
-    "default",
-    "@material-ui/styles/esm/createGenerateClassName/createGenerateClassName.js",
+    "createGenerateClassName",
+    "@material-ui/styles",
   ],
   Array [
     "jssPreset",
-    "default",
-    "@material-ui/styles/esm/jssPreset/jssPreset.js",
+    "jssPreset",
+    "@material-ui/styles",
   ],
   Array [
     "ServerStyleSheets",
-    "default",
-    "@material-ui/styles/esm/ServerStyleSheets/ServerStyleSheets.js",
+    "ServerStyleSheets",
+    "@material-ui/styles",
   ],
   Array [
     "StylesProvider",
-    "default",
-    "@material-ui/styles/esm/StylesProvider/StylesProvider.js",
+    "StylesProvider",
+    "@material-ui/styles",
   ],
   Array [
     "ThemeProvider",
-    "default",
-    "@material-ui/styles/esm/ThemeProvider/ThemeProvider.js",
+    "ThemeProvider",
+    "@material-ui/styles",
   ],
 ]
 `);
