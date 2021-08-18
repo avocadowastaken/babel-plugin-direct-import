@@ -457,7 +457,7 @@ Array [
   ],
   Array [
     "useAutocomplete",
-    "default",
+    "useAutocomplete",
     "@material-ui/unstyled",
   ],
 ]

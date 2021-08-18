@@ -14,6 +14,6 @@ test("transformation", () => {
   ).toMatchInlineSnapshot(`
     import Button from "@material-ui/core/Button/Button.js";
     import * as colors from "@material-ui/core/colors/index.js";
-    import ThemeProvider from "@material-ui/system";
+    import { ThemeProvider } from "@material-ui/system";
   `);
 });

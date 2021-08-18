@@ -2042,7 +2042,7 @@ Array [
   ],
   Array [
     "ThemeProvider",
-    "default",
+    "ThemeProvider",
     "@material-ui/system",
   ],
   Array [
