@@ -18,12 +18,7 @@ npm install --save-dev babel-plugin-direct-import
 **In**
 
 ```javascript
-import {
-  Button,
-  colors,
-  makeStyles,
-  ServerStyleSheets,
-} from "@material-ui/core";
+import { Button, colors, ThemeProvider } from "@material-ui/core";
 import {
   ChevronLeft as ChevronLeftIcon,
   ChevronRight as ChevronRightIcon,
@@ -33,12 +28,11 @@ import {
 **Out**
 
 ```javascript
-import Button from "@material-ui/core/esm/Button/index.js";
-import * as colors from "@material-ui/core/esm/colors/index.js";
-import makeStyles from "@material-ui/core/esm/styles/makeStyles.js";
-import ServerStyleSheets from "@material-ui/styles/esm/ServerStyleSheets/ServerStyleSheets.js";
+import Button from "@material-ui/core/Button/Button.js";
+import * as colors from "@material-ui/core/colors/index.js";
+import ThemeProvider from "@material-ui/system/esm/ThemeProvider/ThemeProvider.js";
 import ChevronLeftIcon from "@material-ui/icons/esm/ChevronLeft.js";
-import ChevronLeftIcon from "@material-ui/icons/esm/ChevronRight.js";
+import ChevronRightIcon from "@material-ui/icons/esm/ChevronRight.js";
 ```
 
 ### Usage
@@ -57,7 +51,7 @@ import ChevronLeftIcon from "@material-ui/icons/esm/ChevronRight.js";
           "luxon",
           "@material-ui/core",
           "@material-ui/icons",
-          "@material-ui/styles"
+          "@material-ui/system"
         ]
       }
     ]
@@ -77,7 +71,7 @@ require("babel-core").transform("code", {
           "luxon",
           "@material-ui/core",
           "@material-ui/icons",
-          "@material-ui/styles",
+          "@material-ui/system",
         ],
       },
     ],
@@ -129,7 +123,7 @@ export const noop = () => {};
           "@material-ui/lab",
           "@material-ui/core",
           "@material-ui/icons",
-          "@material-ui/styles"
+          "@material-ui/system"
         ]
       }
     ]
