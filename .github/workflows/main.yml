@@ -41,5 +41,5 @@ jobs:
 
       - run: npm test
 
-      - uses: codecov/codecov-action@v2.0.2
+      - uses: codecov/codecov-action@v2.0.3
         if: matrix.os == 'ubuntu-latest' && matrix.node == '14'
