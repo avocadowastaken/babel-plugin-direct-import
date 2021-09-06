@@ -18,21 +18,21 @@ npm install --save-dev babel-plugin-direct-import
 **In**
 
 ```javascript
-import { Button, colors, ThemeProvider } from "@material-ui/core";
+import { Button, colors, ThemeProvider } from "@mui/material";
 import {
   ChevronLeft as ChevronLeftIcon,
   ChevronRight as ChevronRightIcon,
-} from "@material-ui/icons";
+} from "@mui/icons-material";
 ```
 
 **Out**
 
 ```javascript
-import Button from "@material-ui/core/esm/Button/Button.js";
-import * as colors from "@material-ui/core/esm/colors/index.js";
-import ThemeProvider from "@material-ui/system/esm/ThemeProvider/ThemeProvider.js";
-import ChevronLeftIcon from "@material-ui/icons/esm/ChevronLeft.js";
-import ChevronRightIcon from "@material-ui/icons/esm/ChevronRight.js";
+import Button from "@mui/material/Button/Button.js";
+import * as colors from "@mui/material/colors/index.js";
+import ThemeProvider from "@mui/system/esm/ThemeProvider/ThemeProvider.js";
+import ChevronLeftIcon from "@mui/icons-material/esm/ChevronLeft.js";
+import ChevronRightIcon from "@mui/icons-material/esm/ChevronRight.js";
 ```
 
 ### Usage
@@ -49,9 +49,9 @@ import ChevronRightIcon from "@material-ui/icons/esm/ChevronRight.js";
       {
         "modules": [
           "luxon",
-          "@material-ui/core",
-          "@material-ui/icons",
-          "@material-ui/system"
+          "@mui/system",
+          "@mui/material",
+          "@mui/icons-material"
         ]
       }
     ]
@@ -69,9 +69,9 @@ require("babel-core").transform("code", {
       {
         modules: [
           "luxon",
-          "@material-ui/core",
-          "@material-ui/icons",
-          "@material-ui/system",
+          "@mui/system",
+          "@mui/material",
+          "@mui/icons-material",
         ],
       },
     ],
@@ -86,7 +86,7 @@ require("babel-core").transform("code", {
 Namespace imports are hard to analyze, that's why we skip them.
 
 ```jsx
-import * as MUI from "material-ui";
+import * as MUI from "@mui/material";
 
 return (props) => <MUI.Checkbox {...props} />;
 ```
@@ -94,11 +94,11 @@ return (props) => <MUI.Checkbox {...props} />;
 ##### Mapping of variable exports:
 
 ```js
-import foo from "./foo";
+import * as colors from "./colors";
 
-export const bar = foo.bar;
-export const baz = foo.baz;
-export const noop = () => {};
+export const blue = colors.blue;
+export const cyan = colors.cyan;
+export const getDefaultColor = () => red;
 ```
 
 ### Tested Packages
@@ -124,6 +124,26 @@ export const noop = () => {};
           "@material-ui/core",
           "@material-ui/icons",
           "@material-ui/system"
+        ]
+      }
+    ]
+  ]
+}
+```
+
+##### [Material UI (v5)](https://github.com/mui-org/material-ui/tree/v5.0.0-rc.0)
+
+```json
+{
+  "plugins": [
+    [
+      "babel-plugin-direct-import",
+      {
+        "modules": [
+          "@mui/lab",
+          "@mui/system",
+          "@mui/material",
+          "@mui/icons-material"
         ]
       }
     ]
