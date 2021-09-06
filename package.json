@@ -43,8 +43,8 @@
     "resolve": "^1.20.0"
   },
   "devDependencies": {
-    "@babel/core": "7.15.0",
-    "@babel/parser": "7.15.3",
+    "@babel/core": "7.15.5",
+    "@babel/parser": "7.15.5",
     "@babel/plugin-syntax-flow": "7.14.5",
     "@material-ui/core": "5.0.0-beta.5",
     "@material-ui/icons": "5.0.0-beta.5",
