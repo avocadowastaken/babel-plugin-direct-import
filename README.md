@@ -28,8 +28,8 @@ import {
 **Out**
 
 ```javascript
-import Button from "@material-ui/core/Button/Button.js";
-import * as colors from "@material-ui/core/colors/index.js";
+import Button from "@material-ui/core/esm/Button/Button.js";
+import * as colors from "@material-ui/core/esm/colors/index.js";
 import ThemeProvider from "@material-ui/system/esm/ThemeProvider/ThemeProvider.js";
 import ChevronLeftIcon from "@material-ui/icons/esm/ChevronLeft.js";
 import ChevronRightIcon from "@material-ui/icons/esm/ChevronRight.js";
@@ -111,7 +111,7 @@ export const noop = () => {};
 }
 ```
 
-##### [Material UI](https://github.com/mui-org/material-ui)
+##### [Material UI (v4)](https://github.com/mui-org/material-ui/tree/v4.12.3)
 
 ```json
 {

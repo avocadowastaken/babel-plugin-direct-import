@@ -8,7 +8,7 @@ test("transformation", () => {
       "@material-ui/lab",
     ])
   ).toMatchInlineSnapshot(`
-    import Alert from "@material-ui/lab/Alert/Alert.js";
-    import AlertTitle from "@material-ui/lab/AlertTitle/AlertTitle.js";
+    import Alert from "@material-ui/lab/esm/Alert/Alert.js";
+    import AlertTitle from "@material-ui/lab/esm/AlertTitle/AlertTitle.js";
   `);
 });

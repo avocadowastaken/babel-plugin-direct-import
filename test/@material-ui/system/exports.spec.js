@@ -6,26 +6,6 @@ test("exports", () => {
   expect(testExports("@material-ui/system")).toMatchInlineSnapshot(`
 Array [
   Array [
-    "css",
-    "css",
-    "@material-ui/styled-engine",
-  ],
-  Array [
-    "keyframes",
-    "keyframes",
-    "@material-ui/styled-engine",
-  ],
-  Array [
-    "GlobalStyles",
-    "GlobalStyles",
-    "@material-ui/styled-engine",
-  ],
-  Array [
-    "StyledEngineProvider",
-    "StyledEngineProvider",
-    "@material-ui/styled-engine",
-  ],
-  Array [
     "borders",
     "default",
     "@material-ui/system/esm/borders.js",
@@ -61,34 +41,9 @@ Array [
     "@material-ui/system/esm/borders.js",
   ],
   Array [
-    "borderTopColor",
-    "borderTopColor",
-    "@material-ui/system/esm/borders.js",
-  ],
-  Array [
-    "borderRightColor",
-    "borderRightColor",
-    "@material-ui/system/esm/borders.js",
-  ],
-  Array [
-    "borderBottomColor",
-    "borderBottomColor",
-    "@material-ui/system/esm/borders.js",
-  ],
-  Array [
-    "borderLeftColor",
-    "borderLeftColor",
-    "@material-ui/system/esm/borders.js",
-  ],
-  Array [
     "borderRadius",
     "borderRadius",
     "@material-ui/system/esm/borders.js",
-  ],
-  Array [
-    "Box",
-    "default",
-    "@material-ui/system/esm/Box/Box.js",
   ],
   Array [
     "breakpoints",
@@ -96,114 +51,9 @@ Array [
     "@material-ui/system/esm/breakpoints.js",
   ],
   Array [
-    "handleBreakpoints",
-    "handleBreakpoints",
-    "@material-ui/system/esm/breakpoints.js",
-  ],
-  Array [
-    "mergeBreakpointsInOrder",
-    "mergeBreakpointsInOrder",
-    "@material-ui/system/esm/breakpoints.js",
-  ],
-  Array [
-    "hexToRgb",
-    "hexToRgb",
-    "@material-ui/system/esm/colorManipulator.js",
-  ],
-  Array [
-    "rgbToHex",
-    "rgbToHex",
-    "@material-ui/system/esm/colorManipulator.js",
-  ],
-  Array [
-    "hslToRgb",
-    "hslToRgb",
-    "@material-ui/system/esm/colorManipulator.js",
-  ],
-  Array [
-    "decomposeColor",
-    "decomposeColor",
-    "@material-ui/system/esm/colorManipulator.js",
-  ],
-  Array [
-    "recomposeColor",
-    "recomposeColor",
-    "@material-ui/system/esm/colorManipulator.js",
-  ],
-  Array [
-    "getContrastRatio",
-    "getContrastRatio",
-    "@material-ui/system/esm/colorManipulator.js",
-  ],
-  Array [
-    "getLuminance",
-    "getLuminance",
-    "@material-ui/system/esm/colorManipulator.js",
-  ],
-  Array [
-    "emphasize",
-    "emphasize",
-    "@material-ui/system/esm/colorManipulator.js",
-  ],
-  Array [
-    "alpha",
-    "alpha",
-    "@material-ui/system/esm/colorManipulator.js",
-  ],
-  Array [
-    "darken",
-    "darken",
-    "@material-ui/system/esm/colorManipulator.js",
-  ],
-  Array [
-    "lighten",
-    "lighten",
-    "@material-ui/system/esm/colorManipulator.js",
-  ],
-  Array [
     "compose",
     "default",
     "@material-ui/system/esm/compose.js",
-  ],
-  Array [
-    "createBox",
-    "default",
-    "@material-ui/system/esm/createBox.js",
-  ],
-  Array [
-    "createStyled",
-    "default",
-    "@material-ui/system/esm/createStyled.js",
-  ],
-  Array [
-    "shouldForwardProp",
-    "shouldForwardProp",
-    "@material-ui/system/esm/createStyled.js",
-  ],
-  Array [
-    "systemDefaultTheme",
-    "systemDefaultTheme",
-    "@material-ui/system/esm/createStyled.js",
-  ],
-  Array [
-    "createBreakpoints",
-    "default",
-    "@material-ui/system/esm/createTheme/createBreakpoints.js",
-  ],
-  Array [
-    "createSpacing",
-    "default",
-    "@material-ui/system/esm/createTheme/createSpacing.js",
-  ],
-  Array [
-    "createTheme",
-    "default",
-    "@material-ui/system/esm/createTheme/createTheme.js",
-  ],
-  Array [
-    "shape",
-    "default",
-    "@material-ui/system/esm/createTheme/shape.js",
   ],
   Array [
     "display",
@@ -281,28 +131,23 @@ Array [
     "@material-ui/system/esm/flexbox.js",
   ],
   Array [
-    "unstable_getThemeValue",
-    "default",
-    "@material-ui/system/esm/getThemeValue.js",
-  ],
-  Array [
     "grid",
     "default",
     "@material-ui/system/esm/grid.js",
   ],
   Array [
-    "gap",
-    "gap",
+    "gridGap",
+    "gridGap",
     "@material-ui/system/esm/grid.js",
   ],
   Array [
-    "columnGap",
-    "columnGap",
+    "gridColumnGap",
+    "gridColumnGap",
     "@material-ui/system/esm/grid.js",
   ],
   Array [
-    "rowGap",
-    "rowGap",
+    "gridRowGap",
+    "gridRowGap",
     "@material-ui/system/esm/grid.js",
   ],
   Array [
@@ -363,11 +208,6 @@ Array [
   Array [
     "bgcolor",
     "bgcolor",
-    "@material-ui/system/esm/palette.js",
-  ],
-  Array [
-    "backgroundColor",
-    "backgroundColor",
     "@material-ui/system/esm/palette.js",
   ],
   Array [
@@ -466,39 +306,9 @@ Array [
     "@material-ui/system/esm/spacing.js",
   ],
   Array [
-    "createUnaryUnit",
-    "createUnaryUnit",
-    "@material-ui/system/esm/spacing.js",
-  ],
-  Array [
     "createUnarySpacing",
     "createUnarySpacing",
     "@material-ui/system/esm/spacing.js",
-  ],
-  Array [
-    "getValue",
-    "getValue",
-    "@material-ui/system/esm/spacing.js",
-  ],
-  Array [
-    "getStyleFromPropValue",
-    "getStyleFromPropValue",
-    "@material-ui/system/esm/spacing.js",
-  ],
-  Array [
-    "margin",
-    "margin",
-    "@material-ui/system/esm/spacing.js",
-  ],
-  Array [
-    "padding",
-    "padding",
-    "@material-ui/system/esm/spacing.js",
-  ],
-  Array [
-    "getPath",
-    "getPath",
-    "@material-ui/system/esm/style.js",
   ],
   Array [
     "style",
@@ -506,24 +316,14 @@ Array [
     "@material-ui/system/esm/style.js",
   ],
   Array [
-    "styled",
+    "styleFunctionSx",
     "default",
-    "@material-ui/system/esm/styled.js",
+    "@material-ui/system/esm/styleFunctionSx.js",
   ],
   Array [
-    "unstable_extendSxProp",
-    "default",
-    "@material-ui/system/esm/styleFunctionSx/extendSxProp.js",
-  ],
-  Array [
-    "unstable_styleFunctionSx",
-    "default",
-    "@material-ui/system/esm/styleFunctionSx/styleFunctionSx.js",
-  ],
-  Array [
-    "ThemeProvider",
-    "default",
-    "@material-ui/system/esm/ThemeProvider/ThemeProvider.js",
+    "css",
+    "css",
+    "@material-ui/system/esm/styleFunctionSx.js",
   ],
   Array [
     "typography",
@@ -564,31 +364,6 @@ Array [
     "textAlign",
     "textAlign",
     "@material-ui/system/esm/typography.js",
-  ],
-  Array [
-    "typographyVariant",
-    "typographyVariant",
-    "@material-ui/system/esm/typography.js",
-  ],
-  Array [
-    "useTheme",
-    "default",
-    "@material-ui/system/esm/useTheme.js",
-  ],
-  Array [
-    "getThemeProps",
-    "default",
-    "@material-ui/system/esm/useThemeProps/getThemeProps.js",
-  ],
-  Array [
-    "useThemeProps",
-    "default",
-    "@material-ui/system/esm/useThemeProps/useThemeProps.js",
-  ],
-  Array [
-    "useThemeWithoutDefault",
-    "default",
-    "@material-ui/system/esm/useThemeWithoutDefault.js",
   ],
 ]
 `);
