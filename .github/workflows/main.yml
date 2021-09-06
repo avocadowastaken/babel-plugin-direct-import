@@ -15,8 +15,12 @@ jobs:
     steps:
       - uses: styfle/cancel-workflow-action@0.9.1
       - uses: actions/checkout@v2
-      - uses: umidbekk/actions/npm/install@v1
+      - uses: actions/setup-node@v2
+        with:
+          cache: "npm"
+          node-version: "14"
 
+      - run: npm ci
       - run: npx tsc
       - run: npm run lint
 
@@ -30,15 +34,13 @@ jobs:
         node: [12, 14, 16]
 
     steps:
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
+          cache: "npm"
           node-version: ${{ matrix.node }}
 
-      - uses: actions/checkout@v2
-      - uses: umidbekk/actions/npm/install@v1
-        with:
-          cache-key: npm-${{ matrix.os }}-${{ matrix.node }}-
-
+      - run: npm ci
       - run: npm test
 
       - uses: codecov/codecov-action@v2.0.3
