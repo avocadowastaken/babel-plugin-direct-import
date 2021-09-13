@@ -47,12 +47,7 @@ import ChevronRightIcon from "@mui/icons-material/esm/ChevronRight.js";
     [
       "babel-plugin-direct-import",
       {
-        "modules": [
-          "luxon",
-          "@mui/system",
-          "@mui/material",
-          "@mui/icons-material"
-        ]
+        "modules": ["@mui/system", "@mui/material", "@mui/icons-material"]
       }
     ]
   ]
@@ -67,12 +62,7 @@ require("babel-core").transform("code", {
     [
       "babel-plugin-direct-import",
       {
-        modules: [
-          "luxon",
-          "@mui/system",
-          "@mui/material",
-          "@mui/icons-material",
-        ],
+        modules: ["@mui/system", "@mui/material", "@mui/icons-material"],
       },
     ],
   ],
@@ -102,14 +92,6 @@ export const getDefaultColor = () => red;
 ```
 
 ### Tested Packages
-
-##### [Luxon](https://github.com/moment/luxon)
-
-```json
-{
-  "plugins": [["babel-plugin-direct-import", { "modules": ["luxon"] }]]
-}
-```
 
 ##### [Material UI (v4)](https://github.com/mui-org/material-ui/tree/v4.12.3)
 
