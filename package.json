@@ -16,7 +16,7 @@
     "!*.spec.js"
   ],
   "scripts": {
-    "lint": "prettier . --check",
+    "lint": "prettier -wc .",
     "prepare": "husky install",
     "prerelease": "npm i && npm ddp && npm run lint",
     "release": "np --no-2fa",
@@ -24,7 +24,7 @@
     "test": "jest --coverage"
   },
   "lint-staged": {
-    "*": "prettier --write"
+    "*": "prettier -wu"
   },
   "jest": {
     "coveragePathIgnorePatterns": [
@@ -55,6 +55,7 @@
     "@types/jest": "27.0.2",
     "@types/node": "16.6.1",
     "@types/resolve": "1.20.1",
+    "@umidbekk/configs": "0.1.0",
     "husky": "7.0.2",
     "jest": "27.2.4",
     "jest-watch-typeahead": "1.0.0",

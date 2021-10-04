@@ -1,12 +1,4 @@
 {
-  "include": ["lib", "test"],
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "CommonJS",
-
-    "noEmit": true,
-    "strict": true,
-    "allowJs": true,
-    "checkJs": true
-  }
+  "extends": "@umidbekk/configs/tsconfig.json",
+  "include": ["lib", "test"]
 }
