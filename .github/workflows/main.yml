@@ -13,16 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: styfle/cancel-workflow-action@0.9.1
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          cache: "npm"
-          node-version: "14"
+      - uses: umidbekk/actions/prepare-node-repo@v2
 
-      - run: npm ci
       - run: npx tsc
       - run: npm run lint -- -no-write
+      - run: npm test
+      - uses: codecov/codecov-action@v2.1.0
 
   tests:
     runs-on: ${{ matrix.os }}
@@ -34,14 +30,8 @@ jobs:
         node: [12, 14, 16]
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: umidbekk/actions/prepare-node-repo@v2
         with:
-          cache: "npm"
           node-version: ${{ matrix.node }}
 
-      - run: npm ci
       - run: npm test
-
-      - uses: codecov/codecov-action@v2.1.0
-        if: matrix.os == 'ubuntu-latest' && matrix.node == '14'
