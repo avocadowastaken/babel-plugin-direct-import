@@ -531,6 +531,11 @@ test("exports", () => {
         "@mui/system/esm/styleFunctionSx/styleFunctionSx.js",
       ],
       Array [
+        "experimental_sx",
+        "default",
+        "@mui/system/esm/sx/sx.js",
+      ],
+      Array [
         "ThemeProvider",
         "default",
         "@mui/system/esm/ThemeProvider/ThemeProvider.js",

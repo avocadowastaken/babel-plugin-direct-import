@@ -16,6 +16,6 @@ test("transformation", () => {
     import { ButtonProps } from "@mui/material/Button";
     import * as colors from "@mui/material/colors/index.js";
     import { ThemeProvider } from "@mui/system";
-    import isHostComponent from "@mui/core/utils/isHostComponent.js";
+    import isHostComponent from "@mui/base/utils/isHostComponent.js";
   `);
 });
