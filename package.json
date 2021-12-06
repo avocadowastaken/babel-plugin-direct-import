@@ -57,7 +57,7 @@
     "@types/resolve": "1.20.1",
     "@umidbekk/configs": "0.1.0",
     "husky": "7.0.4",
-    "jest": "27.4.2",
+    "jest": "27.4.3",
     "jest-watch-typeahead": "1.0.0",
     "lint-staged": "11.2.6",
     "np": "7.5.0",
