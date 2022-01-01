@@ -41,9 +41,9 @@
     "resolve": "^1.20.0"
   },
   "devDependencies": {
-    "@babel/core": "7.16.0",
-    "@babel/parser": "7.16.4",
-    "@babel/plugin-syntax-flow": "7.16.0",
+    "@babel/core": "7.16.7",
+    "@babel/parser": "7.16.7",
+    "@babel/plugin-syntax-flow": "7.16.7",
     "@material-ui/core": "4.12.3",
     "@material-ui/icons": "4.11.2",
     "@material-ui/lab": "4.0.0-alpha.60",
