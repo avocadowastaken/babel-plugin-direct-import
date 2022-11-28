@@ -4,367 +4,367 @@ const testExports = require("../../testExports");
 
 test("exports", () => {
   expect(testExports("@material-ui/system")).toMatchInlineSnapshot(`
-Array [
-  Array [
-    "borders",
-    "default",
-    "@material-ui/system/esm/borders.js",
-  ],
-  Array [
-    "border",
-    "border",
-    "@material-ui/system/esm/borders.js",
-  ],
-  Array [
-    "borderTop",
-    "borderTop",
-    "@material-ui/system/esm/borders.js",
-  ],
-  Array [
-    "borderRight",
-    "borderRight",
-    "@material-ui/system/esm/borders.js",
-  ],
-  Array [
-    "borderBottom",
-    "borderBottom",
-    "@material-ui/system/esm/borders.js",
-  ],
-  Array [
-    "borderLeft",
-    "borderLeft",
-    "@material-ui/system/esm/borders.js",
-  ],
-  Array [
-    "borderColor",
-    "borderColor",
-    "@material-ui/system/esm/borders.js",
-  ],
-  Array [
-    "borderRadius",
-    "borderRadius",
-    "@material-ui/system/esm/borders.js",
-  ],
-  Array [
-    "breakpoints",
-    "default",
-    "@material-ui/system/esm/breakpoints.js",
-  ],
-  Array [
-    "compose",
-    "default",
-    "@material-ui/system/esm/compose.js",
-  ],
-  Array [
-    "display",
-    "default",
-    "@material-ui/system/esm/display.js",
-  ],
-  Array [
-    "flexbox",
-    "default",
-    "@material-ui/system/esm/flexbox.js",
-  ],
-  Array [
-    "flexBasis",
-    "flexBasis",
-    "@material-ui/system/esm/flexbox.js",
-  ],
-  Array [
-    "flexDirection",
-    "flexDirection",
-    "@material-ui/system/esm/flexbox.js",
-  ],
-  Array [
-    "flexWrap",
-    "flexWrap",
-    "@material-ui/system/esm/flexbox.js",
-  ],
-  Array [
-    "justifyContent",
-    "justifyContent",
-    "@material-ui/system/esm/flexbox.js",
-  ],
-  Array [
-    "alignItems",
-    "alignItems",
-    "@material-ui/system/esm/flexbox.js",
-  ],
-  Array [
-    "alignContent",
-    "alignContent",
-    "@material-ui/system/esm/flexbox.js",
-  ],
-  Array [
-    "order",
-    "order",
-    "@material-ui/system/esm/flexbox.js",
-  ],
-  Array [
-    "flex",
-    "flex",
-    "@material-ui/system/esm/flexbox.js",
-  ],
-  Array [
-    "flexGrow",
-    "flexGrow",
-    "@material-ui/system/esm/flexbox.js",
-  ],
-  Array [
-    "flexShrink",
-    "flexShrink",
-    "@material-ui/system/esm/flexbox.js",
-  ],
-  Array [
-    "alignSelf",
-    "alignSelf",
-    "@material-ui/system/esm/flexbox.js",
-  ],
-  Array [
-    "justifyItems",
-    "justifyItems",
-    "@material-ui/system/esm/flexbox.js",
-  ],
-  Array [
-    "justifySelf",
-    "justifySelf",
-    "@material-ui/system/esm/flexbox.js",
-  ],
-  Array [
-    "grid",
-    "default",
-    "@material-ui/system/esm/grid.js",
-  ],
-  Array [
-    "gridGap",
-    "gridGap",
-    "@material-ui/system/esm/grid.js",
-  ],
-  Array [
-    "gridColumnGap",
-    "gridColumnGap",
-    "@material-ui/system/esm/grid.js",
-  ],
-  Array [
-    "gridRowGap",
-    "gridRowGap",
-    "@material-ui/system/esm/grid.js",
-  ],
-  Array [
-    "gridColumn",
-    "gridColumn",
-    "@material-ui/system/esm/grid.js",
-  ],
-  Array [
-    "gridRow",
-    "gridRow",
-    "@material-ui/system/esm/grid.js",
-  ],
-  Array [
-    "gridAutoFlow",
-    "gridAutoFlow",
-    "@material-ui/system/esm/grid.js",
-  ],
-  Array [
-    "gridAutoColumns",
-    "gridAutoColumns",
-    "@material-ui/system/esm/grid.js",
-  ],
-  Array [
-    "gridAutoRows",
-    "gridAutoRows",
-    "@material-ui/system/esm/grid.js",
-  ],
-  Array [
-    "gridTemplateColumns",
-    "gridTemplateColumns",
-    "@material-ui/system/esm/grid.js",
-  ],
-  Array [
-    "gridTemplateRows",
-    "gridTemplateRows",
-    "@material-ui/system/esm/grid.js",
-  ],
-  Array [
-    "gridTemplateAreas",
-    "gridTemplateAreas",
-    "@material-ui/system/esm/grid.js",
-  ],
-  Array [
-    "gridArea",
-    "gridArea",
-    "@material-ui/system/esm/grid.js",
-  ],
-  Array [
-    "palette",
-    "default",
-    "@material-ui/system/esm/palette.js",
-  ],
-  Array [
-    "color",
-    "color",
-    "@material-ui/system/esm/palette.js",
-  ],
-  Array [
-    "bgcolor",
-    "bgcolor",
-    "@material-ui/system/esm/palette.js",
-  ],
-  Array [
-    "positions",
-    "default",
-    "@material-ui/system/esm/positions.js",
-  ],
-  Array [
-    "position",
-    "position",
-    "@material-ui/system/esm/positions.js",
-  ],
-  Array [
-    "zIndex",
-    "zIndex",
-    "@material-ui/system/esm/positions.js",
-  ],
-  Array [
-    "top",
-    "top",
-    "@material-ui/system/esm/positions.js",
-  ],
-  Array [
-    "right",
-    "right",
-    "@material-ui/system/esm/positions.js",
-  ],
-  Array [
-    "bottom",
-    "bottom",
-    "@material-ui/system/esm/positions.js",
-  ],
-  Array [
-    "left",
-    "left",
-    "@material-ui/system/esm/positions.js",
-  ],
-  Array [
-    "shadows",
-    "default",
-    "@material-ui/system/esm/shadows.js",
-  ],
-  Array [
-    "sizing",
-    "default",
-    "@material-ui/system/esm/sizing.js",
-  ],
-  Array [
-    "width",
-    "width",
-    "@material-ui/system/esm/sizing.js",
-  ],
-  Array [
-    "maxWidth",
-    "maxWidth",
-    "@material-ui/system/esm/sizing.js",
-  ],
-  Array [
-    "minWidth",
-    "minWidth",
-    "@material-ui/system/esm/sizing.js",
-  ],
-  Array [
-    "height",
-    "height",
-    "@material-ui/system/esm/sizing.js",
-  ],
-  Array [
-    "maxHeight",
-    "maxHeight",
-    "@material-ui/system/esm/sizing.js",
-  ],
-  Array [
-    "minHeight",
-    "minHeight",
-    "@material-ui/system/esm/sizing.js",
-  ],
-  Array [
-    "sizeWidth",
-    "sizeWidth",
-    "@material-ui/system/esm/sizing.js",
-  ],
-  Array [
-    "sizeHeight",
-    "sizeHeight",
-    "@material-ui/system/esm/sizing.js",
-  ],
-  Array [
-    "boxSizing",
-    "boxSizing",
-    "@material-ui/system/esm/sizing.js",
-  ],
-  Array [
-    "spacing",
-    "default",
-    "@material-ui/system/esm/spacing.js",
-  ],
-  Array [
-    "createUnarySpacing",
-    "createUnarySpacing",
-    "@material-ui/system/esm/spacing.js",
-  ],
-  Array [
-    "style",
-    "default",
-    "@material-ui/system/esm/style.js",
-  ],
-  Array [
-    "styleFunctionSx",
-    "default",
-    "@material-ui/system/esm/styleFunctionSx.js",
-  ],
-  Array [
-    "css",
-    "css",
-    "@material-ui/system/esm/styleFunctionSx.js",
-  ],
-  Array [
-    "typography",
-    "default",
-    "@material-ui/system/esm/typography.js",
-  ],
-  Array [
-    "fontFamily",
-    "fontFamily",
-    "@material-ui/system/esm/typography.js",
-  ],
-  Array [
-    "fontSize",
-    "fontSize",
-    "@material-ui/system/esm/typography.js",
-  ],
-  Array [
-    "fontStyle",
-    "fontStyle",
-    "@material-ui/system/esm/typography.js",
-  ],
-  Array [
-    "fontWeight",
-    "fontWeight",
-    "@material-ui/system/esm/typography.js",
-  ],
-  Array [
-    "letterSpacing",
-    "letterSpacing",
-    "@material-ui/system/esm/typography.js",
-  ],
-  Array [
-    "lineHeight",
-    "lineHeight",
-    "@material-ui/system/esm/typography.js",
-  ],
-  Array [
-    "textAlign",
-    "textAlign",
-    "@material-ui/system/esm/typography.js",
-  ],
-]
-`);
+    [
+      [
+        "borders",
+        "default",
+        "@material-ui/system/esm/borders.js",
+      ],
+      [
+        "border",
+        "border",
+        "@material-ui/system/esm/borders.js",
+      ],
+      [
+        "borderTop",
+        "borderTop",
+        "@material-ui/system/esm/borders.js",
+      ],
+      [
+        "borderRight",
+        "borderRight",
+        "@material-ui/system/esm/borders.js",
+      ],
+      [
+        "borderBottom",
+        "borderBottom",
+        "@material-ui/system/esm/borders.js",
+      ],
+      [
+        "borderLeft",
+        "borderLeft",
+        "@material-ui/system/esm/borders.js",
+      ],
+      [
+        "borderColor",
+        "borderColor",
+        "@material-ui/system/esm/borders.js",
+      ],
+      [
+        "borderRadius",
+        "borderRadius",
+        "@material-ui/system/esm/borders.js",
+      ],
+      [
+        "breakpoints",
+        "default",
+        "@material-ui/system/esm/breakpoints.js",
+      ],
+      [
+        "compose",
+        "default",
+        "@material-ui/system/esm/compose.js",
+      ],
+      [
+        "display",
+        "default",
+        "@material-ui/system/esm/display.js",
+      ],
+      [
+        "flexbox",
+        "default",
+        "@material-ui/system/esm/flexbox.js",
+      ],
+      [
+        "flexBasis",
+        "flexBasis",
+        "@material-ui/system/esm/flexbox.js",
+      ],
+      [
+        "flexDirection",
+        "flexDirection",
+        "@material-ui/system/esm/flexbox.js",
+      ],
+      [
+        "flexWrap",
+        "flexWrap",
+        "@material-ui/system/esm/flexbox.js",
+      ],
+      [
+        "justifyContent",
+        "justifyContent",
+        "@material-ui/system/esm/flexbox.js",
+      ],
+      [
+        "alignItems",
+        "alignItems",
+        "@material-ui/system/esm/flexbox.js",
+      ],
+      [
+        "alignContent",
+        "alignContent",
+        "@material-ui/system/esm/flexbox.js",
+      ],
+      [
+        "order",
+        "order",
+        "@material-ui/system/esm/flexbox.js",
+      ],
+      [
+        "flex",
+        "flex",
+        "@material-ui/system/esm/flexbox.js",
+      ],
+      [
+        "flexGrow",
+        "flexGrow",
+        "@material-ui/system/esm/flexbox.js",
+      ],
+      [
+        "flexShrink",
+        "flexShrink",
+        "@material-ui/system/esm/flexbox.js",
+      ],
+      [
+        "alignSelf",
+        "alignSelf",
+        "@material-ui/system/esm/flexbox.js",
+      ],
+      [
+        "justifyItems",
+        "justifyItems",
+        "@material-ui/system/esm/flexbox.js",
+      ],
+      [
+        "justifySelf",
+        "justifySelf",
+        "@material-ui/system/esm/flexbox.js",
+      ],
+      [
+        "grid",
+        "default",
+        "@material-ui/system/esm/grid.js",
+      ],
+      [
+        "gridGap",
+        "gridGap",
+        "@material-ui/system/esm/grid.js",
+      ],
+      [
+        "gridColumnGap",
+        "gridColumnGap",
+        "@material-ui/system/esm/grid.js",
+      ],
+      [
+        "gridRowGap",
+        "gridRowGap",
+        "@material-ui/system/esm/grid.js",
+      ],
+      [
+        "gridColumn",
+        "gridColumn",
+        "@material-ui/system/esm/grid.js",
+      ],
+      [
+        "gridRow",
+        "gridRow",
+        "@material-ui/system/esm/grid.js",
+      ],
+      [
+        "gridAutoFlow",
+        "gridAutoFlow",
+        "@material-ui/system/esm/grid.js",
+      ],
+      [
+        "gridAutoColumns",
+        "gridAutoColumns",
+        "@material-ui/system/esm/grid.js",
+      ],
+      [
+        "gridAutoRows",
+        "gridAutoRows",
+        "@material-ui/system/esm/grid.js",
+      ],
+      [
+        "gridTemplateColumns",
+        "gridTemplateColumns",
+        "@material-ui/system/esm/grid.js",
+      ],
+      [
+        "gridTemplateRows",
+        "gridTemplateRows",
+        "@material-ui/system/esm/grid.js",
+      ],
+      [
+        "gridTemplateAreas",
+        "gridTemplateAreas",
+        "@material-ui/system/esm/grid.js",
+      ],
+      [
+        "gridArea",
+        "gridArea",
+        "@material-ui/system/esm/grid.js",
+      ],
+      [
+        "palette",
+        "default",
+        "@material-ui/system/esm/palette.js",
+      ],
+      [
+        "color",
+        "color",
+        "@material-ui/system/esm/palette.js",
+      ],
+      [
+        "bgcolor",
+        "bgcolor",
+        "@material-ui/system/esm/palette.js",
+      ],
+      [
+        "positions",
+        "default",
+        "@material-ui/system/esm/positions.js",
+      ],
+      [
+        "position",
+        "position",
+        "@material-ui/system/esm/positions.js",
+      ],
+      [
+        "zIndex",
+        "zIndex",
+        "@material-ui/system/esm/positions.js",
+      ],
+      [
+        "top",
+        "top",
+        "@material-ui/system/esm/positions.js",
+      ],
+      [
+        "right",
+        "right",
+        "@material-ui/system/esm/positions.js",
+      ],
+      [
+        "bottom",
+        "bottom",
+        "@material-ui/system/esm/positions.js",
+      ],
+      [
+        "left",
+        "left",
+        "@material-ui/system/esm/positions.js",
+      ],
+      [
+        "shadows",
+        "default",
+        "@material-ui/system/esm/shadows.js",
+      ],
+      [
+        "sizing",
+        "default",
+        "@material-ui/system/esm/sizing.js",
+      ],
+      [
+        "width",
+        "width",
+        "@material-ui/system/esm/sizing.js",
+      ],
+      [
+        "maxWidth",
+        "maxWidth",
+        "@material-ui/system/esm/sizing.js",
+      ],
+      [
+        "minWidth",
+        "minWidth",
+        "@material-ui/system/esm/sizing.js",
+      ],
+      [
+        "height",
+        "height",
+        "@material-ui/system/esm/sizing.js",
+      ],
+      [
+        "maxHeight",
+        "maxHeight",
+        "@material-ui/system/esm/sizing.js",
+      ],
+      [
+        "minHeight",
+        "minHeight",
+        "@material-ui/system/esm/sizing.js",
+      ],
+      [
+        "sizeWidth",
+        "sizeWidth",
+        "@material-ui/system/esm/sizing.js",
+      ],
+      [
+        "sizeHeight",
+        "sizeHeight",
+        "@material-ui/system/esm/sizing.js",
+      ],
+      [
+        "boxSizing",
+        "boxSizing",
+        "@material-ui/system/esm/sizing.js",
+      ],
+      [
+        "spacing",
+        "default",
+        "@material-ui/system/esm/spacing.js",
+      ],
+      [
+        "createUnarySpacing",
+        "createUnarySpacing",
+        "@material-ui/system/esm/spacing.js",
+      ],
+      [
+        "style",
+        "default",
+        "@material-ui/system/esm/style.js",
+      ],
+      [
+        "styleFunctionSx",
+        "default",
+        "@material-ui/system/esm/styleFunctionSx.js",
+      ],
+      [
+        "css",
+        "css",
+        "@material-ui/system/esm/styleFunctionSx.js",
+      ],
+      [
+        "typography",
+        "default",
+        "@material-ui/system/esm/typography.js",
+      ],
+      [
+        "fontFamily",
+        "fontFamily",
+        "@material-ui/system/esm/typography.js",
+      ],
+      [
+        "fontSize",
+        "fontSize",
+        "@material-ui/system/esm/typography.js",
+      ],
+      [
+        "fontStyle",
+        "fontStyle",
+        "@material-ui/system/esm/typography.js",
+      ],
+      [
+        "fontWeight",
+        "fontWeight",
+        "@material-ui/system/esm/typography.js",
+      ],
+      [
+        "letterSpacing",
+        "letterSpacing",
+        "@material-ui/system/esm/typography.js",
+      ],
+      [
+        "lineHeight",
+        "lineHeight",
+        "@material-ui/system/esm/typography.js",
+      ],
+      [
+        "textAlign",
+        "textAlign",
+        "@material-ui/system/esm/typography.js",
+      ],
+    ]
+  `);
 });
