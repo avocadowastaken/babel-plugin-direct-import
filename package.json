@@ -53,7 +53,7 @@
     "@mui/material": "5.10.15",
     "@mui/system": "5.10.15",
     "@types/jest": "29.2.3",
-    "@types/node": "18.11.9",
+    "@types/node": "18.11.12",
     "@types/resolve": "1.20.2",
     "@umidbekk/configs": "0.2.0",
     "husky": "8.0.2",
