@@ -31,6 +31,9 @@
       "/test/",
       "/node_modules/"
     ],
+    "snapshotSerializers": [
+      "./test/pathSerializer.js"
+    ],
     "testEnvironment": "node",
     "watchPlugins": [
       "jest-watch-typeahead/filename",
