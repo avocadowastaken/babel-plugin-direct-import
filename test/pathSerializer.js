@@ -10,12 +10,10 @@ module.exports = {
     return typeof value === "string" && value.startsWith(ROOT_DIR);
   },
   serialize(value, config, indentation, depth, refs, printer) {
-    return printer(
-      value.replace(ROOT_DIR, "<cwd>"),
-      config,
-      indentation,
-      depth,
-      refs
-    );
+    let result = String(value).replace(ROOT_DIR, "<cwd>");
+    if (path.sep !== path.posix.sep) {
+      result = result.split(path.sep).join(path.posix.sep);
+    }
+    return printer(result, config, indentation, depth, refs);
   },
 };
