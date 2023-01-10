@@ -33,5 +33,6 @@ jobs:
       - uses: umidbekk/actions/prepare-node-repo@v2
         with:
           node-version: ${{ matrix.node }}
+          cache-key: npm-${{ matrix.node }}-
 
       - run: npm test
