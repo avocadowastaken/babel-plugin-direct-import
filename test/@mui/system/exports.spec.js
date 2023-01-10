@@ -31,6 +31,11 @@ test("exports", () => {
         "@mui/system/esm/borders.js",
       ],
       [
+        "borderTransform",
+        "borderTransform",
+        "@mui/system/esm/borders.js",
+      ],
+      [
         "border",
         "border",
         "@mui/system/esm/borders.js",
@@ -126,6 +131,11 @@ test("exports", () => {
         "@mui/system/esm/colorManipulator.js",
       ],
       [
+        "private_safeColorChannel",
+        "private_safeColorChannel",
+        "@mui/system/esm/colorManipulator.js",
+      ],
+      [
         "recomposeColor",
         "recomposeColor",
         "@mui/system/esm/colorManipulator.js",
@@ -156,8 +166,18 @@ test("exports", () => {
         "@mui/system/esm/colorManipulator.js",
       ],
       [
+        "private_safeAlpha",
+        "private_safeAlpha",
+        "@mui/system/esm/colorManipulator.js",
+      ],
+      [
         "darken",
         "darken",
+        "@mui/system/esm/colorManipulator.js",
+      ],
+      [
+        "private_safeDarken",
+        "private_safeDarken",
         "@mui/system/esm/colorManipulator.js",
       ],
       [
@@ -166,8 +186,18 @@ test("exports", () => {
         "@mui/system/esm/colorManipulator.js",
       ],
       [
+        "private_safeLighten",
+        "private_safeLighten",
+        "@mui/system/esm/colorManipulator.js",
+      ],
+      [
         "emphasize",
         "emphasize",
+        "@mui/system/esm/colorManipulator.js",
+      ],
+      [
+        "private_safeEmphasize",
+        "private_safeEmphasize",
         "@mui/system/esm/colorManipulator.js",
       ],
       [
@@ -391,8 +421,18 @@ test("exports", () => {
         "@mui/system/esm/getThemeValue.js",
       ],
       [
+        "experimental_sx",
+        "experimental_sx",
+        "@mui/system/esm/index.js",
+      ],
+      [
         "palette",
         "default",
+        "@mui/system/esm/palette.js",
+      ],
+      [
+        "paletteTransform",
+        "paletteTransform",
         "@mui/system/esm/palette.js",
       ],
       [
@@ -461,6 +501,11 @@ test("exports", () => {
         "@mui/system/esm/sizing.js",
       ],
       [
+        "sizingTransform",
+        "sizingTransform",
+        "@mui/system/esm/sizing.js",
+      ],
+      [
         "width",
         "width",
         "@mui/system/esm/sizing.js",
@@ -508,6 +553,16 @@ test("exports", () => {
       [
         "spacing",
         "default",
+        "@mui/system/esm/spacing.js",
+      ],
+      [
+        "marginKeys",
+        "marginKeys",
+        "@mui/system/esm/spacing.js",
+      ],
+      [
+        "paddingKeys",
+        "paddingKeys",
         "@mui/system/esm/spacing.js",
       ],
       [
@@ -581,6 +636,11 @@ test("exports", () => {
         "@mui/system/esm/styled.js",
       ],
       [
+        "unstable_defaultSxConfig",
+        "default",
+        "@mui/system/esm/styleFunctionSx/defaultSxConfig.js",
+      ],
+      [
         "unstable_extendSxProp",
         "default",
         "@mui/system/esm/styleFunctionSx/extendSxProp.js",
@@ -594,11 +654,6 @@ test("exports", () => {
         "unstable_createStyleFunctionSx",
         "unstable_createStyleFunctionSx",
         "@mui/system/esm/styleFunctionSx/styleFunctionSx.js",
-      ],
-      [
-        "experimental_sx",
-        "default",
-        "@mui/system/esm/sx/sx.js",
       ],
       [
         "ThemeProvider",
