@@ -16,7 +16,7 @@ jobs:
       - uses: umidbekk/actions/prepare-node-repo@v2
 
       - run: npx tsc
-      - run: npm run lint -- -no-write
+      - run: npm run lint -- --no-write
       - run: npm test
       - uses: codecov/codecov-action@v2.1.0
 
