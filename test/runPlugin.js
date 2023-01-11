@@ -24,7 +24,7 @@ module.exports = function runPlugin(input, modules) {
   const result = babel.transformSync(input, {
     plugins: [[plugin, { modules }]],
   });
-  if (!result || !result.code) return "";
+  if (!result?.code) return "";
   transformed.add(result.code);
   return result.code;
 };

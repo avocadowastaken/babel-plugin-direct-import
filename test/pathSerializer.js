@@ -1,19 +1,26 @@
 const path = require("path");
 
-const ROOT_DIR = path.join(__dirname, "..");
+const CWD = path.join(__dirname, "..");
 
 /**
- * @type {import("pretty-format").NewPlugin}
+ * @param {string} input
+ * @returns {string}
  */
+function normalizeSeparators(input) {
+  return input.replace(/\\/g, "/");
+}
+
+/** @type {import("pretty-format").NewPlugin} */
 module.exports = {
   test(value) {
-    return typeof value === "string" && value.startsWith(ROOT_DIR);
+    return typeof value === "string" && value.includes(CWD);
   },
   serialize(value, config, indentation, depth, refs, printer) {
-    let result = String(value).replace(ROOT_DIR, "<cwd>");
-    if (path.sep !== path.posix.sep) {
-      result = result.split(path.sep).join(path.posix.sep);
+    let result = String(value).replace(CWD, "<cwd>");
+    while (result.includes(CWD)) {
+      result = result.replace(CWD, "<cwd>");
     }
+    result = normalizeSeparators(result);
     return printer(result, config, indentation, depth, refs);
   },
 };

@@ -18,10 +18,13 @@ jobs:
 
     steps:
       - uses: umidbekk/actions/prepare-node-repo@v2
-      - run: npx tsc
-      - run: npm run lint -- --no-write
-      - run: npm test
-      - uses: codecov/codecov-action@v3.1.1
+      - run: npm run checks
+      - uses: paambaati/codeclimate-action@v3.1.1
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageLocations: |
+            ${{github.workspace}}/coverage/lcov.info:lcov
 
   tests:
     runs-on: ${{ matrix.os }}
