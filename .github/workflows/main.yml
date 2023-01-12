@@ -8,13 +8,16 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   checks:
     runs-on: ubuntu-latest
 
     steps:
       - uses: umidbekk/actions/prepare-node-repo@v2
-
       - run: npx tsc
       - run: npm run lint -- --no-write
       - run: npm test
@@ -33,6 +36,4 @@ jobs:
       - uses: umidbekk/actions/prepare-node-repo@v2
         with:
           node-version: ${{ matrix.node }}
-          cache-key: npm-${{ matrix.node }}-
-
       - run: npm test
