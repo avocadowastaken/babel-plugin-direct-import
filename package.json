@@ -13,7 +13,7 @@
   "main": "lib/plugin.js",
   "files": [
     "lib",
-    "!*.spec.js"
+    "!**/*.spec.js"
   ],
   "scripts": {
     "checks": "npx tsc && npm run lint && npm run format -- --no-write && npm t",
