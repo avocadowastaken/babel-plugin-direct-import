@@ -1,21 +1,21 @@
 "use strict";
 
 const babel = require("@babel/core");
+const Parser = require("../lib/internal/Parser");
 
-const NodeModule = require("../lib/internal/NodeModule");
-const DependencyTree = require("../lib/internal/DependencyTree");
+const parser = new Parser(babel.parse, babel.types);
 
 /**
- * @param {string} id
+ * @param {string} entryId
  * @returns {unknown[]}
  */
-module.exports = function testExports(id) {
-  const tree = DependencyTree.create(NodeModule.get(id), babel);
-
-  /** @type {Array<[id: string, internalID: string, source: string]>} */
+module.exports = function testExports(entryId) {
+  /** @type {[id: string, internalID: string, source: string][]} */
   const result = [];
 
-  for (const [id, { source, internalID }] of tree.getDependencies()) {
+  for (const [id, { source, internalID }] of parser.getDependenciesMap(
+    entryId
+  )) {
     result.push([id, internalID, source]);
   }
 
