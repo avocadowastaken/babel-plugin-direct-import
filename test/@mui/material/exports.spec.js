@@ -6,11 +6,6 @@ test("exports", () => {
   expect(testExports("@mui/material")).toMatchInlineSnapshot(`
     [
       [
-        "useAutocomplete",
-        "default",
-        "@mui/base/AutocompleteUnstyled",
-      ],
-      [
         "ClickAwayListener",
         "default",
         "@mui/base/ClickAwayListener",
@@ -36,13 +31,13 @@ test("exports", () => {
         "@mui/base/ModalUnstyled/ModalManager.js",
       ],
       [
-        "getModalUtilityClass",
-        "getModalUtilityClass",
+        "modalUnstyledClasses",
+        "default",
         "@mui/base/ModalUnstyled/modalUnstyledClasses.js",
       ],
       [
-        "modalUnstyledClasses",
-        "default",
+        "getModalUtilityClass",
+        "getModalUtilityClass",
         "@mui/base/ModalUnstyled/modalUnstyledClasses.js",
       ],
       [
@@ -59,6 +54,11 @@ test("exports", () => {
         "TextareaAutosize",
         "default",
         "@mui/base/TextareaAutosize",
+      ],
+      [
+        "useAutocomplete",
+        "default",
+        "@mui/base/useAutocomplete",
       ],
       [
         "Accordion",
@@ -1331,11 +1331,6 @@ test("exports", () => {
         "@mui/material/Slider/Slider.js",
       ],
       [
-        "sliderClasses",
-        "sliderClasses",
-        "@mui/material/Slider/Slider.js",
-      ],
-      [
         "SliderRoot",
         "SliderRoot",
         "@mui/material/Slider/Slider.js",
@@ -1357,7 +1352,7 @@ test("exports", () => {
       ],
       [
         "SliderValueLabel",
-        "SliderValueLabel",
+        "StyledSliderValueLabel",
         "@mui/material/Slider/Slider.js",
       ],
       [
@@ -1369,6 +1364,16 @@ test("exports", () => {
         "SliderMarkLabel",
         "SliderMarkLabel",
         "@mui/material/Slider/Slider.js",
+      ],
+      [
+        "sliderClasses",
+        "default",
+        "@mui/material/Slider/sliderClasses.js",
+      ],
+      [
+        "getSliderUtilityClass",
+        "getSliderUtilityClass",
+        "@mui/material/Slider/sliderClasses.js",
       ],
       [
         "Snackbar",
@@ -1449,6 +1454,11 @@ test("exports", () => {
         "Stack",
         "default",
         "@mui/material/Stack/Stack.js",
+      ],
+      [
+        "stackClasses",
+        "default",
+        "@mui/material/Stack/stackClasses.js",
       ],
       [
         "Step",

@@ -16,6 +16,6 @@ test("transformation", () => {
     import { ButtonProps } from "@mui/material/Button";
     import * as colors from "@mui/material/colors/index.js";
     import { ThemeProvider } from "@mui/system";
-    import useAutocomplete from "@mui/base/AutocompleteUnstyled";
+    import useAutocomplete from "@mui/base/useAutocomplete";
   `);
 });
