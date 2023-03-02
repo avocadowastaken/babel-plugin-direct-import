@@ -57,6 +57,9 @@
       "./test/pathSerializer.js"
     ],
     "testEnvironment": "node",
+    "transformIgnorePatterns": [
+      ".+"
+    ],
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
