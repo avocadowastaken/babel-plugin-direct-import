@@ -1,6 +1,5 @@
-"use strict";
-
-const runPlugin = require("../../runPlugin");
+import { expect, test } from "vitest";
+import { runPlugin } from "../../utils.js";
 
 test("transformation", () => {
   expect(

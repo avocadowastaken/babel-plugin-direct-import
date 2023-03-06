@@ -1,6 +1,5 @@
-"use strict";
-
-const testExports = require("../../testExports");
+import { expect, test } from "vitest";
+import { testExports } from "../../utils.js";
 
 test("exports", () => {
   expect(testExports("@material-ui/core")).toMatchInlineSnapshot(`
