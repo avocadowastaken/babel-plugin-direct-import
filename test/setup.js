@@ -1,6 +1,8 @@
-const path = require("path");
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { expect } from "vitest";
 
-const CWD = path.join(__dirname, "..");
+const CWD = path.join(fileURLToPath(import.meta.url), "..", "..");
 
 /**
  * @param {string} input
@@ -10,8 +12,7 @@ function normalizeSeparators(input) {
   return input.replace(/\\/g, "/");
 }
 
-/** @type {import("pretty-format").NewPlugin} */
-module.exports = {
+expect.addSnapshotSerializer({
   test(value) {
     return typeof value === "string" && value.includes(CWD);
   },
@@ -23,4 +24,4 @@ module.exports = {
     result = normalizeSeparators(result);
     return printer(result, config, indentation, depth, refs);
   },
-};
+});

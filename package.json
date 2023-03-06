@@ -21,48 +21,48 @@
     "lint": "eslint .",
     "prepare": "husky install",
     "release": "npx --yes np --test-script checks",
-    "tdd": "jest --watch",
-    "test": "jest --coverage"
+    "tdd": "vitest watch",
+    "test": "vitest run --coverage"
   },
   "lint-staged": {
     "*.js": "eslint --fix",
     "*.*": "prettier --write --ignore-unknown"
   },
   "eslintConfig": {
-    "parserOptions": {
-      "ecmaVersion": 2022
-    },
     "extends": [
-      "eslint:recommended",
-      "plugin:node/recommended-script"
+      "eslint:recommended"
     ],
     "overrides": [
       {
         "files": [
-          "test/**",
-          "*.spec.js"
+          "lib/**/*.js"
         ],
-        "env": {
-          "jest": true
+        "excludedFiles": [
+          "**/*.spec.js"
+        ],
+        "parserOptions": {
+          "ecmaVersion": 2022
+        },
+        "extends": [
+          "plugin:node/recommended-script"
+        ]
+      },
+      {
+        "files": [
+          "**/*.spec.js",
+          "test/**/*.js",
+          "vitest.config.js"
+        ],
+        "parserOptions": {
+          "ecmaVersion": 2022
+        },
+        "extends": [
+          "plugin:node/recommended-module"
+        ],
+        "rules": {
+          "node/no-missing-import": "off"
         }
       }
-    ]
-  },
-  "jest": {
-    "coveragePathIgnorePatterns": [
-      "/test/",
-      "/node_modules/"
-    ],
-    "snapshotSerializers": [
-      "./test/pathSerializer.js"
-    ],
-    "testEnvironment": "node",
-    "transformIgnorePatterns": [
-      ".+"
-    ],
-    "watchPlugins": [
-      "jest-watch-typeahead/filename",
-      "jest-watch-typeahead/testname"
     ]
   },
   "dependencies": {
@@ -80,20 +80,22 @@
     "@mui/lab": "5.0.0-alpha.121",
     "@mui/material": "5.11.11",
     "@mui/system": "5.11.11",
-    "@types/jest": "29.4.0",
+    "@types/babel__core": "7.20.0",
     "@types/node": "18.14.4",
     "@types/resolve": "1.20.2",
     "@umidbekk/configs": "0.2.0",
+    "@vitest/coverage-c8": "^0.29.2",
     "eslint": "8.35.0",
     "eslint-plugin-node": "11.1.0",
     "husky": "8.0.3",
-    "jest": "29.4.3",
-    "jest-watch-typeahead": "2.2.2",
     "lint-staged": "13.1.2",
     "prettier": "2.8.4",
     "prettier-plugin-jsdoc": "0.4.2",
+    "prettier-plugin-organize-imports": "3.2.2",
     "prettier-plugin-packagejson": "2.4.3",
-    "typescript": "4.9.5"
+    "typescript": "4.9.5",
+    "vite": "4.1.4",
+    "vitest": "0.29.2"
   },
   "engines": {
     "node": ">=14",
@@ -101,6 +103,6 @@
   },
   "volta": {
     "node": "14.21.3",
-    "npm": "7.24.2"
+    "npm": "8.19.4"
   }
 }
